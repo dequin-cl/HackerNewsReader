@@ -28,7 +28,9 @@ class FeedModelTests: XCTestCase {
         
 //        // Hits are in an array of correct length
         XCTAssertNotNil(feed.hits, "Should parse hits from sample file")
-//        XCTAssertEqual(feed.hits.count, feed.hitsPerPage, "The number of hits should be equal to the hits per page")
+        XCTAssertEqual(feed.hits.count, feed.hitsPerPage, "The number of hits should be equal to the hits per page")
+        
+        XCTAssertEqual(feed.hits.last!.author, "privong")
     }
 
 }

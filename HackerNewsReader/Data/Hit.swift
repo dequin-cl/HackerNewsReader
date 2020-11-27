@@ -12,11 +12,12 @@ struct Hit: Codable {
     let storyTitle: String?
     let title: String?
     let createdAt: Date
+    let objectID: String
     
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
         case storyTitle = "story_title"
-        case author, title
+        case author, title, objectID
     }
 }
 

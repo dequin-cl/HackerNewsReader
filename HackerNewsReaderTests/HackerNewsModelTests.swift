@@ -71,6 +71,9 @@ class HackerNewsModelTests: XCTestCase {
         let dateFormatter = ISO8601DateFormatter([.withInternetDateTime, .withFractionalSeconds])
         let date = dateFormatter.date(from: "2020-11-26T23:08:36.000Z")
         XCTAssertEqual(hit.createdAt, date, "Hit should parse creation date correctly")
+        
+        // Identifier
+        XCTAssertEqual(hit.objectID, "25224210", "Hit should parse and set Object Id")
     }
 }
 
