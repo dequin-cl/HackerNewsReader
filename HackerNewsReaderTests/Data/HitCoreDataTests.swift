@@ -37,7 +37,9 @@ class HitCoreDataTests: XCTestCase {
             XCTAssertEqual(hitCD.createdAt, hitDTO.createdAt)
             XCTAssertEqual(hitCD.id, hitDTO.objectID)
             XCTAssertEqual(hitCD.storyTitle, hitDTO.storyTitle)
-            XCTAssertEqual(hitCD.title, hitDTO.title)
+            XCTAssertEqual(hitCD.storyURL, hitDTO.storyURL)
+            XCTAssertNil(hitCD.title)
+            XCTAssertNil(hitCD.url)
             
             XCTAssertFalse(hitCD.isUserDeleted)
         }
@@ -74,9 +76,10 @@ class HitCoreDataTests: XCTestCase {
             XCTAssertEqual(hitCD.author, hitDTO.author)
             XCTAssertEqual(hitCD.createdAt, hitDTO.createdAt)
             XCTAssertEqual(hitCD.id, hitDTO.objectID)
-            XCTAssertEqual(hitCD.storyTitle, hitDTO.storyTitle)
+            XCTAssertNil(hitCD.storyTitle)
+            XCTAssertNil(hitCD.storyURL)
             XCTAssertEqual(hitCD.title, hitDTO.title)
-            
+            XCTAssertEqual(hitCD.url, hitDTO.url)
             XCTAssertFalse(hitCD.isUserDeleted)
         }
         

@@ -27,6 +27,8 @@ extension Hit {
         hit.id = dto.objectID
         hit.storyTitle = dto.storyTitle
         hit.title = dto.title
+        hit.storyURL = dto.storyURL
+        hit.url = dto.url
         
         context.perform {
           do {

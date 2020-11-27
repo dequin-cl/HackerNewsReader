@@ -26,9 +26,12 @@ class HitDTOModelTests: XCTestCase {
         // Story Title
         XCTAssertNotNil(hitDTO.storyTitle, "Hit needs to parse story_title")
         XCTAssertEqual(hitDTO.storyTitle, "Fucking, Austria changes name to Fugging", "Hit should have the same story_title as the sample data in SampleNews.json")
-        
         // Title
         XCTAssertNil(hitDTO.title, "Hit needs to parse title, and should be nil")
+
+        // URL
+        XCTAssertNotNil(hitDTO.storyURL, "Hit needs to parse story_url")
+        XCTAssertNil(hitDTO.url, "Hit needs to parse url, and should be nil")
         
         // Author
         XCTAssertNotNil(hitDTO.author, "Hit needs to parse author")
@@ -61,6 +64,11 @@ class HitDTOModelTests: XCTestCase {
         // Title
         XCTAssertNotNil(hitDTO.title, "Hit needs to parse title")
         XCTAssertEqual(hitDTO.title, "Improve your forecasting skills with each avocado you open", "Hit should have the same title as the sample data in SampleNews2.json")
+
+        // URL
+        XCTAssertNil(hitDTO.storyURL, "Hit needs to parse story_url, and should be nil")
+        XCTAssertNotNil(hitDTO.url, "Hit needs to parse url")
+
         
         // Author
         XCTAssertNotNil(hitDTO.author, "Hit needs to parse author")

@@ -13,11 +13,14 @@ struct HitDTO: Codable {
     let title: String?
     let createdAt: Date
     let objectID: String
+    let url: String?
+    let storyURL: String?
     
     enum CodingKeys: String, CodingKey {
         case createdAt = "created_at"
         case storyTitle = "story_title"
-        case author, title, objectID
+        case storyURL = "story_url"
+        case author, title, objectID, url
     }
 }
 
