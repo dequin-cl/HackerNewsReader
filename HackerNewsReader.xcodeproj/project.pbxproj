@@ -24,6 +24,8 @@
 		2C7F498925711B3F00EE9B0B /* FeedDTOModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F498825711B3F00EE9B0B /* FeedDTOModelTests.swift */; };
 		2C7F498E2571230000EE9B0B /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F498D2571230000EE9B0B /* FeedDTO.swift */; };
 		2C7F49A7257129A000EE9B0B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F49A6257129A000EE9B0B /* Persistence.swift */; };
+		2C7F49BC2571342E00EE9B0B /* HitCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F49BB2571342E00EE9B0B /* HitCoreDataTests.swift */; };
+		2C7F49C1257134A700EE9B0B /* Hit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F49C0257134A700EE9B0B /* Hit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		2C7F498825711B3F00EE9B0B /* FeedDTOModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTOModelTests.swift; sourceTree = "<group>"; };
 		2C7F498D2571230000EE9B0B /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
 		2C7F49A6257129A000EE9B0B /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2C7F49BB2571342E00EE9B0B /* HitCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitCoreDataTests.swift; sourceTree = "<group>"; };
+		2C7F49C0257134A700EE9B0B /* Hit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				2C7F497B257109FD00EE9B0B /* HitDTO.swift */,
 				2C7F498D2571230000EE9B0B /* FeedDTO.swift */,
 				2C7F49A6257129A000EE9B0B /* Persistence.swift */,
+				2C7F49C0257134A700EE9B0B /* Hit.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				2C7F4964257107B900EE9B0B /* HitDTOModelTests.swift */,
 				2C7F498825711B3F00EE9B0B /* FeedDTOModelTests.swift */,
+				2C7F49BB2571342E00EE9B0B /* HitCoreDataTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7F497C257109FD00EE9B0B /* HitDTO.swift in Sources */,
+				2C7F49C1257134A700EE9B0B /* Hit.swift in Sources */,
 				2C7F492D2571067C00EE9B0B /* ViewController.swift in Sources */,
 				2C7F49292571067C00EE9B0B /* AppDelegate.swift in Sources */,
 				2C7F49A7257129A000EE9B0B /* Persistence.swift in Sources */,
@@ -326,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7F49BC2571342E00EE9B0B /* HitCoreDataTests.swift in Sources */,
 				2C7F4965257107B900EE9B0B /* HitDTOModelTests.swift in Sources */,
 				2C7F49432571067E00EE9B0B /* HackerNewsReaderTests.swift in Sources */,
 				2C7F498925711B3F00EE9B0B /* FeedDTOModelTests.swift in Sources */,
