@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hit: Codable {
+struct HitDTO: Codable {
     let author: String
     let storyTitle: String?
     let title: String?
@@ -21,9 +21,9 @@ struct Hit: Codable {
     }
 }
 
-extension Hit {
+extension HitDTO {
     init(data: Data) throws {
-        self = try JSONDecoderWithFractionalSeconds().decode(Hit.self, from: data)
+        self = try JSONDecoderWithFractionalSeconds().decode(HitDTO.self, from: data)
     }
 }
 

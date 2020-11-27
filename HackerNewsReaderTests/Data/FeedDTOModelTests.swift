@@ -8,7 +8,7 @@
 import XCTest
 @testable import HackerNewsReader
 
-class FeedModelTests: XCTestCase {
+class FeedDTOModelTests: XCTestCase {
 
     func testModelFromValidNoTitleJSON_Succeed() throws {
         /// Given
@@ -20,7 +20,7 @@ class FeedModelTests: XCTestCase {
         
         let json = try Data(contentsOf: url)
         /// When
-        let feed = try Feed(data: json)
+        let feed = try FeedDTO(data: json)
         /// Then
         
         // Hits per Page

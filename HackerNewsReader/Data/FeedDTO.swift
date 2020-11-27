@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Feed: Codable {
+struct FeedDTO: Codable {
     let hitsPerPage: Int
-    let hits: [Hit]
+    let hits: [HitDTO]
 }
 
-extension Feed {
+extension FeedDTO {
     init(data: Data) throws {
-        self = try JSONDecoderWithFractionalSeconds().decode(Feed.self, from: data)
+        self = try JSONDecoderWithFractionalSeconds().decode(FeedDTO.self, from: data)
     }
 }
