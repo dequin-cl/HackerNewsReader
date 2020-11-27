@@ -22,13 +22,13 @@ struct Hit: Codable {
 
 extension Hit {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Hit.self, from: data)
+        self = try JSONDecoderWithFractionalSeconds().decode(Hit.self, from: data)
     }
 }
 
 // MARK: - Encode/decode helpers
 
-func newJSONDecoder() -> JSONDecoder {
+func JSONDecoderWithFractionalSeconds() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .iso8601withFractionalSeconds
     return decoder
