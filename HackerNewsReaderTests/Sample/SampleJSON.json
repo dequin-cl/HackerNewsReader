@@ -1,0 +1,772 @@
+{
+    "hits": [{
+        "created_at": "2020-11-26T23:09:43.000Z",
+        "title": null,
+        "url": null,
+        "author": "amiga-workbench",
+        "points": null,
+        "story_text": null,
+        "comment_text": "Great, now its going to fuel Spurdo memes instead.",
+        "num_comments": null,
+        "story_id": 25223633,
+        "story_title": "Fucking, Austria changes name to Fugging",
+        "story_url": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+        "parent_id": 25223633,
+        "created_at_i": 1606432183,
+        "_tags": ["comment", "author_amiga-workbench", "story_25223633"],
+        "objectID": "25224216",
+        "_highlightResult": {
+            "author": {
+                "value": "amiga-workbench",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "Great, now \u003cem\u003eits\u003c/em\u003e going to fuel Spurdo memes instead.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Fucking, Austria changes name to Fugging",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:09:28.000Z",
+        "title": null,
+        "url": null,
+        "author": "jjk166",
+        "points": null,
+        "story_text": null,
+        "comment_text": "ITER is magnetic confinement fusion - the plasma is heated to extreme temperatures but at low density. While theoretically it looks like a much more promising route to a practical fusion reactor, as far as we know there has never been a net-positive magnetically confined fusion reaction in the universe. Plasma physics is incredibly complicated and we\u0026#x27;ve run into a long series of issues with plasma instabilities, we believe that these issues will be overcome but we still can\u0026#x27;t rule out some unknown physics which renders it impossible.\u003cp\u003eI personally believe tokamaks like ITER will be the route that leads to energy generation, but putting all our eggs in one basket is risky and inertial confinement experiments like NIF let us answer fundamentally different questions about reality.",
+        "num_comments": null,
+        "story_id": 25209666,
+        "story_title": "Laser fusion reactor approaches ‘burning plasma’ milestone",
+        "story_url": "https://www.sciencemag.org/news/2020/11/laser-fusion-reactor-approaches-burning-plasma-milestone",
+        "parent_id": 25217226,
+        "created_at_i": 1606432168,
+        "_tags": ["comment", "author_jjk166", "story_25209666"],
+        "objectID": "25224215",
+        "_highlightResult": {
+            "author": {
+                "value": "jjk166",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "ITER \u003cem\u003eis\u003c/em\u003e magnetic confinement fusion - the plasma \u003cem\u003eis\u003c/em\u003e heated to extreme temperatures but at low density. While theoretically it looks like a much more promising route to a practical fusion reactor, as far as we know there has never been a net-positive magnetically confined fusion reaction in the universe. Plasma physics \u003cem\u003eis\u003c/em\u003e incredibly complicated and we've run into a long series of \u003cem\u003eis\u003c/em\u003esues with plasma instabilities, we believe that these \u003cem\u003eis\u003c/em\u003esues will be overcome but we still can't rule out some unknown physics which renders it impossible.\u003cp\u003eI personally believe tokamaks like ITER will be the route that leads to energy generation, but putting all our eggs in one basket \u003cem\u003eis\u003c/em\u003e risky and inertial confinement experiments like NIF let us answer fundamentally different questions about reality.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Laser fusion reactor approaches ‘burning plasma’ milestone",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.sciencemag.org/news/2020/11/laser-fusion-reactor-approaches-burning-plasma-milestone",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:09:23.000Z",
+        "title": null,
+        "url": null,
+        "author": "spijdar",
+        "points": null,
+        "story_text": null,
+        "comment_text": "That goes beyond what most people consider the GPL to cover. There are other licenses with stronger copylefts specifically to cover that last case -- notably, the AGPL.\u003cp\u003eI suspect trying to make the case that GPL\u0026#x27;s viral copyleft isn\u0026#x27;t limited to strictly linking but potentially any interaction with it would probably have a chilling effect on the use of GPL code, and this reinterpretation would only reinforce some people\u0026#x27;s prejudice against the GPL, a la Ballmer\u0026#x27;s \u0026quot;Linux is cancer\u0026quot; line.\u003cp\u003eMaybe it\u0026#x27;s the pragmatism in me, but I think it would have a net negative effect long term, unless it managed to flip all of the tables and convince everyone to use all GPL code, instead of making people reject copyleft wholesale.",
+        "num_comments": null,
+        "story_id": 25222243,
+        "story_title": "io_uring and eBPF Will Revolutionize Programming in Linux",
+        "story_url": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+        "parent_id": 25223960,
+        "created_at_i": 1606432163,
+        "_tags": ["comment", "author_spijdar", "story_25222243"],
+        "objectID": "25224214",
+        "_highlightResult": {
+            "author": {
+                "value": "spijdar",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "That goes beyond what most people consider the GPL to cover. There are other licenses with stronger copylefts specifically to cover that last case -- notably, the AGPL.\u003cp\u003eI suspect trying to make the case that GPL's viral copyleft \u003cem\u003eis\u003c/em\u003en't limited to strictly linking but potentially any interaction with it would probably have a chilling effect on the use of GPL code, and this reinterpretation would only reinforce some people's prejudice against the GPL, a la Ballmer's \u0026quot;Linux \u003cem\u003eis\u003c/em\u003e cancer\u0026quot; line.\u003cp\u003eMaybe it's the pragmatism in me, but I think it would have a net negative effect long term, unless it managed to flip all of the tables and convince everyone to use all GPL code, instead of making people reject copyleft wholesale.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "io_uring and eBPF Will Revolutionize Programming in Linux",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:08:36.000Z",
+        "title": "Improve your forecasting skills with each avocado you open",
+        "url": "https://kadavy.net/blog/posts/avocado-challenge/",
+        "author": "kadavy",
+        "points": 1,
+        "story_text": null,
+        "comment_text": null,
+        "num_comments": 0,
+        "story_id": null,
+        "story_title": null,
+        "story_url": null,
+        "parent_id": null,
+        "created_at_i": 1606432116,
+        "_tags": ["story", "author_kadavy", "story_25224210"],
+        "objectID": "25224210",
+        "_highlightResult": {
+            "title": {
+                "value": "Improve your forecasting skills with each avocado you open",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "url": {
+                "value": "https://kadavy.net/blog/posts/avocado-challenge/",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "author": {
+                "value": "kadavy",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:08:17.000Z",
+        "title": null,
+        "url": null,
+        "author": "fermienrico",
+        "points": null,
+        "story_text": null,
+        "comment_text": "Viruses engineered to kill people do not spread as fast. It needs a host, a living one to be able to spread effectively unless you bomb a whole country at once with bio-bombs. You might as well use nuclear weapons then. Ebola has a very high death rate but doesn\u0026#x27;t spread as fast.  A virus doesn\u0026#x27;t have some internal goal to kill humans. It\u0026#x27;d rather not kill the host, it\u0026#x27;d rather spread as far and wide as it can; speaking from the evolutionary standpoint.\u003cp\u003eA well engineered bioweapon would be a virus that goes undetected for a few months and then happens to kill the host due to complications. That can wipe out an entire country or possibly the whole human race. I don\u0026#x27;t think this is possible biologically.",
+        "num_comments": null,
+        "story_id": 25222164,
+        "story_title": "The major genetic risk factor for severe Covid-19 is inherited from Neanderthals",
+        "story_url": "https://www.nature.com/articles/s41586-020-2818-3",
+        "parent_id": 25224042,
+        "created_at_i": 1606432097,
+        "_tags": ["comment", "author_fermienrico", "story_25222164"],
+        "objectID": "25224208",
+        "_highlightResult": {
+            "author": {
+                "value": "fermienrico",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "Viruses engineered to kill people do not spread as fast. It needs a host, a living one to be able to spread effectively unless you bomb a whole country at once with bio-bombs. You might as well use nuclear weapons then. Ebola has a very high death rate but doesn't spread as fast.  A virus doesn't have some internal goal to kill humans. It'd rather not kill the host, it'd rather spread as far and wide as it can; speaking from the evolutionary standpoint.\u003cp\u003eA well engineered bioweapon would be a virus that goes undetected for a few months and then happens to kill the host due to complications. That can wipe out an entire country or possibly the whole human race. I don't think this \u003cem\u003eis\u003c/em\u003e possible biologically.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "The major genetic risk factor for severe Covid-19 \u003cem\u003eis\u003c/em\u003e inherited from Neanderthals",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_url": {
+                "value": "https://www.nature.com/articles/s41586-020-2818-3",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:08:03.000Z",
+        "title": null,
+        "url": null,
+        "author": "natchy",
+        "points": null,
+        "story_text": null,
+        "comment_text": "This is how I write libraries but never formalized the tactic.\u003cp\u003eBasically create a readme with  example of how to use the lib with explanation.\u003cp\u003eThen I design the library to match my design.\u003cp\u003eI see lots of libraries (especially in .net) that are missing that extra \u003ci\u003esomething\u003c/i\u003e as if they weren’t designed first.",
+        "num_comments": null,
+        "story_id": 25222601,
+        "story_title": "Readme Driven Development",
+        "story_url": "https://tom.preston-werner.com/2010/08/23/readme-driven-development.html",
+        "parent_id": 25222601,
+        "created_at_i": 1606432083,
+        "_tags": ["comment", "author_natchy", "story_25222601"],
+        "objectID": "25224206",
+        "_highlightResult": {
+            "author": {
+                "value": "natchy",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "This \u003cem\u003eis\u003c/em\u003e how I write libraries but never formalized the tactic.\u003cp\u003eBasically create a readme with  example of how to use the lib with explanation.\u003cp\u003eThen I design the library to match my design.\u003cp\u003eI see lots of libraries (especially in .net) that are missing that extra \u003ci\u003esomething\u003c/i\u003e as if they weren’t designed first.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Readme Driven Development",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://tom.preston-werner.com/2010/08/23/readme-driven-development.html",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:07:55.000Z",
+        "title": null,
+        "url": null,
+        "author": "DoreenMichele",
+        "points": null,
+        "story_text": null,
+        "comment_text": "There\u0026#x27;s a pandemic on. I crabbed at some random stranger recently who thought it was appropriate to touch me so as to get my attention because she urgently needed to point and laugh at how wet I was from walking to the store in the rain.\u003cp\u003eLet\u0026#x27;s not encourage random hugging. There are enough troglodytes who won\u0026#x27;t keep their hands to themselves as is.\u003cp\u003e(Don\u0026#x27;t get me wrong: I knee jerk upvoted you because funny\u0026#x2F;good point and then promptly changed my mind because germ control is a real and serious issue in my life and in the world generally currently.)",
+        "num_comments": null,
+        "story_id": 25223633,
+        "story_title": "Fucking, Austria changes name to Fugging",
+        "story_url": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+        "parent_id": 25224192,
+        "created_at_i": 1606432075,
+        "_tags": ["comment", "author_DoreenMichele", "story_25223633"],
+        "objectID": "25224205",
+        "_highlightResult": {
+            "author": {
+                "value": "DoreenMichele",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "There's a pandemic on. I crabbed at some random stranger recently who thought it was appropriate to touch me so as to get my attention because she urgently needed to point and laugh at how wet I was from walking to the store in the rain.\u003cp\u003eLet's not encourage random hugging. There are enough troglodytes who won't keep their hands to themselves as \u003cem\u003eis\u003c/em\u003e.\u003cp\u003e(Don't get me wrong: I knee jerk upvoted you because funny/good point and then promptly changed my mind because germ control \u003cem\u003eis\u003c/em\u003e a real and serious \u003cem\u003eis\u003c/em\u003esue in my life and in the world generally currently.)",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Fucking, Austria changes name to Fugging",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:07:37.000Z",
+        "title": null,
+        "url": null,
+        "author": "tanelpoder",
+        "points": null,
+        "story_text": null,
+        "comment_text": "With PCIe lane bifurcation, you won’t even need a PCIe switch on your expansion card. I have 10 Samsung 980 Pro PCIe SSDs in my AMD ThreadRipper PRO\u0026#x2F;WX machine (2 in motherboard M.2 slots, and 2 x “expansion cards” that hold 4 SSDs each). Had to configure PCIe bifurcation in BIOS, so lanes connected to a PCIe x16 card will be treated like 4 x PCIe x4 instead.\u003cp\u003eSo far the best aggregate results with io_uring 10.5 M 4K IOPS and 66.5 GB\u0026#x2F;s with large reads...",
+        "num_comments": null,
+        "story_id": 25220892,
+        "story_title": "Modern storage is plenty fast, but the APIs are bad",
+        "story_url": "https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a",
+        "parent_id": 25222479,
+        "created_at_i": 1606432057,
+        "_tags": ["comment", "author_tanelpoder", "story_25220892"],
+        "objectID": "25224204",
+        "_highlightResult": {
+            "author": {
+                "value": "tanelpoder",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "With PCIe lane bifurcation, you won’t even need a PCIe switch on your expansion card. I have 10 Samsung 980 Pro PCIe SSDs in my AMD ThreadRipper PRO/WX machine (2 in motherboard M.2 slots, and 2 x “expansion cards” that hold 4 SSDs each). Had to configure PCIe bifurcation in BIOS, so lanes connected to a PCIe x16 card will be treated like 4 x PCIe x4 \u003cem\u003eins\u003c/em\u003etead.\u003cp\u003eSo far the best aggregate results with io_uring 10.5 M 4K IOPS and 66.5 GB/s with large reads...",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Modern storage is plenty fast, but the APIs are bad",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:06:19.000Z",
+        "title": null,
+        "url": null,
+        "author": "alexpetralia",
+        "points": null,
+        "story_text": null,
+        "comment_text": "Yes, similar to Schelling points, I call these Schelling fulcra. Not \u0026quot;what do people focus on?\u0026quot; but specifically \u0026quot;what issue illustrates our tribal divisions?\u0026quot;",
+        "num_comments": null,
+        "story_id": 25209001,
+        "story_title": "A Worsening Culture War",
+        "story_url": "https://taibbi.substack.com/p/for-what-are-americas-wealthy-thankful-fe3",
+        "parent_id": 25209366,
+        "created_at_i": 1606431979,
+        "_tags": ["comment", "author_alexpetralia", "story_25209001"],
+        "objectID": "25224198",
+        "_highlightResult": {
+            "author": {
+                "value": "alexpetralia",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "Yes, similar to Schelling points, I call these Schelling fulcra. Not \u0026quot;what do people focus on?\u0026quot; but specifically \u0026quot;what \u003cem\u003eiss\u003c/em\u003eue illustrates our tribal divisions?\u0026quot;",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "A Worsening Culture War",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://taibbi.substack.com/p/for-what-are-americas-wealthy-thankful-fe3",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:06:13.000Z",
+        "title": null,
+        "url": null,
+        "author": "ncmncm",
+        "points": null,
+        "story_text": null,
+        "comment_text": "Hi-speed trading is a zero-sum game, like poker. Every single gain is somebody\u0026#x27;s loss. Either you rip the other guy\u0026#x27;s heart out and eat it, or he rips your heart out and eats yours. There is no other choice.\u003cp\u003eChoosing Java over C++ is choosing to be that second guy.",
+        "num_comments": null,
+        "story_id": 25217270,
+        "story_title": "Java is better than C++ for high speed trading systems",
+        "story_url": "https://news.efinancialcareers.com/uk-en/3004875/low-latency-java-trading-systems",
+        "parent_id": 25217270,
+        "created_at_i": 1606431973,
+        "_tags": ["comment", "author_ncmncm", "story_25217270"],
+        "objectID": "25224197",
+        "_highlightResult": {
+            "author": {
+                "value": "ncmncm",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "Hi-speed trading \u003cem\u003eis\u003c/em\u003e a zero-sum game, like poker. Every single gain \u003cem\u003eis\u003c/em\u003e somebody's loss. Either you rip the other guy's heart out and eat it, or he rips your heart out and eats yours. There \u003cem\u003eis\u003c/em\u003e no other choice.\u003cp\u003eChoosing Java over C++ \u003cem\u003eis\u003c/em\u003e choosing to be that second guy.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Java \u003cem\u003eis\u003c/em\u003e better than C++ for high speed trading systems",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_url": {
+                "value": "https://news.efinancialcareers.com/uk-en/3004875/low-latency-java-trading-systems",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:06:12.000Z",
+        "title": null,
+        "url": null,
+        "author": "aparsons",
+        "points": null,
+        "story_text": null,
+        "comment_text": "With puts your upside is limited right?",
+        "num_comments": null,
+        "story_id": 25204567,
+        "story_title": "Ask HN: Any Day Traders on HN?",
+        "story_url": null,
+        "parent_id": 25216096,
+        "created_at_i": 1606431972,
+        "_tags": ["comment", "author_aparsons", "story_25204567"],
+        "objectID": "25224196",
+        "_highlightResult": {
+            "author": {
+                "value": "aparsons",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "With puts your upside \u003cem\u003eis\u003c/em\u003e limited right?",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Ask HN: Any Day Traders on HN?",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:05:52.000Z",
+        "title": null,
+        "url": null,
+        "author": "mtmail",
+        "points": null,
+        "story_text": null,
+        "comment_text": "\u003ca href=\"https:\u0026#x2F;\u0026#x2F;news.ycombinator.com\u0026#x2F;item?id=25194795\" rel=\"nofollow\"\u003ehttps:\u0026#x2F;\u0026#x2F;news.ycombinator.com\u0026#x2F;item?id=25194795\u003c/a\u003e\u003cp\u003e(The submission with the most comments had \u0026#x27;?hn\u0026#x27; as part of the URL. HN logic doesn\u0026#x27;t automatically see that as duplicate.)",
+        "num_comments": null,
+        "story_id": 25224092,
+        "story_title": "Someone Attacked Our Company",
+        "story_url": "https://usefathom.com/blog/ddos-attack",
+        "parent_id": 25224092,
+        "created_at_i": 1606431952,
+        "_tags": ["comment", "author_mtmail", "story_25224092"],
+        "objectID": "25224194",
+        "_highlightResult": {
+            "author": {
+                "value": "mtmail",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "\u003ca href=\"https://news.ycombinator.com/item?id=25194795\" rel=\"nofollow\"\u003ehttps://news.ycombinator.com/item?id=25194795\u003c/a\u003e\u003cp\u003e(The submission with the \u003cem\u003emos\u003c/em\u003et comments had '?hn' as part of the URL. HN logic doesn't automatically see that as duplicate.)",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Someone Attacked Our Company",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://usefathom.com/blog/ddos-attack",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:03:40.000Z",
+        "title": null,
+        "url": null,
+        "author": "kleer001",
+        "points": null,
+        "story_text": null,
+        "comment_text": "I usually wait, then, when the dust settles I use the usual suspects of google, youtube, and reddit to get a gist of the consensus reality of the thing. Nothing that happens outside my immediate life needs my immediate attention. Unless it\u0026#x27;s a new book from a favourite author, then I pounce.",
+        "num_comments": null,
+        "story_id": 25219453,
+        "story_title": "For complex current events, what primary sources of information do you read?",
+        "story_url": null,
+        "parent_id": 25219453,
+        "created_at_i": 1606431820,
+        "_tags": ["comment", "author_kleer001", "story_25219453"],
+        "objectID": "25224183",
+        "_highlightResult": {
+            "author": {
+                "value": "kleer001",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "I usually wait, then, when the dust settles I use the usual suspects of google, youtube, and reddit to get a gist of the consensus reality of the thing. Nothing that happens outside my immediate life needs my immediate attention. Unless \u003cem\u003eit's\u003c/em\u003e a new book from a favourite author, then I pounce.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "For complex current events, what primary sources of information do you read?",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:03:20.000Z",
+        "title": null,
+        "url": null,
+        "author": "pengaru",
+        "points": null,
+        "story_text": null,
+        "comment_text": "It\u0026#x27;s under active development, more syscalls keep getting added.  Contributions are welcome.",
+        "num_comments": null,
+        "story_id": 25222243,
+        "story_title": "io_uring and eBPF Will Revolutionize Programming in Linux",
+        "story_url": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+        "parent_id": 25223986,
+        "created_at_i": 1606431800,
+        "_tags": ["comment", "author_pengaru", "story_25222243"],
+        "objectID": "25224182",
+        "_highlightResult": {
+            "author": {
+                "value": "pengaru",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "\u003cem\u003eIt's\u003c/em\u003e under active development, more syscalls keep getting added.  Contributions are welcome.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "io_uring and eBPF Will Revolutionize Programming in Linux",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:02:15.000Z",
+        "title": null,
+        "url": null,
+        "author": "johnwalkr",
+        "points": null,
+        "story_text": null,
+        "comment_text": "After more than 20 years, the name nesticle still cracks me up. And looking back, it’s nostalgic to remember playing such “old games” that were about 10 years old at the time. Still playing the same ones but they’re now 30 years old.",
+        "num_comments": null,
+        "story_id": 25215955,
+        "story_title": "How to turn your Xbox Series X/S into an emulation powerhouse",
+        "story_url": "https://arstechnica.com/gaming/2020/11/how-to-turn-your-xbox-series-x-s-into-an-emulation-powerhouse/",
+        "parent_id": 25222799,
+        "created_at_i": 1606431735,
+        "_tags": ["comment", "author_johnwalkr", "story_25215955"],
+        "objectID": "25224174",
+        "_highlightResult": {
+            "author": {
+                "value": "johnwalkr",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "After more than 20 years, the name nesticle still cracks me up. And looking back, \u003cem\u003eit’s\u003c/em\u003e nostalgic to remember playing such “old games” that were about 10 years old at the time. Still playing the same ones but they’re now 30 years old.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "How to turn your Xbox Series X/S into an emulation powerhouse",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://arstechnica.com/gaming/2020/11/how-to-turn-your-xbox-series-x-s-into-an-emulation-powerhouse/",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:02:13.000Z",
+        "title": null,
+        "url": null,
+        "author": "BMSmnqXAE4yfe1",
+        "points": null,
+        "story_text": null,
+        "comment_text": "I have noticed that the way to make money on the internet is  to provide services to people wanting to make money on the internet.",
+        "num_comments": null,
+        "story_id": 25219924,
+        "story_title": "I launched a paid community in one month",
+        "story_url": "https://monicalent.com/paid-community-launch/",
+        "parent_id": 25219924,
+        "created_at_i": 1606431733,
+        "_tags": ["comment", "author_BMSmnqXAE4yfe1", "story_25219924"],
+        "objectID": "25224173",
+        "_highlightResult": {
+            "author": {
+                "value": "BMSmnqXAE4yfe1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "I have noticed that the way to make money on the internet \u003cem\u003eis\u003c/em\u003e  to provide services to people wanting to make money on the internet.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "I launched a paid community in one month",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://monicalent.com/paid-community-launch/",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:01:20.000Z",
+        "title": null,
+        "url": null,
+        "author": "mhh__",
+        "points": null,
+        "story_text": null,
+        "comment_text": "There is enough evidence of it now that \u003ci\u003edenying\u003c/i\u003e the Trump-Russia thing is the conspiracy theory.\u003cp\u003eStone and Flynn have been pardoned (for what...), Mueller indicted something like 100 people russian or otherwise.",
+        "num_comments": null,
+        "story_id": 25213713,
+        "story_title": "UVB-76",
+        "story_url": "https://en.wikipedia.org/wiki/UVB-76",
+        "parent_id": 25223733,
+        "created_at_i": 1606431680,
+        "_tags": ["comment", "author_mhh__", "story_25213713"],
+        "objectID": "25224170",
+        "_highlightResult": {
+            "author": {
+                "value": "mhh__",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "There \u003cem\u003eis\u003c/em\u003e enough evidence of it now that \u003ci\u003edenying\u003c/i\u003e the Trump-Russia thing \u003cem\u003eis\u003c/em\u003e the conspiracy theory.\u003cp\u003eStone and Flynn have been pardoned (for what...), Mueller indicted something like 100 people russian or otherwise.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "UVB-76",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://en.wikipedia.org/wiki/UVB-76",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:01:17.000Z",
+        "title": null,
+        "url": null,
+        "author": "pjmlp",
+        "points": null,
+        "story_text": null,
+        "comment_text": "We have to \u0026quot;thank\u0026quot; Compaq for it as well.\u003cp\u003eEven with all its management flaws, the Amiga might have survived without the mass production of PC clones.",
+        "num_comments": null,
+        "story_id": 25222243,
+        "story_title": "io_uring and eBPF Will Revolutionize Programming in Linux",
+        "story_url": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+        "parent_id": 25223861,
+        "created_at_i": 1606431677,
+        "_tags": ["comment", "author_pjmlp", "story_25222243"],
+        "objectID": "25224169",
+        "_highlightResult": {
+            "author": {
+                "value": "pjmlp",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "We have to \u0026quot;thank\u0026quot; Compaq for it as well.\u003cp\u003eEven with all \u003cem\u003eits\u003c/em\u003e management flaws, the Amiga might have survived without the mass production of PC clones.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "io_uring and eBPF Will Revolutionize Programming in Linux",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.scylladb.com/2020/05/05/how-io_uring-and-ebpf-will-revolutionize-programming-in-linux/",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:00:24.000Z",
+        "title": null,
+        "url": null,
+        "author": "kleer001",
+        "points": null,
+        "story_text": null,
+        "comment_text": "No.\u003cp\u003eI\u0026#x27;m an adult and can easily ignore things I don\u0026#x27;t want to read.\u003cp\u003eIMHO this is an awful idea at every level of analysis.",
+        "num_comments": null,
+        "story_id": 25211940,
+        "story_title": "Ask HN: Would you find a browser extension that screens for toxic text useful?",
+        "story_url": null,
+        "parent_id": 25211940,
+        "created_at_i": 1606431624,
+        "_tags": ["comment", "author_kleer001", "story_25211940"],
+        "objectID": "25224166",
+        "_highlightResult": {
+            "author": {
+                "value": "kleer001",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "No.\u003cp\u003eI'm an adult and can easily ignore things I don't want to read.\u003cp\u003eIMHO this \u003cem\u003eis\u003c/em\u003e an awful idea at every level of analysis.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Ask HN: Would you find a browser extension that screens for toxic text useful?",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-26T23:00:16.000Z",
+        "title": null,
+        "url": null,
+        "author": "privong",
+        "points": null,
+        "story_text": null,
+        "comment_text": "\u0026gt; Even that is clickbaity - it fails to account how likely it was to find such a star in that volume of space.\u003cp\u003eYeah. I should\u0026#x27;ve been more clear that I was only meaning that as a summary of the article, not as a replacement title.",
+        "num_comments": null,
+        "story_id": 25208205,
+        "story_title": "Amateur astronomer Alberto Caballero finds possible source of Wow signal",
+        "story_url": "https://phys.org/news/2020-11-amateur-astronomer-alberto-caballero-source.html",
+        "parent_id": 25214763,
+        "created_at_i": 1606431616,
+        "_tags": ["comment", "author_privong", "story_25208205"],
+        "objectID": "25224164",
+        "_highlightResult": {
+            "author": {
+                "value": "privong",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "\u0026gt; Even that \u003cem\u003eis\u003c/em\u003e clickbaity - it fails to account how likely it was to find such a star in that volume of space.\u003cp\u003eYeah. I should've been more clear that I was only meaning that as a summary of the article, not as a replacement title.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Amateur astronomer Alberto Caballero finds possible source of Wow signal",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://phys.org/news/2020-11-amateur-astronomer-alberto-caballero-source.html",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }],
+    "nbHits": 168126,
+    "page": 0,
+    "nbPages": 50,
+    "hitsPerPage": 20,
+    "exhaustiveNbHits": false,
+    "query": "ios",
+    "params": "advancedSyntax=true\u0026analytics=true\u0026analyticsTags=backend\u0026query=ios",
+    "processingTimeMS": 18
+}

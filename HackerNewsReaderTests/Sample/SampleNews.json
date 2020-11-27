@@ -1,0 +1,40 @@
+{
+    "created_at": "2020-11-26T23:09:43.000Z",
+    "title": null,
+    "url": null,
+    "author": "amiga-workbench",
+    "points": null,
+    "story_text": null,
+    "comment_text": "Great, now its going to fuel Spurdo memes instead.",
+    "num_comments": null,
+    "story_id": 25223633,
+    "story_title": "Fucking, Austria changes name to Fugging",
+    "story_url": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+    "parent_id": 25223633,
+    "created_at_i": 1606432183,
+    "_tags": ["comment", "author_amiga-workbench", "story_25223633"],
+    "objectID": "25224216",
+    "_highlightResult": {
+        "author": {
+            "value": "amiga-workbench",
+            "matchLevel": "none",
+            "matchedWords": []
+        },
+        "comment_text": {
+            "value": "Great, now \u003cem\u003eits\u003c/em\u003e going to fuel Spurdo memes instead.",
+            "matchLevel": "full",
+            "fullyHighlighted": false,
+            "matchedWords": ["ios"]
+        },
+        "story_title": {
+            "value": "Fucking, Austria changes name to Fugging",
+            "matchLevel": "none",
+            "matchedWords": []
+        },
+        "story_url": {
+            "value": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+            "matchLevel": "none",
+            "matchedWords": []
+        }
+    }
+}
