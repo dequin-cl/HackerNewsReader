@@ -165,7 +165,7 @@ class FeedServiceTest: XCTestCase {
         waitForExpectations(timeout: 2.0) { error in }
         
         let expectation = XCTestExpectation(description: "Fetching hits")
-        
+
         feedService.feed { (hits) in
             XCTAssertEqual(hits.count, feedDTO.hits.count)
             
