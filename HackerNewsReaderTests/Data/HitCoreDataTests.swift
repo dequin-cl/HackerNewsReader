@@ -6,9 +6,21 @@
 //
 
 import XCTest
+
 @testable import HackerNewsReader
 
 class HitCoreDataTests: XCTestCase {
+    
+    var persistanceController: PersistenceController!
+    
+    override func setUpWithError() throws {
+        self.persistanceController = PersistenceController(inMemory: true)
+    }
+    
+    override func tearDownWithError() throws {
+        self.persistanceController = nil
+    }
+
     
     func testInitializeFromDTO() throws {
         /// Given
@@ -20,71 +32,21 @@ class HitCoreDataTests: XCTestCase {
         
         let json = try Data(contentsOf: url)
         let hitDTO = try HitDTO(data: json)
-        let viewContext = PersistenceController.emptyPreview.container.viewContext
-        
-        expectation(
-            forNotification: .NSManagedObjectContextDidSave,
-            object: viewContext) { _ in
-            return true
-        }
         
         /// When
-        viewContext.perform {
-            let hitCD = Hit.from(dto: hitDTO, in: viewContext)
-            /// Then
-            XCTAssertNotNil(hitCD, "The Hit should be created on Core Data")
-            XCTAssertEqual(hitCD.author, hitDTO.author)
-            XCTAssertEqual(hitCD.createdAt, hitDTO.createdAt)
-            XCTAssertEqual(hitCD.id, hitDTO.objectID)
-            XCTAssertEqual(hitCD.storyTitle, hitDTO.storyTitle)
-            XCTAssertEqual(hitCD.storyURL, hitDTO.storyURL)
-            XCTAssertNil(hitCD.title)
-            XCTAssertNil(hitCD.url)
-            
-            XCTAssertFalse(hitCD.isUserDeleted)
-        }
+        let hitCD = Hit.from(hitDTO, in: persistanceController.container.viewContext)
         
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        /// Then
+        XCTAssertNotNil(hitCD, "The Hit should be created on Core Data")
+        XCTAssertEqual(hitCD.author, hitDTO.author)
+        XCTAssertEqual(hitCD.createdAt, hitDTO.createdAt)
+        XCTAssertEqual(hitCD.id, hitDTO.objectID)
+        XCTAssertEqual(hitCD.storyTitle, hitDTO.storyTitle)
+        XCTAssertEqual(hitCD.storyURL, hitDTO.storyURL)
+        XCTAssertNil(hitCD.title)
+        XCTAssertNil(hitCD.url)
         
-    }
-    
-    func testInitializeFromDTO2() throws {
-        /// Given
-        let bundle = Bundle(for: type(of: self))
-        guard let url = bundle.url(forResource: "SampleNews2", withExtension: "json") else {
-            XCTFail("Missing file: SampleNews2.json")
-            return
-        }
+        XCTAssertFalse(hitCD.isUserDeleted)
         
-        let json = try Data(contentsOf: url)
-        let hitDTO = try HitDTO(data: json)
-        let viewContext = PersistenceController.emptyPreview.container.viewContext
-        
-        expectation(
-            forNotification: .NSManagedObjectContextDidSave,
-            object: viewContext) { _ in
-            return true
-        }
-        
-        /// When
-        viewContext.perform {
-            let hitCD = Hit.from(dto: hitDTO, in: viewContext)
-            /// Then
-            XCTAssertNotNil(hitCD, "The Hit should be created on Core Data")
-            XCTAssertEqual(hitCD.author, hitDTO.author)
-            XCTAssertEqual(hitCD.createdAt, hitDTO.createdAt)
-            XCTAssertEqual(hitCD.id, hitDTO.objectID)
-            XCTAssertNil(hitCD.storyTitle)
-            XCTAssertNil(hitCD.storyURL)
-            XCTAssertEqual(hitCD.title, hitDTO.title)
-            XCTAssertEqual(hitCD.url, hitDTO.url)
-            XCTAssertFalse(hitCD.isUserDeleted)
-        }
-        
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
     }
 }

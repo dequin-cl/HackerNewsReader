@@ -1,0 +1,90 @@
+{
+    "hits": [{
+        "created_at": "2020-11-27T23:09:43.000Z",
+        "title": null,
+        "url": null,
+        "author": "amiga-workbench",
+        "points": null,
+        "story_text": null,
+        "comment_text": "Great, now its going to fuel Spurdo memes instead.",
+        "num_comments": null,
+        "story_id": 25223633,
+        "story_title": "Fucking, Austria changes name to Fugging",
+        "story_url": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+        "parent_id": 25223633,
+        "created_at_i": 1606432183,
+        "_tags": ["comment", "author_amiga-workbench", "story_25223633"],
+        "objectID": "25224216",
+        "_highlightResult": {
+            "author": {
+                "value": "amiga-workbench",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "Great, now \u003cem\u003eits\u003c/em\u003e going to fuel Spurdo memes instead.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Fucking, Austria changes name to Fugging",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.theguardian.com/world/2020/nov/26/fugging-hell-tired-of-mockery-austrian-village-changes-name",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }, {
+        "created_at": "2020-11-21T23:09:28.000Z",
+        "title": null,
+        "url": null,
+        "author": "jjk166",
+        "points": null,
+        "story_text": null,
+        "comment_text": "ITER is magnetic confinement fusion - the plasma is heated to extreme temperatures but at low density. While theoretically it looks like a much more promising route to a practical fusion reactor, as far as we know there has never been a net-positive magnetically confined fusion reaction in the universe. Plasma physics is incredibly complicated and we\u0026#x27;ve run into a long series of issues with plasma instabilities, we believe that these issues will be overcome but we still can\u0026#x27;t rule out some unknown physics which renders it impossible.\u003cp\u003eI personally believe tokamaks like ITER will be the route that leads to energy generation, but putting all our eggs in one basket is risky and inertial confinement experiments like NIF let us answer fundamentally different questions about reality.",
+        "num_comments": null,
+        "story_id": 25209666,
+        "story_title": "Laser fusion reactor approaches ‘burning plasma’ milestone",
+        "story_url": "https://www.sciencemag.org/news/2020/11/laser-fusion-reactor-approaches-burning-plasma-milestone",
+        "parent_id": 25217226,
+        "created_at_i": 1606432168,
+        "_tags": ["comment", "author_jjk166", "story_25209666"],
+        "objectID": "25224215",
+        "_highlightResult": {
+            "author": {
+                "value": "jjk166",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "ITER \u003cem\u003eis\u003c/em\u003e magnetic confinement fusion - the plasma \u003cem\u003eis\u003c/em\u003e heated to extreme temperatures but at low density. While theoretically it looks like a much more promising route to a practical fusion reactor, as far as we know there has never been a net-positive magnetically confined fusion reaction in the universe. Plasma physics \u003cem\u003eis\u003c/em\u003e incredibly complicated and we've run into a long series of \u003cem\u003eis\u003c/em\u003esues with plasma instabilities, we believe that these \u003cem\u003eis\u003c/em\u003esues will be overcome but we still can't rule out some unknown physics which renders it impossible.\u003cp\u003eI personally believe tokamaks like ITER will be the route that leads to energy generation, but putting all our eggs in one basket \u003cem\u003eis\u003c/em\u003e risky and inertial confinement experiments like NIF let us answer fundamentally different questions about reality.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Laser fusion reactor approaches ‘burning plasma’ milestone",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://www.sciencemag.org/news/2020/11/laser-fusion-reactor-approaches-burning-plasma-milestone",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }],
+    "nbHits": 168126,
+    "page": 0,
+    "nbPages": 50,
+    "hitsPerPage": 20,
+    "exhaustiveNbHits": false,
+    "query": "ios",
+    "params": "advancedSyntax=true\u0026analytics=true\u0026analyticsTags=backend\u0026query=ios",
+    "processingTimeMS": 18
+}
+

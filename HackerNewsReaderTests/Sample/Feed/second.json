@@ -1,0 +1,86 @@
+{
+    "hits": [{
+        "created_at": "2020-11-26T23:00:16.000Z",
+        "title": null,
+        "url": null,
+        "author": "privong",
+        "points": null,
+        "story_text": null,
+        "comment_text": "\u0026gt; Even that is clickbaity - it fails to account how likely it was to find such a star in that volume of space.\u003cp\u003eYeah. I should\u0026#x27;ve been more clear that I was only meaning that as a summary of the article, not as a replacement title.",
+        "num_comments": null,
+        "story_id": 25208205,
+        "story_title": "Amateur astronomer Alberto Caballero finds possible source of Wow signal",
+        "story_url": "https://phys.org/news/2020-11-amateur-astronomer-alberto-caballero-source.html",
+        "parent_id": 25214763,
+        "created_at_i": 1606431616,
+        "_tags": ["comment", "author_privong", "story_25208205"],
+        "objectID": "25224164",
+        "_highlightResult": {
+            "author": {
+                "value": "privong",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "\u0026gt; Even that \u003cem\u003eis\u003c/em\u003e clickbaity - it fails to account how likely it was to find such a star in that volume of space.\u003cp\u003eYeah. I should've been more clear that I was only meaning that as a summary of the article, not as a replacement title.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Amateur astronomer Alberto Caballero finds possible source of Wow signal",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "story_url": {
+                "value": "https://phys.org/news/2020-11-amateur-astronomer-alberto-caballero-source.html",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    },
+    {
+        "created_at": "2020-11-26T23:00:24.000Z",
+        "title": null,
+        "url": null,
+        "author": "kleer001",
+        "points": null,
+        "story_text": null,
+        "comment_text": "No.\u003cp\u003eI\u0026#x27;m an adult and can easily ignore things I don\u0026#x27;t want to read.\u003cp\u003eIMHO this is an awful idea at every level of analysis.",
+        "num_comments": null,
+        "story_id": 25211940,
+        "story_title": "Ask HN: Would you find a browser extension that screens for toxic text useful?",
+        "story_url": null,
+        "parent_id": 25211940,
+        "created_at_i": 1606431624,
+        "_tags": ["comment", "author_kleer001", "story_25211940"],
+        "objectID": "25224166",
+        "_highlightResult": {
+            "author": {
+                "value": "kleer001",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "comment_text": {
+                "value": "No.\u003cp\u003eI'm an adult and can easily ignore things I don't want to read.\u003cp\u003eIMHO this \u003cem\u003eis\u003c/em\u003e an awful idea at every level of analysis.",
+                "matchLevel": "full",
+                "fullyHighlighted": false,
+                "matchedWords": ["ios"]
+            },
+            "story_title": {
+                "value": "Ask HN: Would you find a browser extension that screens for toxic text useful?",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }],
+    "nbHits": 168126,
+    "page": 0,
+    "nbPages": 50,
+    "hitsPerPage": 20,
+    "exhaustiveNbHits": false,
+    "query": "ios",
+    "params": "advancedSyntax=true\u0026analytics=true\u0026analyticsTags=backend\u0026query=ios",
+    "processingTimeMS": 18
+}
+

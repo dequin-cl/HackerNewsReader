@@ -7,13 +7,9 @@
 
 import CoreData
 
-struct PersistenceController {
+final class PersistenceController {
     static let shared: PersistenceController = PersistenceController()
     
-    static var emptyPreview: PersistenceController = {
-        return PersistenceController(inMemory: true)
-    }()
-
     let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {
@@ -35,7 +31,13 @@ struct PersistenceController {
                 Check the error message to determine what the actual problem was.
                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
+            }else {
+                debugPrint("\n  STORES LOADED! \(storeDescription) \n")
             }
+        
+            self.container.viewContext.automaticallyMergesChangesFromParent = true
+            self.container.viewContext.mergePolicy = NSMergePolicy.error
+
         })
     }
     
@@ -54,5 +56,16 @@ struct PersistenceController {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+}
+
+extension NSManagedObjectContext {
+
+    /// Only performs a save if there are changes to commit.
+    /// - Returns: `true` if a save was needed. Otherwise, `false`.
+    @discardableResult public func saveIfNeeded() throws -> Bool {
+        guard hasChanges else { return false }
+        try save()
+        return true
     }
 }
