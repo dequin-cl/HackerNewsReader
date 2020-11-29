@@ -9,7 +9,7 @@ import CoreData
 
 final class PersistenceController {
     static let shared: PersistenceController = PersistenceController()
-    
+
     let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {
@@ -31,21 +31,21 @@ final class PersistenceController {
                 Check the error message to determine what the actual problem was.
                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
-            }else {
+            } else {
                 debugPrint("\n  STORES LOADED! \(storeDescription) \n")
             }
-        
+
             self.container.viewContext.automaticallyMergesChangesFromParent = true
             self.container.viewContext.mergePolicy = NSMergePolicy.error
 
         })
     }
-    
+
     // MARK: - Core Data Saving support
 
     func saveContext () {
         let context = PersistenceController.shared.container.viewContext
-        
+
         if context.hasChanges {
             do {
                 try context.save()

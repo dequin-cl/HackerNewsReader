@@ -16,6 +16,6 @@ class HitsPresenter: HitsPresentationLogic {
     weak var viewController: HitsDisplayLogic?
 
     func presentHits(response: Hits.FetchHits.Response) {
-        
+
     }
 }

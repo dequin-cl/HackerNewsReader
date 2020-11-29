@@ -15,25 +15,25 @@ struct Seeds {
 extension Seeds {
     struct Hits {
         private init() {}
-        
+
         private static let context = PersistenceController(inMemory: true).container.viewContext
         static var hitOne: Hit = {
             let hit = Hit(context: context)
-            
+
             hit.id = "25224216"
             try? context.save()
             return hit
         }()
         static var hitTwo: Hit = {
             let hit = Hit(context: context)
-            
+
             hit.id = "25224210"
             try? context.save()
             return hit
         }()
 
         static let hits = [hitOne, hitTwo]
-        
+
         static let hitDTOOne = HitDTO(author: "Author 1",
                                       storyTitle: nil,
                                       title: "Title 1",

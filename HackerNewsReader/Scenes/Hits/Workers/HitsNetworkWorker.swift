@@ -10,10 +10,10 @@ import UIKit
 
 public struct Configuration {
     private init() {}
-    
+
     struct api {
         private init() {}
-        
+
         // https://hn.algolia.com/api
         static let byDate =  "http://hn.algolia.com/api/v1/search_by_date?query=ios"
     }
@@ -22,9 +22,9 @@ public struct Configuration {
 class HitsNetworkWorker {
     func fetchHits(session: URLSession = URLSession(configuration: .default),
                    block: @escaping ([HitDTO]?, Error?) -> Void) {
-        
+
         guard let url = URL(string: Configuration.api.byDate) else { fatalError("Should be able to instantiate an URL from the API endpoint") }
-     
+
         let task = session.dataTask(with: url) { (data, _, error) in
             if error == nil {
                 if let safeData = data {
@@ -41,7 +41,6 @@ class HitsNetworkWorker {
             }
         }
         task.resume()
-        
-        
+
     }
 }

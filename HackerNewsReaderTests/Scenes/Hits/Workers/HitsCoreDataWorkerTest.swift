@@ -9,17 +9,17 @@
 import XCTest
 
 class HitsCoreDataWorkerTest: XCTestCase {
-    
+
     var persistanceController: PersistenceController!
-    
+
     override func setUpWithError() throws {
         self.persistanceController = PersistenceController(inMemory: true)
     }
-    
+
     override func tearDownWithError() throws {
         self.persistanceController = nil
     }
-    
+
     // MARK: Subject under test
 
     var sut: HitsCoreDataWorker!
@@ -43,39 +43,39 @@ class HitsCoreDataWorkerTest: XCTestCase {
     }
 
     // MARK: Tests
-    
+
     func testFetchHits() throws {
-        
+
         /// Given
         let bundle = Bundle(for: type(of: self))
         guard let sample = bundle.url(forResource: "SampleJSON", withExtension: "json") else {
             XCTFail("Missing file: SampleJSON.json")
             return
         }
-        
+
         let data = try Data(contentsOf: sample)
         let feedDTO = try FeedDTO(data: data)
         let feedService = FeedService(persistenceController: persistanceController)
-        
+
         expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
             return true
         }
-        
+
         feedService.process(feedDTO.hits)
-        
+
         waitForExpectations(timeout: 2.0) { error in
             XCTAssertNil(error, "Save did not occur")
         }
 
         /// When
-        
+
         let expectation = XCTestExpectation(description: "Fetching hits")
 
         /// When
         sut.fetchHits(persistenceController: persistanceController) { (hits, error) in
-            
+
             /// Then
-            
+
             XCTAssertNil(error)
             XCTAssertNotNil(hits)
             XCTAssertFalse(hits!.isEmpty)
@@ -85,7 +85,7 @@ class HitsCoreDataWorkerTest: XCTestCase {
 
         }
         wait(for: [expectation], timeout: 1.0)
-        
+
     }
 
 }

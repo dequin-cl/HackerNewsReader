@@ -41,10 +41,10 @@ class HitsNetworkWorkerTests: XCTestCase {
     }
 
     // MARK: Tests
-    
+
     func testFetchHits() throws {
         /// Given
-        
+
         let url = URL(string: "http://hn.algolia.com/api/v1/search_by_date?query=ios")!
 
         let bundle = Bundle(for: type(of: self))
@@ -52,7 +52,7 @@ class HitsNetworkWorkerTests: XCTestCase {
             XCTFail("Missing file: SampleJSON.json")
             return
         }
-        
+
         let data = try Data(contentsOf: jsonURL)
 
         let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
@@ -66,9 +66,9 @@ class HitsNetworkWorkerTests: XCTestCase {
 
         /// When
         sut.fetchHits(session: mockSession) { (hitsDTO, error) in
-            
+
             /// Then
-            
+
             XCTAssertNil(error)
             XCTAssertNotNil(hitsDTO)
             XCTAssertEqual(hitsDTO?.count, 2)
@@ -80,10 +80,10 @@ class HitsNetworkWorkerTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
 
     }
-    
+
     func testFetchHitsBadJSON() throws {
         /// Given
-        
+
         let url = URL(string: "http://hn.algolia.com/api/v1/search_by_date?query=ios")!
 
         let bundle = Bundle(for: type(of: self))
@@ -91,7 +91,7 @@ class HitsNetworkWorkerTests: XCTestCase {
             XCTFail("Missing file: SampleJSON.json")
             return
         }
-        
+
         let data = try Data(contentsOf: jsonURL)
 
         let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
@@ -105,9 +105,9 @@ class HitsNetworkWorkerTests: XCTestCase {
 
         /// When
         sut.fetchHits(session: mockSession) { (hitsDTO, error) in
-            
+
             /// Then
-            
+
             XCTAssertNotNil(error)
             XCTAssertNil(hitsDTO)
 

@@ -17,11 +17,11 @@ class HitDTOModelTests: XCTestCase {
             XCTFail("Missing file: SampleNews.json")
             return
         }
-        
+
         let json = try Data(contentsOf: url)
         /// When
         let hitDTO = try HitDTO(data: json)
-        
+
         /// Then
         // Story Title
         XCTAssertNotNil(hitDTO.storyTitle, "Hit needs to parse story_title")
@@ -32,7 +32,7 @@ class HitDTOModelTests: XCTestCase {
         // URL
         XCTAssertNotNil(hitDTO.storyURL, "Hit needs to parse story_url")
         XCTAssertNil(hitDTO.url, "Hit needs to parse url, and should be nil")
-        
+
         // Author
         XCTAssertNotNil(hitDTO.author, "Hit needs to parse author")
         XCTAssertEqual(hitDTO.author, "amiga-workbench", "Hit should have the same author as the sample data in SampleNews.json")
@@ -42,9 +42,9 @@ class HitDTOModelTests: XCTestCase {
         let dateFormatter = ISO8601DateFormatter([.withInternetDateTime, .withFractionalSeconds])
         let date = dateFormatter.date(from: "2020-11-26T23:09:43.000Z")
         XCTAssertEqual(hitDTO.createdAt, date, "Hit should parse creation date correctly")
-        
+
     }
-    
+
     func testModelFromValidWithTitleJSON_Succeed() throws {
         /// Given
         let bundle = Bundle(for: type(of: self))
@@ -52,11 +52,11 @@ class HitDTOModelTests: XCTestCase {
             XCTFail("Missing file: SampleNews2.json")
             return
         }
-        
+
         let json = try Data(contentsOf: url)
         /// When
         let hitDTO = try HitDTO(data: json)
-        
+
         /// Then
         // Story Title
         XCTAssertNil(hitDTO.storyTitle, "Hit needs to parse story_title and should be nil")
@@ -69,7 +69,6 @@ class HitDTOModelTests: XCTestCase {
         XCTAssertNil(hitDTO.storyURL, "Hit needs to parse story_url, and should be nil")
         XCTAssertNotNil(hitDTO.url, "Hit needs to parse url")
 
-        
         // Author
         XCTAssertNotNil(hitDTO.author, "Hit needs to parse author")
         XCTAssertEqual(hitDTO.author, "kadavy", "Hit should have the same author as the sample data in SampleNews2.json")
@@ -79,9 +78,8 @@ class HitDTOModelTests: XCTestCase {
         let dateFormatter = ISO8601DateFormatter([.withInternetDateTime, .withFractionalSeconds])
         let date = dateFormatter.date(from: "2020-11-26T23:08:36.000Z")
         XCTAssertEqual(hitDTO.createdAt, date, "Hit should parse creation date correctly")
-        
+
         // Identifier
         XCTAssertEqual(hitDTO.objectID, "25224210", "Hit should parse and set Object Id")
     }
 }
-

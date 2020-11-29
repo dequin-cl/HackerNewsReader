@@ -11,7 +11,7 @@ import CoreData
 final class FeedService {
     // MARK: - Properties
     let persistenceController: PersistenceController
-    
+
     // MARK: - Initializers
     public init(persistenceController: PersistenceController = PersistenceController.shared) {
         self.persistenceController = persistenceController
@@ -19,15 +19,15 @@ final class FeedService {
 }
 
 extension FeedService {
-    
+
     /// Creates a Hit on the Core Data
     /// - Parameter hitDTO: Hit Data Transfer Object
     /// - Parameter block: Delivers a Hit Core Data Managed Object
     func add(_ hitDTO: HitDTO, _ block: @escaping (Hit) -> Void) {
-        
+
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             let hit = Hit.from(hitDTO, in: backgroundContext)
-            
+
             backgroundContext.perform {
                 do {
                     try backgroundContext.save()
@@ -39,7 +39,7 @@ extension FeedService {
             }
         }
     }
-    
+
     /// List the hits on Core Data
     /// - Parameter block: Delivers a list of Hits Core Data Managed Object
     func feed(limit: Int = 20, _ block: @escaping ([Hit]) -> Void) {
@@ -49,7 +49,7 @@ extension FeedService {
             NSSortDescriptor(key: "createdAt", ascending: false)
         ]
         fetchRequest.fetchLimit = limit
-        
+
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             do {
                 let results = try backgroundContext.fetch(fetchRequest)
@@ -60,15 +60,15 @@ extension FeedService {
             }
         }
     }
-    
+
     /// Receives a list of Data Transfer Objects with Hits information and adds them to the Database as Hits objects
     /// - Parameter hitsDTO: list of hits from the API
     func process(_ hitsDTO: [HitDTO], block: @escaping () -> Void = {}) {
-        
+
         persistenceController.container.performBackgroundTask { (backgroundContext) in
-            
+
             hitsDTO.forEach { (hitDTO) in
-                let _ = Hit.from(hitDTO, in: backgroundContext)
+                _ = Hit.from(hitDTO, in: backgroundContext)
             }
 
             backgroundContext.perform {

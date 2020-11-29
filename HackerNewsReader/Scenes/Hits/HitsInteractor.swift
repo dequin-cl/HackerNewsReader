@@ -33,7 +33,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
             }
         }
     }
-    
+
     private func grabFromCoreData(block: @escaping () -> Void) {
         workerCoreData?.fetchHits(block: { (hits, error) in
             if error == nil {

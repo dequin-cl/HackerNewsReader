@@ -24,17 +24,17 @@ class URLProtocolMock: URLProtocol {
     override func startLoading() {
         if let url = request.url {
             if let (error, data, response) = URLProtocolMock.mockURLs[url] {
-                
+
                 // We have a mock response specified so return it.
                 if let responseStrong = response {
                     self.client?.urlProtocol(self, didReceive: responseStrong, cacheStoragePolicy: .notAllowed)
                 }
-                
+
                 // We have mocked data specified so return it.
                 if let dataStrong = data {
                     self.client?.urlProtocol(self, didLoad: dataStrong)
                 }
-                
+
                 // We have a mocked error so return it.
                 if let errorStrong = error {
                     self.client?.urlProtocol(self, didFailWithError: errorStrong)

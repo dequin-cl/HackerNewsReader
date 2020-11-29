@@ -59,16 +59,16 @@ class HitsInteractorTests: XCTestCase {
         var fetchHitsGotCalled = false
         override func fetchHits(session: URLSession = URLSession(configuration: .default), block: @escaping ([HitDTO]?, Error?) -> Void) {
             fetchHitsGotCalled = true
-            
+
             block(Seeds.Hits.hitsDTO, nil)
         }
     }
-    
+
     class HitsCoreDataWorkerSpy: HitsCoreDataWorker {
         var fetchHitsGotCalled = false
         override func fetchHits(persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hit]?, Error?) -> Void) {
             fetchHitsGotCalled = true
-            
+
             block(Seeds.Hits.hits, nil)
         }
     }
@@ -76,11 +76,11 @@ class HitsInteractorTests: XCTestCase {
     // MARK: Tests
     func testGrabHitsCallsNetworkWorker() {
         /// Given
-        
+
         /// When
         sut.grabHits()
         /// Then
-        
+
         XCTAssertTrue(spyCoreDataWorker.fetchHitsGotCalled, "Hits Interactor should call the core data worker")
         XCTAssertTrue(spyNetworkWorker.fetchHitsGotCalled, "Hits Interactor should call the network worker")
 

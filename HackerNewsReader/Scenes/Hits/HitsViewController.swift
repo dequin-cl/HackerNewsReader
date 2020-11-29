@@ -66,5 +66,5 @@ class HitsViewController: UITableViewController {
 }
 
 extension HitsViewController: HitsDisplayLogic {
-    
+
 }
