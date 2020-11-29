@@ -55,9 +55,10 @@ class HitsViewControllerTests: XCTestCase {
 
     // MARK: Tests
 
-     func testShouldDoSomethingWhenViewIsLoaded() {
+    func testShouldCallInteractorWhenGrabIsCalled() {
         // Given
         // When
+        sut.startGrab()
         // Then
         XCTAssertTrue(spyInteractor.grabHitsGotCalled, "viewDidLoad() should ask the interactor to do grab the hits")
     }
@@ -96,7 +97,8 @@ class HitsViewControllerTests: XCTestCase {
         /// When
         let cell = cellForRow(in: sut.tableView, row: 0)
         /// Then
-        XCTAssertEqual(cell?.textLabel?.text, "Test 1", "The datasource should set the correct title for the table")
+        XCTAssertNotNil(cell)
+        XCTAssertEqual((cell! as! HitTableViewCell).labelTitle.text, "Test 1", "The datasource should set the correct title for the table")
     }
 
     func testReloadDataSetCorrectlyNumberOfCells() {

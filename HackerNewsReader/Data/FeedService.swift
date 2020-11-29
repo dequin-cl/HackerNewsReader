@@ -31,10 +31,7 @@ extension FeedService {
             backgroundContext.perform {
                 do {
                     try backgroundContext.save()
-                } catch let error as NSError {
-                    debugPrint("=====================")
-                    debugPrint(error)
-                }
+                } catch { }
                 block(hit)
             }
         }
@@ -74,10 +71,7 @@ extension FeedService {
             backgroundContext.perform {
                 do {
                     try backgroundContext.save()
-                } catch let error as NSError {
-                    debugPrint("=====================")
-                    debugPrint(error)
-                }
+                } catch { }
             }
         }
     }

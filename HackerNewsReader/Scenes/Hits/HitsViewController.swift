@@ -60,14 +60,14 @@ class HitsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Assures that we aren't testing
+        guard ProcessInfo.processInfo.environment["XCTestSessionIdentifier"] == nil else { return }
         startGrab()
     }
 
     // MARK: Do something
 
     func startGrab() {
-        // Assures that we aren't testing
-//        guard ProcessInfo.processInfo.environment["XCTestSessionIdentifier"] == nil else { return }
 
         interactor?.grabHits()
     }
@@ -97,12 +97,11 @@ extension HitsViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell!
+        var cell: HitTableViewCell!
 
-        cell = tableView.dequeueReusableCell(withIdentifier: "hit", for: indexPath)
+        cell = (tableView.dequeueReusableCell(withIdentifier: HitTableViewCell.identifier, for: indexPath) as! HitTableViewCell)
 
-        cell.textLabel?.text = hits[indexPath.row].title
-        cell.detailTextLabel?.text = hits[indexPath.row].subTitle
+        cell.configure(with: hits[indexPath.row])
 
         return cell
     }
