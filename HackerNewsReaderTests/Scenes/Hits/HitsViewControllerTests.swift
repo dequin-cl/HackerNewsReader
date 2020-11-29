@@ -42,7 +42,7 @@ class HitsViewControllerTests: XCTestCase {
     // MARK: Test setup
 
     func setupHitsViewController() {
-        sut = HitsViewController.instantiate(from: .Hits)
+        sut = HitsViewController.instantiate(from: .hits)
 
         spyInteractor = HitsBusinessLogicSpy()
         sut.interactor = spyInteractor

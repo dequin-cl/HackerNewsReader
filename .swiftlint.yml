@@ -1,0 +1,3 @@
+excluded:
+  - .DerivedData/Build/Intermediates.noindex/HackerNewsReader.build/Debug-iphonesimulator/HackerNewsReader.build/DerivedSources/CoreDataGenerated/HackerNewsReader/HackerNewsReader+CoreDataModel.swift
+  - .DerivedData/Build/Intermediates.noindex/HackerNewsReader.build/Debug-iphonesimulator/HackerNewsReader.build/DerivedSources/CoreDataGenerated/HackerNewsReader/Hit+CoreDataProperties.swift

@@ -11,7 +11,7 @@ import UIKit
 public struct Configuration {
     private init() {}
 
-    struct api {
+    struct API {
         private init() {}
 
         // https://hn.algolia.com/api
@@ -23,7 +23,9 @@ class HitsNetworkWorker {
     func fetchHits(session: URLSession = URLSession(configuration: .default),
                    block: @escaping ([HitDTO]?, Error?) -> Void) {
 
-        guard let url = URL(string: Configuration.api.byDate) else { fatalError("Should be able to instantiate an URL from the API endpoint") }
+        guard let url = URL(string: Configuration.API.byDate) else {
+            fatalError("Should be able to instantiate an URL from the API endpoint")
+        }
 
         let task = session.dataTask(with: url) { (data, _, error) in
             if error == nil {

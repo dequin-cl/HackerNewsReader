@@ -5,6 +5,13 @@
 //  Created by Iván on 27-11-20.
 //
 
+// swiftlint:disable superfluous_disable_command
+// swiftlint:disable file_length
+// swiftlint:disable force_cast
+// swiftlint:disable identifier_name
+// swiftlint:disable implicitly_unwrapped_optional
+// swiftlint:disable line_length
+
 import XCTest
 @testable import HackerNewsReader
 
@@ -83,3 +90,10 @@ class HitDTOModelTests: XCTestCase {
         XCTAssertEqual(hitDTO.objectID, "25224210", "Hit should parse and set Object Id")
     }
 }
+
+// swiftlint:enable line_length
+// swiftlint:enable implicitly_unwrapped_optional
+// swiftlint:enable identifier_name
+// swiftlint:enable force_cast
+// swiftlint:enable file_length
+// swiftlint:enable superfluous_disable_command

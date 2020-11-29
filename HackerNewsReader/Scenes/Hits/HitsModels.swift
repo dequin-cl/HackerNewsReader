@@ -8,6 +8,7 @@
 
 import UIKit
 
+// swiftlint:disable nesting
 enum Hits {
     // MARK: Use cases
 
@@ -17,3 +18,4 @@ enum Hits {
         }
     }
 }
+// swiftlint:enable nesting
