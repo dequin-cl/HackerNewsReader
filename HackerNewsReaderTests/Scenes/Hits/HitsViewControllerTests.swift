@@ -64,14 +64,25 @@ class HitsViewControllerTests: XCTestCase {
 
     func testDisplayHits() {
         /// Given
-        let viewModel = Hits.FetchHits.ViewModel(hits: Seeds.Hits.hits)
+        let viewModel = Hits.FetchHits.ViewModel(hits: Seeds.HitSamples.hitsVM)
         let tableViewMock = UITableViewMock()
+        let exp = expectation(description: "\(#function)\(#line) - Waiting for the table's reload call")
+        tableViewMock.block = {
+            exp.fulfill()
+        }
         /// When
         sut.tableView = tableViewMock
         sut.displayHits(viewModel: viewModel)
+
+        waitForExpectations(timeout: 1) { (error) in
+            if let error = error {
+                debugPrint(error)
+            }
+        }
         /// Then
         XCTAssertFalse(sut.hits.isEmpty, "The list of hits should not be empty")
         XCTAssertTrue(tableViewMock.reloadDataGotCalled)
+
     }
 
     private func cellForRow(in tableView: UITableView, row: Int, section: Int = 0) -> UITableViewCell? {
@@ -80,7 +91,7 @@ class HitsViewControllerTests: XCTestCase {
 
     func testReloadDataSetCorrectlyTheCell() {
         /// Given
-        sut.hits = Seeds.Hits.hits
+        sut.hits = Seeds.HitSamples.hitsVM
         sut.tableView.reloadData()
         /// When
         let cell = cellForRow(in: sut.tableView, row: 0)
@@ -90,7 +101,7 @@ class HitsViewControllerTests: XCTestCase {
 
     func testReloadDataSetCorrectlyNumberOfCells() {
         /// Given
-        sut.hits = Seeds.Hits.hits
+        sut.hits = Seeds.HitSamples.hitsVM
         /// When
         sut.tableView.reloadData()
         /// Then
@@ -101,10 +112,10 @@ class HitsViewControllerTests: XCTestCase {
 
 class UITableViewMock: UITableView {
     var reloadDataGotCalled = false
+    var block: () -> Void = {}
     override func reloadData() {
-        super.reloadData()
-
         reloadDataGotCalled = true
+        block()
     }
 }
 

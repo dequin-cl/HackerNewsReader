@@ -14,10 +14,10 @@ enum Hits {
 
     enum FetchHits {
         struct Response {
-            let hits: [Hit]
+            let hits: [HitPresentationModel]
         }
         struct ViewModel {
-            let hits: [Hit]
+            let hits: [HitViewModel]
         }
     }
 
@@ -25,8 +25,9 @@ enum Hits {
         let title: String
         let author: String
         let createdAt: Date
+        let url: String
     }
-    
+
     struct HitViewModel {
         let title: String
         let subTitle: String

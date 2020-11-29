@@ -47,7 +47,7 @@ class HitsPresenterTests: XCTestCase {
 
     func testPresent() {
         /// Given
-        let response = Hits.FetchHits.Response(hits: Seeds.Hits.hits)
+        let response = Hits.FetchHits.Response(hits: Seeds.HitSamples.hitsPresentation)
         /// When
         sut.presentHits(response: response)
         /// Then

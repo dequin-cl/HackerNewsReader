@@ -8,8 +8,14 @@
 import CoreData
 
 final class PersistenceController {
-    static let shared: PersistenceController = PersistenceController()
-
+    static let shared: PersistenceController = {
+        if let _ = ProcessInfo.processInfo.environment["XCTestSessionIdentifier"] {
+            print("TESTING")
+            return PersistenceController(inMemory: true)
+        } else {
+            return PersistenceController()
+        }
+    }()
     let container: NSPersistentCloudKitContainer
 
     init(inMemory: Bool = false) {

@@ -13,10 +13,10 @@ struct Seeds {
 }
 
 extension Seeds {
-    struct Hits {
+    struct HitSamples {
         private init() {}
 
-        private static let context = PersistenceController(inMemory: true).container.viewContext
+        private static let context = PersistenceController.shared.container.viewContext
         static var hitOne: Hit = {
             let hit = Hit(context: context)
             hit.title = "Test 1"
@@ -49,5 +49,15 @@ extension Seeds {
                                       url: nil,
                                       storyURL: "http://localhost/story/2")
         static let hitsDTO = [hitDTOOne, hitDTOTwo]
+
+        static let hitPresentationOne = Hits.HitPresentationModel(title: "Title 1", author: "Author 1", createdAt: Date(), url: "URL1")
+        static let hitPresentationTwo = Hits.HitPresentationModel(title: "Title 2", author: "Author 2", createdAt: Date(), url: "URL2")
+
+        static let hitsPresentation = [hitPresentationOne, hitPresentationTwo]
+
+        static let hitVMOne: Hits.HitViewModel = Hits.HitViewModel(title: "Test 1", subTitle: "Subtitle 1")
+        static let hitVMTwo: Hits.HitViewModel = Hits.HitViewModel(title: "Test 2", subTitle: "Subtitle 2")
+
+        static let hitsVM = [hitVMOne, hitVMTwo]
     }
 }

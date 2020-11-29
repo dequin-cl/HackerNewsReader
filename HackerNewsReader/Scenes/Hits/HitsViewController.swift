@@ -16,7 +16,7 @@ class HitsViewController: UITableViewController {
     var interactor: HitsBusinessLogic?
     var router: (NSObjectProtocol & HitsRoutingLogic & HitsDataPassing)?
 
-    var hits: [Hit] = []
+    var hits: [Hits.HitViewModel] = []
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -66,6 +66,9 @@ class HitsViewController: UITableViewController {
     // MARK: Do something
 
     func startGrab() {
+        // Assures that we aren't testing
+//        guard ProcessInfo.processInfo.environment["XCTestSessionIdentifier"] == nil else { return }
+
         interactor?.grabHits()
     }
 
@@ -77,7 +80,9 @@ extension HitsViewController: HitsDisplayLogic {
 
     func displayHits(viewModel: Hits.FetchHits.ViewModel) {
         hits = viewModel.hits
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -96,11 +101,8 @@ extension HitsViewController {
 
         cell = tableView.dequeueReusableCell(withIdentifier: "hit", for: indexPath)
 
-        if let title = hits[indexPath.row].title {
-            cell.textLabel?.text = title
-        } else {
-            cell.textLabel?.text = "title"
-        }
+        cell.textLabel?.text = hits[indexPath.row].title
+        cell.detailTextLabel?.text = hits[indexPath.row].subTitle
 
         return cell
     }

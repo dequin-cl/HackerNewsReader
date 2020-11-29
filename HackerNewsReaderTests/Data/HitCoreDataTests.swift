@@ -11,16 +11,6 @@ import XCTest
 
 class HitCoreDataTests: XCTestCase {
 
-    var persistanceController: PersistenceController!
-
-    override func setUpWithError() throws {
-        self.persistanceController = PersistenceController(inMemory: true)
-    }
-
-    override func tearDownWithError() throws {
-        self.persistanceController = nil
-    }
-
     func testInitializeFromDTO() throws {
         /// Given
         let bundle = Bundle(for: type(of: self))
@@ -33,7 +23,7 @@ class HitCoreDataTests: XCTestCase {
         let hitDTO = try HitDTO(data: json)
 
         /// When
-        let hitCD = Hit.from(hitDTO, in: persistanceController.container.viewContext)
+        let hitCD = Hit.from(hitDTO, in: PersistenceController.shared.container.viewContext)
 
         /// Then
         XCTAssertNotNil(hitCD, "The Hit should be created on Core Data")

@@ -13,7 +13,7 @@ protocol HitsBusinessLogic {
 }
 
 protocol HitsDataStore {
-    var hits: [Hit] { get }
+    var hits: [Hits.HitPresentationModel] { get }
 }
 
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
@@ -23,7 +23,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
 
     private let feedService = FeedService()
 
-    var hits: [Hit] = []
+    var hits: [Hits.HitPresentationModel] = []
 
     func grabHits() {
 
@@ -37,11 +37,14 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     }
 
     private func grabFromCoreData(block: @escaping () -> Void) {
-        workerCoreData.fetchHits(block: { [weak self] (hits, error) in
+        workerCoreData.fetchHits(block: { [weak self] (presentationModelHits, error) in
             if error == nil {
-                self?.hits = hits!
-                let response = Hits.FetchHits.Response(hits: hits!)
-                self?.presenter?.presentHits(response: response)
+
+                if let datasourceHits = presentationModelHits {
+                    self?.hits = datasourceHits
+                    let response = Hits.FetchHits.Response(hits: datasourceHits)
+                    self?.presenter?.presentHits(response: response)
+                }
                 block()
             } else {
                 // Alert the user of the problem fetching hits from Core Data

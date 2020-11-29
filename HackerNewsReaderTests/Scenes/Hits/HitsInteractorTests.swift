@@ -60,16 +60,16 @@ class HitsInteractorTests: XCTestCase {
         override func fetchHits(session: URLSession = URLSession(configuration: .default), block: @escaping ([HitDTO]?, Error?) -> Void) {
             fetchHitsGotCalled = true
 
-            block(Seeds.Hits.hitsDTO, nil)
+            block(Seeds.HitSamples.hitsDTO, nil)
         }
     }
 
     class HitsCoreDataWorkerSpy: HitsCoreDataWorker {
         var fetchHitsGotCalled = false
-        override func fetchHits(persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hit]?, Error?) -> Void) {
+        override func fetchHits(persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
             fetchHitsGotCalled = true
 
-            block(Seeds.Hits.hits, nil)
+            block(Seeds.HitSamples.hitsPresentation, nil)
         }
     }
 

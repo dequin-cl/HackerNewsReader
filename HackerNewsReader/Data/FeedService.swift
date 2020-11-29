@@ -53,17 +53,6 @@ extension FeedService {
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             do {
                 let results = try backgroundContext.fetch(fetchRequest)
-
-                results.forEach {
-                    print($0)
-
-                    if let title = $0.title {
-                        print(title)
-                    }
-
-                    print($0)
-                }
-
                 block(results)
             } catch let error as NSError {
                 print("Fetch error: \(error) description: \(error.userInfo)")

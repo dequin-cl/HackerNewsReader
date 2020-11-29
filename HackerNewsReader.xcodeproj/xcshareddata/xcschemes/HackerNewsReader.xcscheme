@@ -39,16 +39,6 @@
                ReferencedContainer = "container:HackerNewsReader.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C7F49482571067E00EE9B0B"
-               BuildableName = "HackerNewsReaderUITests.xctest"
-               BlueprintName = "HackerNewsReaderUITests"
-               ReferencedContainer = "container:HackerNewsReader.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
