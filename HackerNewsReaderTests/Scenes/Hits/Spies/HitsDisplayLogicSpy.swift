@@ -9,10 +9,11 @@
 @testable import HackerNewsReader
 
 class HitsDisplayLogicSpy: HitsDisplayLogic {
-//     var displaySomethingCalled = false
-//     var displaySomethingViewModel: Hits.Something.ViewModel?
-//     func displaySomething(viewModel: Hits.Something.ViewModel) {
-//        displaySomethingCalled = true
-//        displaySomethingViewModel = viewModel
-//    }
+
+    var displayHitsViewModel: Hits.FetchHits.ViewModel?
+    var displayHitsGotCalled = false
+    func displayHits(viewModel: Hits.FetchHits.ViewModel) {
+        displayHitsGotCalled = true
+        displayHitsViewModel = viewModel
+    }
 }

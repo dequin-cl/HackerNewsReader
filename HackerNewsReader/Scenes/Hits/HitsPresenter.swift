@@ -17,5 +17,8 @@ class HitsPresenter: HitsPresentationLogic {
 
     func presentHits(response: Hits.FetchHits.Response) {
 
+        // On a typical process this could be formatted
+        // ie: the published date
+        viewController?.displayHits(viewModel: Hits.FetchHits.ViewModel(hits: response.hits))
     }
 }

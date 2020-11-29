@@ -16,6 +16,9 @@ enum Hits {
         struct Response {
             let hits: [Hit]
         }
+        struct ViewModel {
+            let hits: [Hit]
+        }
     }
 }
 // swiftlint:enable nesting

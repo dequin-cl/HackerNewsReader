@@ -45,15 +45,14 @@ class HitsPresenterTests: XCTestCase {
 
     // MARK: Tests
 
-//     func testPresentSomething() {
-//        // Given
-//        let response = Hits.Something.Response(someVariable: "someValue")
-//        // When
-//        sut.presentSomething(response: response)
-//        // Then
-//        XCTAssertTrue(spyViewController.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
-//        XCTAssertEqual(spyViewController.displayMovementsViewModel?.someVariable, "someValue", "presentMovements should change the value to the correct format")
-//    }
+    func testPresent() {
+        /// Given
+        let response = Hits.FetchHits.Response(hits: Seeds.Hits.hits)
+        /// When
+        sut.presentHits(response: response)
+        /// Then
+        XCTAssertTrue(spyViewController.displayHitsGotCalled, "Presenter should call the View Controller")
+    }
 }
 
 // swiftlint:enable line_length

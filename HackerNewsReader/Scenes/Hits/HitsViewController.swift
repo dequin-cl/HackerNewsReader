@@ -9,6 +9,7 @@
 import UIKit
 
 protocol HitsDisplayLogic: class {
+    func displayHits(viewModel: Hits.FetchHits.ViewModel)
 }
 
 class HitsViewController: UITableViewController {
@@ -67,4 +68,7 @@ class HitsViewController: UITableViewController {
 
 extension HitsViewController: HitsDisplayLogic {
 
+    func displayHits(viewModel: Hits.FetchHits.ViewModel) {
+
+    }
 }
