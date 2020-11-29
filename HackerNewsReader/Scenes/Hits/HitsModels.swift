@@ -20,5 +20,16 @@ enum Hits {
             let hits: [Hit]
         }
     }
+
+    struct HitPresentationModel {
+        let title: String
+        let author: String
+        let createdAt: Date
+    }
+    
+    struct HitViewModel {
+        let title: String
+        let subTitle: String
+    }
 }
 // swiftlint:enable nesting

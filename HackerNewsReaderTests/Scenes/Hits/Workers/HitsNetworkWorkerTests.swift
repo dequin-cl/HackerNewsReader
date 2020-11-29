@@ -45,7 +45,7 @@ class HitsNetworkWorkerTests: XCTestCase {
     func testFetchHits() throws {
         /// Given
 
-        let url = URL(string: "http://hn.algolia.com/api/v1/search_by_date?query=ios")!
+        let url = URL(string: "https://hn.algolia.com/api/v1/search_by_date?query=ios")!
 
         let bundle = Bundle(for: type(of: self))
         guard let jsonURL = bundle.url(forResource: "first", withExtension: "json") else {
@@ -84,7 +84,7 @@ class HitsNetworkWorkerTests: XCTestCase {
     func testFetchHitsBadJSON() throws {
         /// Given
 
-        let url = URL(string: "http://hn.algolia.com/api/v1/search_by_date?query=ios")!
+        let url = URL(string: "https://hn.algolia.com/api/v1/search_by_date?query=ios")!
 
         let bundle = Bundle(for: type(of: self))
         guard let jsonURL = bundle.url(forResource: "SampleNews", withExtension: "json") else {

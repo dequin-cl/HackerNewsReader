@@ -13,15 +13,17 @@ protocol HitsBusinessLogic {
 }
 
 protocol HitsDataStore {
-    //var name: String { get set }
+    var hits: [Hit] { get }
 }
 
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     var presenter: HitsPresentationLogic?
-    var workerNetwork: HitsNetworkWorker?
-    var workerCoreData: HitsCoreDataWorker?
-    //var name: String = ""
+    var workerNetwork: HitsNetworkWorker = HitsNetworkWorker()
+    var workerCoreData: HitsCoreDataWorker = HitsCoreDataWorker()
+
     private let feedService = FeedService()
+
+    var hits: [Hit] = []
 
     func grabHits() {
 
@@ -35,10 +37,11 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     }
 
     private func grabFromCoreData(block: @escaping () -> Void) {
-        workerCoreData?.fetchHits(block: { (hits, error) in
+        workerCoreData.fetchHits(block: { [weak self] (hits, error) in
             if error == nil {
+                self?.hits = hits!
                 let response = Hits.FetchHits.Response(hits: hits!)
-                self.presenter?.presentHits(response: response)
+                self?.presenter?.presentHits(response: response)
                 block()
             } else {
                 // Alert the user of the problem fetching hits from Core Data
@@ -48,7 +51,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     }
 
     private func grabFromNetwork(block: @escaping () -> Void) {
-        workerNetwork?.fetchHits(block: { [weak self] (hitsDTO, error) in
+        workerNetwork.fetchHits(block: { [weak self] (hitsDTO, error) in
             if error == nil {
                 self?.feedService.process(hitsDTO!) {
                     block()

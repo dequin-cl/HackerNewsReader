@@ -88,6 +88,14 @@ class HitsInteractorTests: XCTestCase {
         XCTAssertEqual(spyPresenter.presentHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
 
     }
+
+    func testGrabHitsSetDatasourceHits() {
+        /// Given
+        /// When
+        sut.grabHits()
+        /// Then
+        XCTAssertEqual(sut.hits.count, 2, "Hits Interactor should set the hits in the datasource with the result from the Core data")
+    }
 }
 
 // swiftlint:enable line_length

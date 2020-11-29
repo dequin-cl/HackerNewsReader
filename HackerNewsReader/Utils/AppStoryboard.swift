@@ -8,10 +8,11 @@
 
 import UIKit
 
+//swiftlint:disable identifier_name
 enum AppStoryboard: String {
 
-    case hits
-    case story
+    case Hits
+    case Story
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -35,10 +36,4 @@ enum AppStoryboard: String {
         return scene
     }
 }
-
-extension UIStoryboard {
-//    @available(*, deprecated, message: "Parse your data by hand instead")
-//    func instantiateViewController(withIdentifier identifier: String) -> UIViewController {
-//
-//    }
-}
+//swiftlint:enable identifier_name

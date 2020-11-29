@@ -19,14 +19,14 @@ extension Seeds {
         private static let context = PersistenceController(inMemory: true).container.viewContext
         static var hitOne: Hit = {
             let hit = Hit(context: context)
-
+            hit.title = "Test 1"
             hit.id = "25224216"
             try? context.save()
             return hit
         }()
         static var hitTwo: Hit = {
             let hit = Hit(context: context)
-
+            hit.title = "Test 2"
             hit.id = "25224210"
             try? context.save()
             return hit

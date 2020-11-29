@@ -53,6 +53,7 @@
 		2CAD7C7125731B9D00529CF8 /* HitsCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C7025731B9D00529CF8 /* HitsCoreDataWorker.swift */; };
 		2CAD7C85257336F700529CF8 /* HitsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C84257336F700529CF8 /* HitsSampleData.json */; };
 		2CAD7C8D2573376C00529CF8 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C8C2573376C00529CF8 /* Seeds.swift */; };
+		2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */; };
 		2CC822C82572DF4D004ACE8E /* first.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CC822C72572DF4D004ACE8E /* first.json */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		2CAD7C7025731B9D00529CF8 /* HitsCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsCoreDataWorker.swift; sourceTree = "<group>"; };
 		2CAD7C84257336F700529CF8 /* HitsSampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HitsSampleData.json; sourceTree = "<group>"; };
 		2CAD7C8C2573376C00529CF8 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2CC822C72572DF4D004ACE8E /* first.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = first.json; sourceTree = "<group>"; };
 		2CC822CF2572DF65004ACE8E /* second.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = second.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,6 +318,7 @@
 		2CAD7C54257308C600529CF8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */,
 				2CAD7C5D25730EC000529CF8 /* URLProtocolMock.swift */,
 			);
 			path = Utils;
@@ -542,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */,
 				2CAD7C19257300BA00529CF8 /* HitsViewControllerTests.swift in Sources */,
 				2C7F49BC2571342E00EE9B0B /* HitCoreDataTests.swift in Sources */,
 				2C7F4965257107B900EE9B0B /* HitDTOModelTests.swift in Sources */,

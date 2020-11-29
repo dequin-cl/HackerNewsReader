@@ -15,7 +15,7 @@ public struct Configuration {
         private init() {}
 
         // https://hn.algolia.com/api
-        static let byDate =  "http://hn.algolia.com/api/v1/search_by_date?query=ios"
+        static let byDate =  "https://hn.algolia.com/api/v1/search_by_date?query=ios"
     }
 }
 

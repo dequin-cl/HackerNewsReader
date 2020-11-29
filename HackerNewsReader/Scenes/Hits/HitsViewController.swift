@@ -16,6 +16,7 @@ class HitsViewController: UITableViewController {
     var interactor: HitsBusinessLogic?
     var router: (NSObjectProtocol & HitsRoutingLogic & HitsDataPassing)?
 
+    var hits: [Hit] = []
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -59,16 +60,48 @@ class HitsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        startGrab()
     }
 
     // MARK: Do something
 
+    func startGrab() {
+        interactor?.grabHits()
+    }
+
     //@IBOutlet weak var nameTextField: UITextField!
 }
 
+// MARK: - HitsDisplayLogic
 extension HitsViewController: HitsDisplayLogic {
 
     func displayHits(viewModel: Hits.FetchHits.ViewModel) {
+        hits = viewModel.hits
+        tableView.reloadData()
+    }
+}
 
+// MARK: - DataSource
+extension HitsViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hits.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell!
+
+        cell = tableView.dequeueReusableCell(withIdentifier: "hit", for: indexPath)
+
+        if let title = hits[indexPath.row].title {
+            cell.textLabel?.text = title
+        } else {
+            cell.textLabel?.text = "title"
+        }
+
+        return cell
     }
 }
