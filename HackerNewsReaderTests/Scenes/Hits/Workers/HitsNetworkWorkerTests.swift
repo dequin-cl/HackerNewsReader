@@ -1,5 +1,5 @@
 //
-//  HitsWorkerTests.swift
+//  HitsNetworkWorkerTests.swift
 //  HackerNewsReader
 //
 //  Created on 28-11-20.
@@ -17,10 +17,10 @@
 @testable import HackerNewsReader
 import XCTest
 
-class HitsWorkerTests: XCTestCase {
+class HitsNetworkWorkerTests: XCTestCase {
     // MARK: Subject under test
 
-    var sut: HitsWorker!
+    var sut: HitsNetworkWorker!
 
     // MARK: Test lifecycle
 
@@ -37,7 +37,7 @@ class HitsWorkerTests: XCTestCase {
     // MARK: Test setup
 
     func setupHitsWorker() {
-        sut = HitsWorker()
+        sut = HitsNetworkWorker()
     }
 
     // MARK: Tests

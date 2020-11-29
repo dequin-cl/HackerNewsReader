@@ -128,6 +128,35 @@ class FeedServiceTest: XCTestCase {
         }
     }
     
+    func testParseFeedLimitResponseDTO() throws {
+        /// Given
+        let bundle = Bundle(for: type(of: self))
+        guard let url = bundle.url(forResource: "SampleJSON", withExtension: "json") else {
+            XCTFail("Missing file: SampleJSON.json")
+            return
+        }
+        
+        let json = try Data(contentsOf: url)
+        let feedDTO = try FeedDTO(data: json)
+        let feedService = FeedService(persistenceController: persistanceController)
+        
+        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
+            return true
+        }
+        
+        /// When
+        feedService.process(feedDTO.hits)
+        /// Then
+        
+        waitForExpectations(timeout: 2.0) { error in
+            XCTAssertNil(error, "Save did not occur")
+        }
+        
+        feedService.feed(limit: 2) { (hits) in
+            XCTAssertEqual(hits.count, 2)
+        }
+    }
+    
     
     func testParseTwiceFeedDTO() throws {
         /// Given

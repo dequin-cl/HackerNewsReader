@@ -32,7 +32,7 @@
 		2CAD7C19257300BA00529CF8 /* HitsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C10257300BA00529CF8 /* HitsViewControllerTests.swift */; };
 		2CAD7C1A257300BA00529CF8 /* HitsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C11257300BA00529CF8 /* HitsInteractorTests.swift */; };
 		2CAD7C1B257300BA00529CF8 /* HitsDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C12257300BA00529CF8 /* HitsDisplayLogicSpy.swift */; };
-		2CAD7C1C257300BA00529CF8 /* HitsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C13257300BA00529CF8 /* HitsWorkerTests.swift */; };
+		2CAD7C1C257300BA00529CF8 /* HitsNetworkWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C13257300BA00529CF8 /* HitsNetworkWorkerTests.swift */; };
 		2CAD7C1D257300BA00529CF8 /* HitsPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C14257300BA00529CF8 /* HitsPresentationLogicSpy.swift */; };
 		2CAD7C1E257300BA00529CF8 /* HitsRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C15257300BA00529CF8 /* HitsRoutingLogicSpy.swift */; };
 		2CAD7C1F257300BA00529CF8 /* HitsBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C16257300BA00529CF8 /* HitsBusinessLogicSpy.swift */; };
@@ -43,12 +43,16 @@
 		2CAD7C442573025E00529CF8 /* Hits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3C2573025E00529CF8 /* Hits.storyboard */; };
 		2CAD7C452573025E00529CF8 /* Hits.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3D2573025E00529CF8 /* Hits.strings */; };
 		2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */; };
-		2CAD7C472573025E00529CF8 /* HitsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3F2573025E00529CF8 /* HitsWorker.swift */; };
+		2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3F2573025E00529CF8 /* HitsNetworkWorker.swift */; };
 		2CAD7C482573025E00529CF8 /* HitsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C402573025E00529CF8 /* HitsRouter.swift */; };
 		2CAD7C492573025E00529CF8 /* HitsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C412573025E00529CF8 /* HitsModels.swift */; };
 		2CAD7C4A2573025E00529CF8 /* HitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C422573025E00529CF8 /* HitsViewController.swift */; };
 		2CAD7C4B2573025E00529CF8 /* HitsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C432573025E00529CF8 /* HitsInteractor.swift */; };
 		2CAD7C5E25730EC000529CF8 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C5D25730EC000529CF8 /* URLProtocolMock.swift */; };
+		2CAD7C6C25731B5500529CF8 /* HitsCoreDataWorkerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C6B25731B5500529CF8 /* HitsCoreDataWorkerTest.swift */; };
+		2CAD7C7125731B9D00529CF8 /* HitsCoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C7025731B9D00529CF8 /* HitsCoreDataWorker.swift */; };
+		2CAD7C85257336F700529CF8 /* HitsSampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C84257336F700529CF8 /* HitsSampleData.json */; };
+		2CAD7C8D2573376C00529CF8 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C8C2573376C00529CF8 /* Seeds.swift */; };
 		2CC822C82572DF4D004ACE8E /* first.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CC822C72572DF4D004ACE8E /* first.json */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +104,7 @@
 		2CAD7C10257300BA00529CF8 /* HitsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsViewControllerTests.swift; sourceTree = "<group>"; };
 		2CAD7C11257300BA00529CF8 /* HitsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsInteractorTests.swift; sourceTree = "<group>"; };
 		2CAD7C12257300BA00529CF8 /* HitsDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsDisplayLogicSpy.swift; sourceTree = "<group>"; };
-		2CAD7C13257300BA00529CF8 /* HitsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsWorkerTests.swift; sourceTree = "<group>"; };
+		2CAD7C13257300BA00529CF8 /* HitsNetworkWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsNetworkWorkerTests.swift; sourceTree = "<group>"; };
 		2CAD7C14257300BA00529CF8 /* HitsPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsPresentationLogicSpy.swift; sourceTree = "<group>"; };
 		2CAD7C15257300BA00529CF8 /* HitsRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsRoutingLogicSpy.swift; sourceTree = "<group>"; };
 		2CAD7C16257300BA00529CF8 /* HitsBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsBusinessLogicSpy.swift; sourceTree = "<group>"; };
@@ -111,12 +115,16 @@
 		2CAD7C3C2573025E00529CF8 /* Hits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hits.storyboard; sourceTree = "<group>"; };
 		2CAD7C3D2573025E00529CF8 /* Hits.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Hits.strings; sourceTree = "<group>"; };
 		2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsPresenter.swift; sourceTree = "<group>"; };
-		2CAD7C3F2573025E00529CF8 /* HitsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsWorker.swift; sourceTree = "<group>"; };
+		2CAD7C3F2573025E00529CF8 /* HitsNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsNetworkWorker.swift; sourceTree = "<group>"; };
 		2CAD7C402573025E00529CF8 /* HitsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsRouter.swift; sourceTree = "<group>"; };
 		2CAD7C412573025E00529CF8 /* HitsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsModels.swift; sourceTree = "<group>"; };
 		2CAD7C422573025E00529CF8 /* HitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsViewController.swift; sourceTree = "<group>"; };
 		2CAD7C432573025E00529CF8 /* HitsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsInteractor.swift; sourceTree = "<group>"; };
 		2CAD7C5D25730EC000529CF8 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		2CAD7C6B25731B5500529CF8 /* HitsCoreDataWorkerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsCoreDataWorkerTest.swift; sourceTree = "<group>"; };
+		2CAD7C7025731B9D00529CF8 /* HitsCoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsCoreDataWorker.swift; sourceTree = "<group>"; };
+		2CAD7C84257336F700529CF8 /* HitsSampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HitsSampleData.json; sourceTree = "<group>"; };
+		2CAD7C8C2573376C00529CF8 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		2CC822C72572DF4D004ACE8E /* first.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = first.json; sourceTree = "<group>"; };
 		2CC822CF2572DF65004ACE8E /* second.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = second.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,11 +259,12 @@
 		2CAD7C0F2573009B00529CF8 /* Hits */ = {
 			isa = PBXGroup;
 			children = (
+				2CAD7C83257336D900529CF8 /* Sample */,
+				2CAD7C7825731BC200529CF8 /* Workers */,
 				2CAD7C11257300BA00529CF8 /* HitsInteractorTests.swift */,
 				2CAD7C18257300BA00529CF8 /* HitsPresenterTests.swift */,
 				2CAD7C17257300BA00529CF8 /* HitsRouterTests.swift */,
 				2CAD7C10257300BA00529CF8 /* HitsViewControllerTests.swift */,
-				2CAD7C13257300BA00529CF8 /* HitsWorkerTests.swift */,
 				2CAD7C28257300C600529CF8 /* Spies */,
 			);
 			path = Hits;
@@ -295,7 +304,7 @@
 				2CAD7C3C2573025E00529CF8 /* Hits.storyboard */,
 				2CAD7C3D2573025E00529CF8 /* Hits.strings */,
 				2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */,
-				2CAD7C3F2573025E00529CF8 /* HitsWorker.swift */,
+				2CAD7C7F25731CE400529CF8 /* Workers */,
 				2CAD7C402573025E00529CF8 /* HitsRouter.swift */,
 				2CAD7C412573025E00529CF8 /* HitsModels.swift */,
 				2CAD7C422573025E00529CF8 /* HitsViewController.swift */,
@@ -310,6 +319,33 @@
 				2CAD7C5D25730EC000529CF8 /* URLProtocolMock.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2CAD7C7825731BC200529CF8 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD7C6B25731B5500529CF8 /* HitsCoreDataWorkerTest.swift */,
+				2CAD7C13257300BA00529CF8 /* HitsNetworkWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2CAD7C7F25731CE400529CF8 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD7C3F2573025E00529CF8 /* HitsNetworkWorker.swift */,
+				2CAD7C7025731B9D00529CF8 /* HitsCoreDataWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2CAD7C83257336D900529CF8 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD7C84257336F700529CF8 /* HitsSampleData.json */,
+				2CAD7C8C2573376C00529CF8 /* Seeds.swift */,
+			);
+			path = Sample;
 			sourceTree = "<group>";
 		};
 		2CC822C62572DF2A004ACE8E /* Feed */ = {
@@ -437,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAD7C0A2572E0D600529CF8 /* second.json in Resources */,
+				2CAD7C85257336F700529CF8 /* HitsSampleData.json in Resources */,
 				2C7F49732571083600EE9B0B /* SampleNews.json in Resources */,
 				2C7F496B257107EF00EE9B0B /* SampleJSON.json in Resources */,
 				2CC822C82572DF4D004ACE8E /* first.json in Resources */,
@@ -468,9 +505,10 @@
 				2CAD7C492573025E00529CF8 /* HitsModels.swift in Sources */,
 				2CAD7C482573025E00529CF8 /* HitsRouter.swift in Sources */,
 				2C7F49A7257129A000EE9B0B /* Persistence.swift in Sources */,
+				2CAD7C7125731B9D00529CF8 /* HitsCoreDataWorker.swift in Sources */,
 				2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */,
 				2CAD7C4A2573025E00529CF8 /* HitsViewController.swift in Sources */,
-				2CAD7C472573025E00529CF8 /* HitsWorker.swift in Sources */,
+				2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */,
 				2C7F49332571067C00EE9B0B /* HackerNewsReader.xcdatamodeld in Sources */,
 				2C7F498E2571230000EE9B0B /* FeedDTO.swift in Sources */,
 				2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */,
@@ -490,13 +528,15 @@
 				2CAD7C1B257300BA00529CF8 /* HitsDisplayLogicSpy.swift in Sources */,
 				2CAD7C20257300BA00529CF8 /* HitsRouterTests.swift in Sources */,
 				2CAD7C1D257300BA00529CF8 /* HitsPresentationLogicSpy.swift in Sources */,
-				2CAD7C1C257300BA00529CF8 /* HitsWorkerTests.swift in Sources */,
+				2CAD7C1C257300BA00529CF8 /* HitsNetworkWorkerTests.swift in Sources */,
 				2C7F498925711B3F00EE9B0B /* FeedDTOModelTests.swift in Sources */,
 				2CAD7C21257300BA00529CF8 /* HitsPresenterTests.swift in Sources */,
 				2C7F49CD2571497100EE9B0B /* FeedServiceTest.swift in Sources */,
+				2CAD7C6C25731B5500529CF8 /* HitsCoreDataWorkerTest.swift in Sources */,
 				2CAD7C1A257300BA00529CF8 /* HitsInteractorTests.swift in Sources */,
 				2CAD7C1F257300BA00529CF8 /* HitsBusinessLogicSpy.swift in Sources */,
 				2CAD7C5E25730EC000529CF8 /* URLProtocolMock.swift in Sources */,
+				2CAD7C8D2573376C00529CF8 /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

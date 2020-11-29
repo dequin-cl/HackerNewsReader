@@ -11,4 +11,9 @@ import UIKit
 enum Hits {
     // MARK: Use cases
 
+    enum FetchHits {
+        struct Response {
+            let hits: [Hit]
+        }
+    }
 }

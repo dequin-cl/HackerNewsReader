@@ -9,9 +9,13 @@
 import UIKit
 
 protocol HitsPresentationLogic {
+    func presentHits(response: Hits.FetchHits.Response)
 }
 
 class HitsPresenter: HitsPresentationLogic {
     weak var viewController: HitsDisplayLogic?
 
+    func presentHits(response: Hits.FetchHits.Response) {
+        
+    }
 }

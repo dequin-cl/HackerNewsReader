@@ -9,10 +9,10 @@
 @testable import HackerNewsReader
 
 class HitsPresentationLogicSpy: HitsPresentationLogic {
-//     var presentSomethingCalled = false
-//     var presentSomethingResponse: Hits.Something.Response?
-//     func presentSomething(response: Hits.Something.Response) {
-//        presentSomethingCalled = true
-//        presentSomethingResponse = response
-//    }
+    var presentHitsGotCalled = false
+    var presentHitsResponse: Hits.FetchHits.Response?
+    func presentHits(response: Hits.FetchHits.Response) {
+        presentHitsGotCalled = true
+        presentHitsResponse = response
+    }
 }

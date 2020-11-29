@@ -21,7 +21,8 @@ class HitsInteractorTests: XCTestCase {
 
     var sut: HitsInteractor!
     var spyPresenter: HitsPresentationLogicSpy!
-    var spyWorker: HitsWorkerSpy!
+    var spyNetworkWorker: HitsNetworkWorkerSpy!
+    var spyCoreDataWorker: HitsCoreDataWorkerSpy!
 
     // MARK: Test lifecycle
 
@@ -32,7 +33,7 @@ class HitsInteractorTests: XCTestCase {
 
     override  func tearDown() {
         spyPresenter = nil
-        spyWorker = nil
+        spyNetworkWorker = nil
         sut = nil
         super.tearDown()
     }
@@ -45,31 +46,48 @@ class HitsInteractorTests: XCTestCase {
         spyPresenter = HitsPresentationLogicSpy()
         sut.presenter = spyPresenter
 
-        spyWorker = HitsWorkerSpy()
-        sut.worker = spyWorker
+        spyNetworkWorker = HitsNetworkWorkerSpy()
+        sut.workerNetwork = spyNetworkWorker
+
+        spyCoreDataWorker = HitsCoreDataWorkerSpy()
+        sut.workerCoreData = spyCoreDataWorker
     }
 
     // MARK: Test doubles
 
-    class HitsWorkerSpy: HitsWorker {
-//         var fetchSomethingCalled = false
-//        override  func fetchSomething(completionHandler: @escaping ([SomethingDecodable]?, Error?) -> Void) {
-//            fetchSomethingCalled = true
-//        }
+    class HitsNetworkWorkerSpy: HitsNetworkWorker {
+        var fetchHitsGotCalled = false
+        override func fetchHits(session: URLSession = URLSession(configuration: .default), block: @escaping ([HitDTO]?, Error?) -> Void) {
+            fetchHitsGotCalled = true
+            
+            block(Seeds.Hits.hitsDTO, nil)
+        }
+    }
+    
+    class HitsCoreDataWorkerSpy: HitsCoreDataWorker {
+        var fetchHitsGotCalled = false
+        override func fetchHits(persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hit]?, Error?) -> Void) {
+            fetchHitsGotCalled = true
+            
+            block(Seeds.Hits.hits, nil)
+        }
     }
 
     // MARK: Tests
+    func testGrabHitsCallsNetworkWorker() {
+        /// Given
+        
+        /// When
+        sut.grabHits()
+        /// Then
+        
+        XCTAssertTrue(spyCoreDataWorker.fetchHitsGotCalled, "Hits Interactor should call the core data worker")
+        XCTAssertTrue(spyNetworkWorker.fetchHitsGotCalled, "Hits Interactor should call the network worker")
 
-//     func testDoSomething() {
-//        // Given
-//        let request = Hits.Something.Request()
-//        // When
-//        sut.doSomething(request: request)
-//        // Then
-//        XCTAssertTrue(spyWorker.fetchSomethingCalled, "doSomething(request:) should ask the worker to fetch something")
-//        XCTAssertTrue(spyPresenter.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
-//    }
+        XCTAssertTrue(spyPresenter.presentHitsGotCalled, "Hits Interactor should call the presenter with the full list of fetched hits")
+        XCTAssertEqual(spyPresenter.presentHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
 
+    }
 }
 
 // swiftlint:enable line_length

@@ -42,13 +42,14 @@ extension FeedService {
     
     /// List the hits on Core Data
     /// - Parameter block: Delivers a list of Hits Core Data Managed Object
-    func feed(_ block: @escaping ([Hit]) -> Void) {
+    func feed(limit: Int = 20, _ block: @escaping ([Hit]) -> Void) {
         let fetchRequest: NSFetchRequest<Hit> = Hit.fetchRequest()
         fetchRequest.propertiesToFetch = ["author", "createdAt", "storyTitle", "storyURL", "title", "url"]
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "createdAt", ascending: false)
         ]
-
+        fetchRequest.fetchLimit = limit
+        
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             do {
                 let results = try backgroundContext.fetch(fetchRequest)
@@ -62,7 +63,7 @@ extension FeedService {
     
     /// Receives a list of Data Transfer Objects with Hits information and adds them to the Database as Hits objects
     /// - Parameter hitsDTO: list of hits from the API
-    func process(_ hitsDTO: [HitDTO]) {
+    func process(_ hitsDTO: [HitDTO], block: @escaping () -> Void = {}) {
         
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             

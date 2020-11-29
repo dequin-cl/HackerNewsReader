@@ -1,5 +1,5 @@
 //
-//  HitsWorker.swift
+//  HitsNetworkWorker.swift
 //  HackerNewsReader
 //
 //  Created on 28-11-20.
@@ -19,7 +19,7 @@ public struct Configuration {
     }
 }
 
-class HitsWorker {
+class HitsNetworkWorker {
     func fetchHits(session: URLSession = URLSession(configuration: .default),
                    block: @escaping ([HitDTO]?, Error?) -> Void) {
         

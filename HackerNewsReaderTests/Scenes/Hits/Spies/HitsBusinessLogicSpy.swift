@@ -9,10 +9,8 @@
 @testable import HackerNewsReader
 
 class HitsBusinessLogicSpy: HitsBusinessLogic {
-//     var doSomethingCalled = false
-//     var doSomethingRequest: Hits.Something.Request?
-//     func doSomething(request: Hits.Something.Request) {
-//        doSomethingCalled = true
-//        doSomethingRequest = request
-//    }
+    var grabHitsGotCalled = false
+    func grabHits() {
+        grabHitsGotCalled = true
+    }
 }
