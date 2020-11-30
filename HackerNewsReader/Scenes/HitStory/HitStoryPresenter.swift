@@ -10,6 +10,7 @@ import UIKit
 
 protocol HitStoryPresentationLogic {
     func presentURL(response: HitStory.ShowStory.Response)
+    func presentTitle(response: HitStory.Scene.Response)
 }
 
 class HitStoryPresenter: HitStoryPresentationLogic {
@@ -20,4 +21,11 @@ class HitStoryPresenter: HitStoryPresentationLogic {
     func presentURL(response: HitStory.ShowStory.Response) {
         viewController?.loadURL(viewModel: HitStory.ShowStory.ViewModel(url: response.url))
     }
+
+    func presentTitle(response: HitStory.Scene.Response) {
+        let viewModel = HitStory.Scene.ViewModel(title: response.title,
+                                                 titleImageName: response.titleImageName)
+        viewController?.setSceneTitle(viewModel: viewModel)
+    }
+
 }

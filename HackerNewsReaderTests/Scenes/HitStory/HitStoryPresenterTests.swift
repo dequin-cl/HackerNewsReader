@@ -55,6 +55,25 @@ class HitStoryPresenterTests: XCTestCase {
         XCTAssertEqual(spyViewController.loadURLViewModel?.url, "TEST", "Presenter should call the VC with the correct URL")
     }
 
+    func testPresentSceneImageTitle() {
+        /// Given
+        let response = HitStory.Scene.Response(title: nil, titleImageName: "lock")
+        /// When
+        sut.presentTitle(response: response)
+        /// Then
+        XCTAssertTrue(spyViewController.setSceneTitleGotCalled, "Should call the VC to set the scene title")
+        XCTAssertNotNil(spyViewController.setSceneTitleViewModel?.titleImageName, "Should pass the non nil value")
+    }
+
+    func testPresentSceneTitle() {
+        /// Given
+        let response = HitStory.Scene.Response(title: "Non secure", titleImageName: nil)
+        /// When
+        sut.presentTitle(response: response)
+        /// Then
+        XCTAssertTrue(spyViewController.setSceneTitleGotCalled, "Should call the VC to set the scene title")
+        XCTAssertNotNil(spyViewController.setSceneTitleViewModel?.title, "Should pass the non nil value")
+    }
 }
 
 // swiftlint:enable line_length

@@ -11,6 +11,7 @@ import WebKit
 
 protocol HitStoryDisplayLogic: AnyObject {
     func loadURL(viewModel: HitStory.ShowStory.ViewModel)
+    func setSceneTitle(viewModel: HitStory.Scene.ViewModel)
 }
 
 class HitStoryViewController: UIViewController, HitStoryDisplayLogic, WKNavigationDelegate {
@@ -108,6 +109,18 @@ class HitStoryViewController: UIViewController, HitStoryDisplayLogic, WKNavigati
     }
 
     // MARK: Methods
+    func setSceneTitle(viewModel: HitStory.Scene.ViewModel) {
+
+        if let imageName = viewModel.titleImageName {
+            let imageView = UIImageView(image: UIImage(systemName: imageName))
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+            navigationItem.titleView = imageView
+        } else {
+            title = viewModel.title!
+        }
+    }
+
     func processHit() {
         interactor?.processHit()
     }

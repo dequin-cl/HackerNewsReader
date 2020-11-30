@@ -65,6 +65,28 @@ class HitStoryInteractorTests: XCTestCase {
         XCTAssertTrue(spyPresenter.presentURLGotCalled, "Interactor should call the presenter")
         XCTAssertEqual(spyPresenter.presentURLResponse?.url, "TEST", "Interactor should call the presenter with the URL grabbed from the hitURL")
     }
+
+    func testProcessHitSecure() {
+        /// Given
+        sut.hitURL = "https://TEST"
+        /// When
+        sut.processHit()
+        /// Then
+        XCTAssertTrue(spyPresenter.presentTitleGotCalled, "Interactor should call the presenter")
+        XCTAssertNil(spyPresenter.presentTitleResponse?.title, "If the protocol is secure don't send the title")
+        XCTAssertEqual(spyPresenter.presentTitleResponse?.titleImageName, "lock", "Interactor should call the presenter with the URL grabbed from the hitURL")
+    }
+
+    func testProcessHitInSecure() {
+        /// Given
+        sut.hitURL = "http://TEST"
+        /// When
+        sut.processHit()
+        /// Then
+        XCTAssertTrue(spyPresenter.presentTitleGotCalled, "Interactor should call the presenter")
+        XCTAssertNil(spyPresenter.presentTitleResponse?.titleImageName, "If the protocol is insecure don't send the image")
+        XCTAssertEqual(spyPresenter.presentTitleResponse?.title, "Not Secure", "Interactor should call the presenter with the URL grabbed from the hitURL")
+    }
 }
 
 // swiftlint:enable line_length

@@ -16,4 +16,11 @@ class HitStoryPresentationLogicSpy: HitStoryPresentationLogic {
         presentURLGotCalled = true
         presentURLResponse = response
     }
+
+    var presentTitleGotCalled = false
+    var presentTitleResponse: HitStory.Scene.Response?
+    func presentTitle(response: HitStory.Scene.Response) {
+        presentTitleGotCalled = true
+        presentTitleResponse = response
+    }
 }

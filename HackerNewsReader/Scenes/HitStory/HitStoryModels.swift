@@ -19,6 +19,17 @@ enum HitStory {
             let url: String
         }
     }
+
+    enum Scene {
+        struct Response {
+            let title: String?
+            let titleImageName: String?
+        }
+        struct ViewModel {
+            let title: String?
+            let titleImageName: String?
+        }
+    }
 }
 
 // swiftlint:enable nesting

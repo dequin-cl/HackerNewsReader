@@ -25,5 +25,12 @@ class HitStoryInteractor: HitStoryBusinessLogic, HitStoryDataStore {
 
     func processHit() {
         presenter?.presentURL(response: HitStory.ShowStory.Response(url: hitURL))
+
+        if hitURL.starts(with: "https") {
+            presenter?.presentTitle(response: HitStory.Scene.Response(title: nil, titleImageName: "lock"))
+        } else {
+            presenter?.presentTitle(response: HitStory.Scene.Response(title: "Not Secure", titleImageName: nil))
+
+        }
     }
 }

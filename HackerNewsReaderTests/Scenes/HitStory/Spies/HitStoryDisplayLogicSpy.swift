@@ -15,4 +15,11 @@ class HitStoryDisplayLogicSpy: HitStoryDisplayLogic {
         loadURLGotCalled = true
         loadURLViewModel = viewModel
     }
+
+    var setSceneTitleGotCalled = false
+    var setSceneTitleViewModel: HitStory.Scene.ViewModel?
+    func setSceneTitle(viewModel: HitStory.Scene.ViewModel) {
+        setSceneTitleGotCalled = true
+        setSceneTitleViewModel = viewModel
+    }
 }
