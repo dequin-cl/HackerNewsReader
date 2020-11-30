@@ -53,6 +53,24 @@ class HitsPresenterTests: XCTestCase {
         /// Then
         XCTAssertTrue(spyViewController.displayHitsGotCalled, "Presenter should call the View Controller")
     }
+
+    func testPresentOlder() {
+        /// Given
+        let response = Hits.FetchHits.Response(hits: Seeds.HitSamples.hitsPresentation)
+        /// When
+        sut.presentOlderHits(response: response)
+        /// Then
+        XCTAssertTrue(spyViewController.displayOlderHitsGotCalled, "Presenter should call the View Controller")
+    }
+
+    func testPresentHitShouldCallVC() {
+        /// Given
+
+        /// When
+        sut.presentHit()
+        /// Then
+        XCTAssertTrue(spyViewController.displaySelectedHitStoryGotCalled, "Presenter should call the VC to display the Story")
+    }
 }
 
 // swiftlint:enable line_length

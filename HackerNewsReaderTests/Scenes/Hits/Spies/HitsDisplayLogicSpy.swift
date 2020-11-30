@@ -16,4 +16,16 @@ class HitsDisplayLogicSpy: HitsDisplayLogic {
         displayHitsGotCalled = true
         displayHitsViewModel = viewModel
     }
+
+    var displayOlderHitsViewModel: Hits.FetchHits.ViewModel?
+    var displayOlderHitsGotCalled = false
+    func displayOlderHits(viewModel: Hits.FetchHits.ViewModel) {
+        displayOlderHitsGotCalled = true
+        displayOlderHitsViewModel = viewModel
+    }
+
+    var displaySelectedHitStoryGotCalled = false
+    func displaySelectedHitStory() {
+        displaySelectedHitStoryGotCalled = true
+    }
 }

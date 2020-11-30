@@ -110,6 +110,27 @@ class HitsViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.dataSource?.numberOfSections?(in: sut.tableView), 1, "The datasource should set only 1 section for the table")
         XCTAssertEqual(sut.tableView.dataSource?.tableView(sut.tableView, numberOfRowsInSection: 0), 2, "The datasource should set the correct title for the table")
     }
+
+    func testDisplayHitStory() {
+        /// Given
+
+        /// When
+        sut.displaySelectedHitStory()
+        /// Then
+        XCTAssertTrue(spyRouter.routeToStoryDetailGotCalled, "The VC should call the router")
+        XCTAssertNil(spyRouter.routeToStoryDetailSegue, "The segue should be nil for this call to the router")
+    }
+
+    func testSelectARowCallsInteractorWithHit() {
+        /// Given
+        sut.hits = Seeds.HitSamples.hitsVM
+        /// When
+        sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        /// Then
+        XCTAssertTrue(spyInteractor.selectHitGotCalled, "When selection a Hit the VC should alert the Interactor")
+        XCTAssertEqual(spyInteractor.selectHitRequest?.hit, Seeds.HitSamples.hitsVM.first, "As we give row 0, should be the correct Hit the one sent to the interactor")
+    }
+
 }
 
 class UITableViewMock: UITableView {

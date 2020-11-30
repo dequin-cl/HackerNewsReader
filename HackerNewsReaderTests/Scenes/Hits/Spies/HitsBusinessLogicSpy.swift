@@ -20,4 +20,11 @@ class HitsBusinessLogicSpy: HitsBusinessLogic {
         grabOlderHitsGotCalled = true
         grabOlderHitsRequest = request
     }
+
+    var selectHitGotCalled = false
+    var selectHitRequest: Hits.Show.Request?
+    func selectHit(request: Hits.Show.Request) {
+        selectHitGotCalled = true
+        selectHitRequest = request
+    }
 }

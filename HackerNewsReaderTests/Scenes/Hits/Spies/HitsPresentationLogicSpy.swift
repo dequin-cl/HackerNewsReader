@@ -15,4 +15,16 @@ class HitsPresentationLogicSpy: HitsPresentationLogic {
         presentHitsGotCalled = true
         presentHitsResponse = response
     }
+
+    var presentOlderHitsGotCalled = false
+    var presentOlderHitsResponse: Hits.FetchHits.Response?
+    func presentOlderHits(response: Hits.FetchHits.Response) {
+        presentOlderHitsGotCalled = true
+        presentOlderHitsResponse = response
+    }
+
+    var presentHitGotCalled = false
+    func presentHit() {
+        presentHitGotCalled = true
+    }
 }

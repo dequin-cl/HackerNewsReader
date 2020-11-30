@@ -11,11 +11,13 @@ import UIKit
 protocol HitsBusinessLogic {
     func grabHits()
     func grabOlderHits(request: Hits.FetchHits.Request)
+    func selectHit(request: Hits.Show.Request)
 }
 
 protocol HitsDataStore {
     var hits: [Hits.HitPresentationModel] { get }
     var isFetchingOlderHits: Bool { get set }
+    var selectedHitURL: String { get set }
 }
 
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
@@ -27,6 +29,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
 
     var hits: [Hits.HitPresentationModel] = []
     var isFetchingOlderHits: Bool = false
+    var selectedHitURL: String = ""
 
     func grabHits() {
 
@@ -63,14 +66,18 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
                         }
 
                         let response = Hits.FetchHits.Response(hits: self!.hits)
-                        self?.presenter?.presentHits(response: response)
+                        if let isFetchingOlderHits = self?.isFetchingOlderHits, isFetchingOlderHits {
+                            self?.presenter?.presentOlderHits(response: response)
+                        } else {
+                            self?.presenter?.presentHits(response: response)
+                        }
+
                     }
                 }
                 block()
             } else {
                 // Alert the user of the problem fetching hits from Core Data
                 //
-                debugPrint("There's some problem")
             }
         })
     }
@@ -86,5 +93,10 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
                 //
             }
         })
+    }
+
+    func selectHit(request: Hits.Show.Request) {
+        selectedHitURL = request.hit.url
+        presenter?.presentHit()
     }
 }

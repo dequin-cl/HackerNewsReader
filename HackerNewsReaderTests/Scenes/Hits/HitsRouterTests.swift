@@ -40,7 +40,63 @@ class HitsRouterTests: XCTestCase {
     }
 
     // MARK: Tests
+    func testRouteToStoryCallsNavigationAnsPassingData() {
+        /// Given
+        let sut = HitsRouterMock()
+        sut.dataStore = HitsInteractor()
+        sut.viewController = HitsViewController.instantiate(from: .Hits)
+        /// When
+        sut.routeToStoryDetail(segue: nil)
+        /// Then
+        XCTAssertTrue(sut.passDataToStoryDetailGotCalled, "Router should call to pass data")
+        XCTAssertTrue(sut.navigateToStoryDetailGotCalled, "Router should call to navigation")
+    }
 
+    func testNavigateToStoryDetails() {
+        /// Given
+        let mockVC = ViewControllerMock()
+        /// When
+        sut.navigateToStoryDetail(source: mockVC, destination: HitStoryViewController())
+        /// Then
+        XCTAssertTrue(mockVC.showGotCalled, "The navigation should use Show")
+        XCTAssertTrue(mockVC.vcUIViewController is HitStoryViewController, "The navigation should be to a HitStoryViewController")
+
+    }
+
+    func testPassDataToStoryDetails() {
+        /// Given
+        let destinationVC = HitStoryViewController()
+        var destinationDS = destinationVC.router!.dataStore!
+        let hitsInteractor = HitsInteractor()
+        hitsInteractor.selectedHitURL = "TEST"
+        /// When
+        sut.passDataToStoryDetail(source: hitsInteractor, destination: &destinationDS)
+        /// Then
+        XCTAssertNotNil(destinationDS.hitURL, "Should pass the value of the selected hit URL")
+        XCTAssertEqual(destinationDS.hitURL, "TEST", "Should pass the correct value")
+    }
+}
+
+class ViewControllerMock: UIViewController {
+
+    var showGotCalled = false
+    var vcUIViewController: UIViewController?
+    override func show(_ vc: UIViewController, sender: Any?) {
+        showGotCalled = true
+        vcUIViewController = vc
+    }
+}
+
+class HitsRouterMock: HitsRouter {
+    var passDataToStoryDetailGotCalled = false
+    override func passDataToStoryDetail(source: HitsDataStore, destination: inout HitStoryDataStore) {
+        passDataToStoryDetailGotCalled = true
+    }
+
+    var navigateToStoryDetailGotCalled = false
+    override func navigateToStoryDetail(source: UIViewController, destination: HitStoryViewController) {
+        navigateToStoryDetailGotCalled = true
+    }
 }
 
 // swiftlint:enable line_length

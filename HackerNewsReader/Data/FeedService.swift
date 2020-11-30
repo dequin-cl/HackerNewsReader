@@ -53,7 +53,7 @@ extension FeedService {
                 let results = try backgroundContext.fetch(fetchRequest)
                 block(results)
             } catch let error as NSError {
-                print("Fetch error: \(error) description: \(error.userInfo)")
+                debugPrint("Fetch error: \(error) description: \(error.userInfo)")
                 block([])
             }
         }

@@ -7,8 +7,16 @@
 //
 
 @testable import HackerNewsReader
-import Foundation
+import UIKit
 
 class HitsRoutingLogicSpy: NSObject, HitsRoutingLogic, HitsDataPassing {
     var dataStore: HitsDataStore?
+
+    var routeToStoryDetailGotCalled = false
+    var routeToStoryDetailSegue: UIStoryboardSegue?
+    func routeToStoryDetail(segue: UIStoryboardSegue?) {
+        routeToStoryDetailGotCalled = true
+        routeToStoryDetailSegue = segue
+    }
+
 }

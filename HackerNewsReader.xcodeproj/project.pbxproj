@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		2C4B61DA25745BA30074988B /* HitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B61D925745BA30074988B /* HitTableViewCell.swift */; };
 		2C4B61E3257461080074988B /* HitTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B61E2257461080074988B /* HitTableViewCellTests.swift */; };
+		2C659B372574B88D003523CC /* HitStoryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */; };
+		2C659B382574B88D003523CC /* HitStoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */; };
+		2C659B392574B88D003523CC /* HitStoryDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */; };
+		2C659B3A2574B88D003523CC /* HitStoryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */; };
+		2C659B3B2574B88D003523CC /* HitStoryPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */; };
+		2C659B3C2574B88D003523CC /* HitStoryRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */; };
+		2C659B3D2574B88D003523CC /* HitStoryBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */; };
+		2C659B3E2574B88D003523CC /* HitStoryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B352574B88D003523CC /* HitStoryRouterTests.swift */; };
+		2C659B3F2574B88D003523CC /* HitStoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */; };
+		2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C659B482574B8C3003523CC /* HitStory.storyboard */; };
+		2C659B512574B8C3003523CC /* HitStory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C659B492574B8C3003523CC /* HitStory.strings */; };
+		2C659B522574B8C3003523CC /* HitStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */; };
+		2C659B532574B8C3003523CC /* HitStoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */; };
+		2C659B542574B8C3003523CC /* HitStoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */; };
+		2C659B552574B8C3003523CC /* HitStoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4D2574B8C3003523CC /* HitStoryModels.swift */; };
+		2C659B562574B8C3003523CC /* HitStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */; };
+		2C659B572574B8C3003523CC /* HitStoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */; };
 		2C7F49292571067C00EE9B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F49282571067C00EE9B0B /* AppDelegate.swift */; };
 		2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F492A2571067C00EE9B0B /* SceneDelegate.swift */; };
 		2C7F49302571067C00EE9B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7F492E2571067C00EE9B0B /* Main.storyboard */; };
@@ -78,6 +95,23 @@
 /* Begin PBXFileReference section */
 		2C4B61D925745BA30074988B /* HitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTableViewCell.swift; sourceTree = "<group>"; };
 		2C4B61E2257461080074988B /* HitTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTableViewCellTests.swift; sourceTree = "<group>"; };
+		2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryViewControllerTests.swift; sourceTree = "<group>"; };
+		2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryInteractorTests.swift; sourceTree = "<group>"; };
+		2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryWorkerTests.swift; sourceTree = "<group>"; };
+		2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresentationLogicSpy.swift; sourceTree = "<group>"; };
+		2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		2C659B352574B88D003523CC /* HitStoryRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouterTests.swift; sourceTree = "<group>"; };
+		2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenterTests.swift; sourceTree = "<group>"; };
+		2C659B482574B8C3003523CC /* HitStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HitStory.storyboard; sourceTree = "<group>"; };
+		2C659B492574B8C3003523CC /* HitStory.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = HitStory.strings; sourceTree = "<group>"; };
+		2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenter.swift; sourceTree = "<group>"; };
+		2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryWorker.swift; sourceTree = "<group>"; };
+		2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouter.swift; sourceTree = "<group>"; };
+		2C659B4D2574B8C3003523CC /* HitStoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryModels.swift; sourceTree = "<group>"; };
+		2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryViewController.swift; sourceTree = "<group>"; };
+		2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryInteractor.swift; sourceTree = "<group>"; };
 		2C7F49252571067C00EE9B0B /* HackerNewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7F49282571067C00EE9B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7F492A2571067C00EE9B0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +206,45 @@
 				2C4B61E2257461080074988B /* HitTableViewCellTests.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C659B2D2574B875003523CC /* HitStory */ = {
+			isa = PBXGroup;
+			children = (
+				2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */,
+				2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */,
+				2C659B462574B895003523CC /* Spies */,
+				2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */,
+				2C659B352574B88D003523CC /* HitStoryRouterTests.swift */,
+				2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */,
+			);
+			path = HitStory;
+			sourceTree = "<group>";
+		};
+		2C659B462574B895003523CC /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */,
+				2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */,
+				2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */,
+				2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		2C659B472574B8AD003523CC /* HitStory */ = {
+			isa = PBXGroup;
+			children = (
+				2C659B482574B8C3003523CC /* HitStory.storyboard */,
+				2C659B492574B8C3003523CC /* HitStory.strings */,
+				2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */,
+				2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */,
+				2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */,
+				2C659B4D2574B8C3003523CC /* HitStoryModels.swift */,
+				2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */,
+				2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */,
+			);
+			path = HitStory;
 			sourceTree = "<group>";
 		};
 		2C7F491C2571067C00EE9B0B = {
@@ -270,6 +343,7 @@
 		2CAD7C0E2573009100529CF8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2C659B2D2574B875003523CC /* HitStory */,
 				2CAD7C0F2573009B00529CF8 /* Hits */,
 			);
 			path = Scenes;
@@ -313,6 +387,7 @@
 		2CAD7C3A257301EB00529CF8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2C659B472574B8AD003523CC /* HitStory */,
 				2CAD7C3B257301F000529CF8 /* Hits */,
 			);
 			path = Scenes;
@@ -485,6 +560,8 @@
 			files = (
 				2C7F49382571067E00EE9B0B /* LaunchScreen.storyboard in Resources */,
 				2CAD7C452573025E00529CF8 /* Hits.strings in Resources */,
+				2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */,
+				2C659B512574B8C3003523CC /* HitStory.strings in Resources */,
 				2C7F49352571067E00EE9B0B /* Assets.xcassets in Resources */,
 				2CAD7C442573025E00529CF8 /* Hits.storyboard in Resources */,
 				2C7F49302571067C00EE9B0B /* Main.storyboard in Resources */,
@@ -540,8 +617,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAD7C312573011A00529CF8 /* AppStoryboard.swift in Sources */,
+				2C659B552574B8C3003523CC /* HitStoryModels.swift in Sources */,
 				2C7F497C257109FD00EE9B0B /* HitDTO.swift in Sources */,
 				2C7F49C1257134A700EE9B0B /* Hit.swift in Sources */,
+				2C659B572574B8C3003523CC /* HitStoryInteractor.swift in Sources */,
+				2C659B532574B8C3003523CC /* HitStoryWorker.swift in Sources */,
 				2CAD7C362573013A00529CF8 /* UIViewController.swift in Sources */,
 				2CAD7C4B2573025E00529CF8 /* HitsInteractor.swift in Sources */,
 				2C7F49292571067C00EE9B0B /* AppDelegate.swift in Sources */,
@@ -549,12 +629,15 @@
 				2CAD7C482573025E00529CF8 /* HitsRouter.swift in Sources */,
 				2C7F49A7257129A000EE9B0B /* Persistence.swift in Sources */,
 				2CAD7C7125731B9D00529CF8 /* HitsCoreDataWorker.swift in Sources */,
+				2C659B562574B8C3003523CC /* HitStoryViewController.swift in Sources */,
 				2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */,
 				2CAD7C4A2573025E00529CF8 /* HitsViewController.swift in Sources */,
 				2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */,
 				2C7F49332571067C00EE9B0B /* HackerNewsReader.xcdatamodeld in Sources */,
 				2C7F498E2571230000EE9B0B /* FeedDTO.swift in Sources */,
 				2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */,
+				2C659B522574B8C3003523CC /* HitStoryPresenter.swift in Sources */,
+				2C659B542574B8C3003523CC /* HitStoryRouter.swift in Sources */,
 				2C7F49C82571492100EE9B0B /* FeedService.swift in Sources */,
 				2C4B61DA25745BA30074988B /* HitTableViewCell.swift in Sources */,
 			);
@@ -566,18 +649,27 @@
 			files = (
 				2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */,
 				2CAD7C19257300BA00529CF8 /* HitsViewControllerTests.swift in Sources */,
+				2C659B382574B88D003523CC /* HitStoryInteractorTests.swift in Sources */,
+				2C659B3A2574B88D003523CC /* HitStoryWorkerTests.swift in Sources */,
+				2C659B3C2574B88D003523CC /* HitStoryRoutingLogicSpy.swift in Sources */,
+				2C659B3D2574B88D003523CC /* HitStoryBusinessLogicSpy.swift in Sources */,
 				2C7F49BC2571342E00EE9B0B /* HitCoreDataTests.swift in Sources */,
 				2C7F4965257107B900EE9B0B /* HitDTOModelTests.swift in Sources */,
 				2CAD7C1E257300BA00529CF8 /* HitsRoutingLogicSpy.swift in Sources */,
 				2C7F49432571067E00EE9B0B /* HackerNewsReaderTests.swift in Sources */,
 				2CAD7C1B257300BA00529CF8 /* HitsDisplayLogicSpy.swift in Sources */,
 				2CAD7C20257300BA00529CF8 /* HitsRouterTests.swift in Sources */,
+				2C659B372574B88D003523CC /* HitStoryViewControllerTests.swift in Sources */,
 				2CAD7C1D257300BA00529CF8 /* HitsPresentationLogicSpy.swift in Sources */,
 				2CAD7C1C257300BA00529CF8 /* HitsNetworkWorkerTests.swift in Sources */,
+				2C659B3B2574B88D003523CC /* HitStoryPresentationLogicSpy.swift in Sources */,
+				2C659B3F2574B88D003523CC /* HitStoryPresenterTests.swift in Sources */,
 				2C7F498925711B3F00EE9B0B /* FeedDTOModelTests.swift in Sources */,
 				2CAD7C21257300BA00529CF8 /* HitsPresenterTests.swift in Sources */,
+				2C659B3E2574B88D003523CC /* HitStoryRouterTests.swift in Sources */,
 				2C7F49CD2571497100EE9B0B /* FeedServiceTest.swift in Sources */,
 				2CAD7C6C25731B5500529CF8 /* HitsCoreDataWorkerTest.swift in Sources */,
+				2C659B392574B88D003523CC /* HitStoryDisplayLogicSpy.swift in Sources */,
 				2C4B61E3257461080074988B /* HitTableViewCellTests.swift in Sources */,
 				2CAD7C1A257300BA00529CF8 /* HitsInteractorTests.swift in Sources */,
 				2CAD7C1F257300BA00529CF8 /* HitsBusinessLogicSpy.swift in Sources */,
@@ -680,7 +772,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -735,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

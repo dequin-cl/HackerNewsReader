@@ -24,6 +24,12 @@ enum Hits {
         }
     }
 
+    enum Show {
+        struct Request {
+            let hit: HitViewModel
+        }
+    }
+
     struct HitPresentationModel {
         let title: String
         let author: String
@@ -31,9 +37,10 @@ enum Hits {
         let url: String
     }
 
-    struct HitViewModel {
+    struct HitViewModel: Equatable {
         let title: String
         let subTitle: String
+        let url: String
     }
 }
 // swiftlint:enable nesting

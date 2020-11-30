@@ -12,7 +12,7 @@ import UIKit
 enum AppStoryboard: String {
 
     case Hits
-    case Story
+    case HitStory
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

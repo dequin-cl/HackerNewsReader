@@ -96,6 +96,30 @@ class HitsInteractorTests: XCTestCase {
         /// Then
         XCTAssertEqual(sut.hits.count, 2, "Hits Interactor should set the hits in the datasource with the result from the Core data")
     }
+
+    func testGrabOldHitsCallsNetworkWorker() {
+        /// Given
+
+        /// When
+        sut.grabOlderHits(request: Hits.FetchHits.Request(offset: 0))
+        /// Then
+
+        XCTAssertTrue(spyCoreDataWorker.fetchHitsGotCalled, "Hits Interactor should call the core data worker")
+
+        XCTAssertTrue(spyPresenter.presentOlderHitsGotCalled, "Hits Interactor should call the presenter with the full list of fetched hits")
+        XCTAssertEqual(spyPresenter.presentOlderHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
+
+    }
+
+    func testSelectHitShouldSetDataStore() {
+        /// Given
+        let request = Hits.Show.Request(hit: Seeds.HitSamples.hitVMOne)
+        /// When
+        sut.selectHit(request: request)
+        /// Then
+        XCTAssertEqual(sut.selectedHitURL, Seeds.HitSamples.hitVMOne.url, "Should set the URL")
+        XCTAssertTrue(spyPresenter.presentHitGotCalled, "Interactor should call the presenter")
+    }
 }
 
 // swiftlint:enable line_length

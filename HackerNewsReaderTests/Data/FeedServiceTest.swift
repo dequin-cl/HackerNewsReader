@@ -97,7 +97,6 @@ class FeedServiceTest: XCTestCase {
             XCTAssertEqual(hits.count, 1)
 
             if let hit = hits.first {
-                print(hit)
 
                 if let identifier = hit.id {
                     XCTAssertEqual(identifier, hitDTO.objectID)
@@ -261,7 +260,6 @@ class FeedServiceTest: XCTestCase {
         feedService.feed { (hits) in
 
             for index in 0..<hits.count {
-                debugPrint("\(DateFormatter.iso8601withFractionalSeconds.string(from: hits[index].createdAt!)) == \(expectedOrder[index])")
                 let receivedDateTimeInterval = hits[index].createdAt!.timeIntervalSinceReferenceDate
                 let expectedDateTimeInterval = DateFormatter.iso8601withFractionalSeconds.date(from: expectedOrder[index])!.timeIntervalSinceReferenceDate
                 XCTAssertEqual(receivedDateTimeInterval, expectedDateTimeInterval, accuracy: 0.001)

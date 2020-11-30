@@ -22,7 +22,7 @@ class HitTableViewCellTests: XCTestCase {
         /// Given
         let controller = HitsViewController.instantiate(from: .Hits)
         let actualCell = controller.tableView.dequeueReusableCell(withIdentifier: HitTableViewCell.identifier, for: IndexPath(row: 0, section: 0)) as! HitTableViewCell
-        let hitVM = Hits.HitViewModel(title: "Test", subTitle: "Sub Test")
+        let hitVM = Hits.HitViewModel(title: "Test", subTitle: "Sub Test", url: "URL Test")
         /// When
         actualCell.configure(with: hitVM)
         /// Then
