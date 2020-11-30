@@ -60,6 +60,10 @@ class HitsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.refreshControl?.addTarget(self,
+                                       action: #selector(refresh),
+                                       for: UIControl.Event.valueChanged
+        )
         // Assures that we aren't testing
         guard ProcessInfo.processInfo.environment["XCTestSessionIdentifier"] == nil else { return }
         startGrab()
@@ -72,7 +76,10 @@ class HitsViewController: UITableViewController {
         interactor?.grabHits()
     }
 
-    //@IBOutlet weak var nameTextField: UITextField!
+    @objc func refresh(sender: AnyObject) {
+
+        interactor?.grabHits()
+    }
 }
 
 // MARK: - HitsDisplayLogic
@@ -82,6 +89,7 @@ extension HitsViewController: HitsDisplayLogic {
         hits = viewModel.hits
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
 }

@@ -19,7 +19,7 @@ class HitsCoreDataWorker {
 
             for hit in hits {
                 let hitPresentation = Hits.HitPresentationModel(
-                    title: hit.title != nil ? hit.title! : hit.storyTitle!,
+                    title: hit.title != nil ? hit.title! : hit.storyTitle ?? "",
                     author: hit.author ?? "No author",
                     createdAt: hit.createdAt ?? Date(),
                     url: hit.url != nil ? hit.url! : hit.storyURL ?? "")

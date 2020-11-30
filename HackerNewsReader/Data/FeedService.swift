@@ -39,13 +39,14 @@ extension FeedService {
 
     /// List the hits on Core Data
     /// - Parameter block: Delivers a list of Hits Core Data Managed Object
-    func feed(limit: Int = 20, _ block: @escaping ([Hit]) -> Void) {
+    func feed(limit: Int = 20, offset: Int = 0, _ block: @escaping ([Hit]) -> Void) {
         let fetchRequest: NSFetchRequest<Hit> = Hit.fetchRequest()
         fetchRequest.propertiesToFetch = ["author", "createdAt", "storyTitle", "storyURL", "title", "url"]
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "createdAt", ascending: false)
         ]
         fetchRequest.fetchLimit = limit
+        fetchRequest.fetchOffset = offset
 
         persistenceController.container.performBackgroundTask { (backgroundContext) in
             do {
@@ -64,14 +65,18 @@ extension FeedService {
 
         persistenceController.container.performBackgroundTask { (backgroundContext) in
 
-            hitsDTO.forEach { (hitDTO) in
-                _ = Hit.from(hitDTO, in: backgroundContext)
-            }
-
             backgroundContext.perform {
-                do {
-                    try backgroundContext.save()
-                } catch { }
+
+                for hitDTO in hitsDTO {
+                    _ = Hit.from(hitDTO, in: backgroundContext)
+
+                    do {
+                        try backgroundContext.save()
+                    } catch let error as NSError {
+                        debugPrint("\(hitDTO.title ?? "") \(hitDTO.storyTitle ?? "")")
+                        debugPrint(error.code)
+                    }
+                }
             }
         }
     }

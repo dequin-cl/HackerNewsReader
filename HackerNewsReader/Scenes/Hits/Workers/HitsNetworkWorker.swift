@@ -15,7 +15,7 @@ public struct Configuration {
         private init() {}
 
         // https://hn.algolia.com/api
-        static let byDate =  "https://hn.algolia.com/api/v1/search_by_date?query=ios"
+        static let byDate =  "https://hn.algolia.com/api/v1/search_by_date?query=ios&tags=story"
     }
 }
 
@@ -31,7 +31,11 @@ class HitsNetworkWorker {
             if error == nil {
                 if let safeData = data {
                     do {
+                        debugPrint("----")
+                        debugPrint(String(data: safeData, encoding: .utf8) ?? "Noup")
+                        debugPrint("----")
                         let results = try FeedDTO(data: safeData)
+                        debugPrint(results)
                         block(results.hits, nil)
                     } catch {
                         print(error)
