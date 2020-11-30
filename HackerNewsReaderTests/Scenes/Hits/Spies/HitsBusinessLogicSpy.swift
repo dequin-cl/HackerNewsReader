@@ -13,4 +13,11 @@ class HitsBusinessLogicSpy: HitsBusinessLogic {
     func grabHits() {
         grabHitsGotCalled = true
     }
+
+    var grabOlderHitsGotCalled = false
+    var grabOlderHitsRequest: Hits.FetchHits.Request?
+    func grabOlderHits(request: Hits.FetchHits.Request) {
+        grabOlderHitsGotCalled = true
+        grabOlderHitsRequest = request
+    }
 }

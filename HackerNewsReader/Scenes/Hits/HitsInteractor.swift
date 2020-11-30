@@ -10,6 +10,7 @@ import UIKit
 
 protocol HitsBusinessLogic {
     func grabHits()
+    func grabOlderHits(request: Hits.FetchHits.Request)
 }
 
 protocol HitsDataStore {
@@ -21,7 +22,8 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     var workerNetwork: HitsNetworkWorker = HitsNetworkWorker()
     var workerCoreData: HitsCoreDataWorker = HitsCoreDataWorker()
 
-    private let feedService = FeedService()
+    private lazy var feedService: FeedService = { FeedService() }()
+    private var isFetchingOlderHits: Bool = false
 
     var hits: [Hits.HitPresentationModel] = []
 
@@ -36,19 +38,38 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
         }
     }
 
-    private func grabFromCoreData(block: @escaping () -> Void) {
-        workerCoreData.fetchHits(block: { [weak self] (presentationModelHits, error) in
+    func grabOlderHits(request: Hits.FetchHits.Request) {
+        guard !isFetchingOlderHits else {
+            return
+        }
+
+        isFetchingOlderHits = true
+        grabFromCoreData(offset: request.offset) {
+            self.isFetchingOlderHits = false
+        }
+    }
+
+    private func grabFromCoreData(offset: Int = 0, block: @escaping () -> Void = {}) {
+        workerCoreData.fetchHits(offset: offset, block: { [weak self] (presentationModelHits, error) in
             if error == nil {
 
                 if let datasourceHits = presentationModelHits {
-                    self?.hits = datasourceHits
-                    let response = Hits.FetchHits.Response(hits: datasourceHits)
-                    self?.presenter?.presentHits(response: response)
+                    if self != nil {
+                        if offset == 0 {
+                            self?.hits = datasourceHits
+                        } else {
+                            self?.hits.append(contentsOf: datasourceHits)
+                        }
+
+                        let response = Hits.FetchHits.Response(hits: self!.hits)
+                        self?.presenter?.presentHits(response: response)
+                    }
                 }
                 block()
             } else {
                 // Alert the user of the problem fetching hits from Core Data
                 //
+                debugPrint("There's some problem")
             }
         })
     }

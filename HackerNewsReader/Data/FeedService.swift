@@ -72,10 +72,13 @@ extension FeedService {
 
                     do {
                         try backgroundContext.save()
-                    } catch let error as NSError {
+                    } catch {
                         debugPrint("\(hitDTO.title ?? "") \(hitDTO.storyTitle ?? "")")
-                        debugPrint(error.code)
                     }
+                }
+
+                DispatchQueue.main.async {
+                    block()
                 }
             }
         }

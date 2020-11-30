@@ -13,6 +13,9 @@ enum Hits {
     // MARK: Use cases
 
     enum FetchHits {
+        struct Request {
+            let offset: Int
+        }
         struct Response {
             let hits: [HitPresentationModel]
         }

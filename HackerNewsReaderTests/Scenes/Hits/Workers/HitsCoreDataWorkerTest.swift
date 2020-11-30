@@ -64,15 +64,12 @@ class HitsCoreDataWorkerTest: XCTestCase {
         let feedDTO = try FeedDTO(data: data)
         let feedService = FeedService(persistenceController: persistanceController)
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
+        let expectationProcess = expectation(description: "Process FeedDTO")
 
-        feedService.process(feedDTO.hits)
-
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
+        feedService.process(feedDTO.hits) {
+            expectationProcess.fulfill()
         }
+        wait(for: [expectationProcess], timeout: 2.0)
 
         /// When
 

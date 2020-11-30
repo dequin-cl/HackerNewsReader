@@ -32,7 +32,7 @@ final class PersistenceController {
             }
 
             self.container.viewContext.automaticallyMergesChangesFromParent = true
-            self.container.viewContext.mergePolicy = NSMergePolicy.error
+            self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
 
         })
     }

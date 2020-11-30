@@ -131,7 +131,9 @@ class FeedServiceTest: XCTestCase {
         }
 
         feedService.feed { (hits) in
-            XCTAssertEqual(hits.count, feedDTO.hits.count)
+            DispatchQueue.main.async {
+                XCTAssertEqual(hits.count, feedDTO.hits.count)
+            }
         }
     }
 
@@ -160,7 +162,9 @@ class FeedServiceTest: XCTestCase {
         }
 
         feedService.feed(limit: 2) { (hits) in
-            XCTAssertEqual(hits.count, 2)
+            DispatchQueue.main.async {
+                XCTAssertEqual(hits.count, 2)
+            }
         }
     }
 
@@ -181,23 +185,23 @@ class FeedServiceTest: XCTestCase {
         }
 
         /// When
-        feedService.process(feedDTO.hits)
+        feedService.process(feedDTO.hits) {
+
+        }
         /// Then
 
         waitForExpectations(timeout: 2.0) { error in
             XCTAssertNil(error, "Save did not occur")
         }
 
-        expectation(forNotification: .NSManagedObjectContextWillSave, object: nil) { _ in
-            return true
-        }
-
+        let expectationProcess = expectation(description: "Second process")
         /// When
-        feedService.process(feedDTO.hits)
+        feedService.process(feedDTO.hits) {
+            expectationProcess.fulfill()
+        }
+        wait(for: [expectationProcess], timeout: 2.0)
+
         /// Then
-
-        waitForExpectations(timeout: 2.0) { _ in }
-
         let expectation = XCTestExpectation(description: "Fetching hits")
 
         feedService.feed { (hits) in
@@ -232,29 +236,32 @@ class FeedServiceTest: XCTestCase {
 
         let feedService = FeedService(persistenceController: persistanceController)
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
-
         let expectedOrder = ["2020-11-27T23:09:43.000Z",
                              "2020-11-26T23:00:24.000Z",
                              "2020-11-26T23:00:16.000Z",
                              "2020-11-21T23:09:28.000Z"]
-        /// When
-        feedService.process(feedDTO.hits)
-        feedService.process(feedDTOSecond.hits)
-        /// Then
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
+        /// When
+        feedService.process(feedDTO.hits) {
+            self.expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
+                return true
+            }
+
+            feedService.process(feedDTOSecond.hits)
+
+            self.waitForExpectations(timeout: 2.0) { error in
+                XCTAssertNil(error, "Save did not occur")
+            }
         }
+
+        /// Then
 
         let expectation = XCTestExpectation(description: "Fetching hits")
 
         feedService.feed { (hits) in
 
             for index in 0..<hits.count {
-
+                debugPrint("\(DateFormatter.iso8601withFractionalSeconds.string(from: hits[index].createdAt!)) == \(expectedOrder[index])")
                 let receivedDateTimeInterval = hits[index].createdAt!.timeIntervalSinceReferenceDate
                 let expectedDateTimeInterval = DateFormatter.iso8601withFractionalSeconds.date(from: expectedOrder[index])!.timeIntervalSinceReferenceDate
                 XCTAssertEqual(receivedDateTimeInterval, expectedDateTimeInterval, accuracy: 0.001)

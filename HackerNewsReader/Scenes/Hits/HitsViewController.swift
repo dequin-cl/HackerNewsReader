@@ -90,6 +90,7 @@ extension HitsViewController: HitsDisplayLogic {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
+            self.tableView.tableFooterView = nil
         }
     }
 }
@@ -112,5 +113,33 @@ extension HitsViewController {
         cell.configure(with: hits[indexPath.row])
 
         return cell
+    }
+}
+
+extension HitsViewController {
+    func createSpinnerForFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(origin: .zero,
+                                              size: CGSize(width: self.view.frame.size.width,
+                                                           height: 100))
+        )
+
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+
+        return footerView
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !hits.isEmpty else {
+            return
+        }
+        let position = scrollView.contentOffset.y
+
+        if position > tableView.contentSize.height - 100 - scrollView.frame.size.height {
+            self.tableView.tableFooterView = createSpinnerForFooter()
+            let request = Hits.FetchHits.Request(offset: hits.count)
+            interactor?.grabOlderHits(request: request)
+        }
     }
 }

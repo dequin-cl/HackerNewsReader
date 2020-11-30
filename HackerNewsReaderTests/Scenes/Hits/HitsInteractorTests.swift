@@ -66,7 +66,7 @@ class HitsInteractorTests: XCTestCase {
 
     class HitsCoreDataWorkerSpy: HitsCoreDataWorker {
         var fetchHitsGotCalled = false
-        override func fetchHits(persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
+        override func fetchHits(offset: Int = 0, persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
             fetchHitsGotCalled = true
 
             block(Seeds.HitSamples.hitsPresentation, nil)
