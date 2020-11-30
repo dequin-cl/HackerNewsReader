@@ -7,6 +7,14 @@
 //
 
 // swiftlint:disable nesting
+enum HitStoryStrings: String, CaseIterable, Localizable {
+    var tableName: String {
+        return "HitStory"
+    }
+
+    case NotSecure
+}
+
 enum HitStory {
 
     enum ShowStory {
@@ -22,7 +30,7 @@ enum HitStory {
 
     enum Scene {
         struct Response {
-            let title: String?
+            let title: Localizable?
             let titleImageName: String?
         }
         struct ViewModel {

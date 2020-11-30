@@ -29,7 +29,7 @@ class HitStoryInteractor: HitStoryBusinessLogic, HitStoryDataStore {
         if hitURL.starts(with: "https") {
             presenter?.presentTitle(response: HitStory.Scene.Response(title: nil, titleImageName: "lock"))
         } else {
-            presenter?.presentTitle(response: HitStory.Scene.Response(title: "Not Secure", titleImageName: nil))
+            presenter?.presentTitle(response: HitStory.Scene.Response(title: HitStoryStrings.NotSecure, titleImageName: nil))
 
         }
     }

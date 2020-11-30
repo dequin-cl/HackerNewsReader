@@ -19,7 +19,6 @@
 		2C659B3E2574B88D003523CC /* HitStoryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B352574B88D003523CC /* HitStoryRouterTests.swift */; };
 		2C659B3F2574B88D003523CC /* HitStoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */; };
 		2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C659B482574B8C3003523CC /* HitStory.storyboard */; };
-		2C659B512574B8C3003523CC /* HitStory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C659B492574B8C3003523CC /* HitStory.strings */; };
 		2C659B522574B8C3003523CC /* HitStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */; };
 		2C659B532574B8C3003523CC /* HitStoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */; };
 		2C659B542574B8C3003523CC /* HitStoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */; };
@@ -59,7 +58,6 @@
 		2CAD7C312573011A00529CF8 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C302573011A00529CF8 /* AppStoryboard.swift */; };
 		2CAD7C362573013A00529CF8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C352573013A00529CF8 /* UIViewController.swift */; };
 		2CAD7C442573025E00529CF8 /* Hits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3C2573025E00529CF8 /* Hits.storyboard */; };
-		2CAD7C452573025E00529CF8 /* Hits.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3D2573025E00529CF8 /* Hits.strings */; };
 		2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */; };
 		2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C3F2573025E00529CF8 /* HitsNetworkWorker.swift */; };
 		2CAD7C482573025E00529CF8 /* HitsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C402573025E00529CF8 /* HitsRouter.swift */; };
@@ -73,6 +71,10 @@
 		2CAD7C8D2573376C00529CF8 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C8C2573376C00529CF8 /* Seeds.swift */; };
 		2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */; };
 		2CC822C82572DF4D004ACE8E /* first.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CC822C72572DF4D004ACE8E /* first.json */; };
+		2CD31C262574E25800428237 /* HitStory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C282574E25800428237 /* HitStory.strings */; };
+		2CD31C2C2574E26100428237 /* Hits.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C2E2574E26100428237 /* Hits.strings */; };
+		2CD31C3B2574E31700428237 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD31C3A2574E31700428237 /* String.swift */; };
+		2CD31C402574E65A00428237 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C3F2574E65A00428237 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +107,6 @@
 		2C659B352574B88D003523CC /* HitStoryRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouterTests.swift; sourceTree = "<group>"; };
 		2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenterTests.swift; sourceTree = "<group>"; };
 		2C659B482574B8C3003523CC /* HitStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HitStory.storyboard; sourceTree = "<group>"; };
-		2C659B492574B8C3003523CC /* HitStory.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = HitStory.strings; sourceTree = "<group>"; };
 		2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenter.swift; sourceTree = "<group>"; };
 		2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryWorker.swift; sourceTree = "<group>"; };
 		2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouter.swift; sourceTree = "<group>"; };
@@ -150,7 +151,6 @@
 		2CAD7C302573011A00529CF8 /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		2CAD7C352573013A00529CF8 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2CAD7C3C2573025E00529CF8 /* Hits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hits.storyboard; sourceTree = "<group>"; };
-		2CAD7C3D2573025E00529CF8 /* Hits.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Hits.strings; sourceTree = "<group>"; };
 		2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsPresenter.swift; sourceTree = "<group>"; };
 		2CAD7C3F2573025E00529CF8 /* HitsNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsNetworkWorker.swift; sourceTree = "<group>"; };
 		2CAD7C402573025E00529CF8 /* HitsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitsRouter.swift; sourceTree = "<group>"; };
@@ -165,6 +165,12 @@
 		2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2CC822C72572DF4D004ACE8E /* first.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = first.json; sourceTree = "<group>"; };
 		2CC822CF2572DF65004ACE8E /* second.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = second.json; sourceTree = "<group>"; };
+		2CD31C272574E25800428237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HitStory.strings; sourceTree = "<group>"; };
+		2CD31C2D2574E26100428237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Hits.strings; sourceTree = "<group>"; };
+		2CD31C322574E27400428237 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/HitStory.strings"; sourceTree = "<group>"; };
+		2CD31C362574E27400428237 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Hits.strings"; sourceTree = "<group>"; };
+		2CD31C3A2574E31700428237 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2CD31C3F2574E65A00428237 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				2C659B482574B8C3003523CC /* HitStory.storyboard */,
-				2C659B492574B8C3003523CC /* HitStory.strings */,
+				2CD31C282574E25800428237 /* HitStory.strings */,
 				2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */,
 				2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */,
 				2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */,
@@ -250,6 +256,7 @@
 		2C7F491C2571067C00EE9B0B = {
 			isa = PBXGroup;
 			children = (
+				2CD31C3F2574E65A00428237 /* README.md */,
 				2C7F49272571067C00EE9B0B /* HackerNewsReader */,
 				2C7F49412571067E00EE9B0B /* HackerNewsReaderTests */,
 				2C7F494C2571067E00EE9B0B /* HackerNewsReaderUITests */,
@@ -378,6 +385,7 @@
 		2CAD7C2F2573011400529CF8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2CD31C3A2574E31700428237 /* String.swift */,
 				2CAD7C352573013A00529CF8 /* UIViewController.swift */,
 				2CAD7C302573011A00529CF8 /* AppStoryboard.swift */,
 			);
@@ -398,7 +406,7 @@
 			children = (
 				2C4B61D825745B8C0074988B /* Cells */,
 				2CAD7C3C2573025E00529CF8 /* Hits.storyboard */,
-				2CAD7C3D2573025E00529CF8 /* Hits.strings */,
+				2CD31C2E2574E26100428237 /* Hits.strings */,
 				2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */,
 				2CAD7C7F25731CE400529CF8 /* Workers */,
 				2CAD7C402573025E00529CF8 /* HitsRouter.swift */,
@@ -540,6 +548,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = 2C7F491C2571067C00EE9B0B;
 			productRefGroup = 2C7F49262571067C00EE9B0B /* Products */;
@@ -559,11 +568,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7F49382571067E00EE9B0B /* LaunchScreen.storyboard in Resources */,
-				2CAD7C452573025E00529CF8 /* Hits.strings in Resources */,
+				2CD31C2C2574E26100428237 /* Hits.strings in Resources */,
 				2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */,
-				2C659B512574B8C3003523CC /* HitStory.strings in Resources */,
+				2CD31C262574E25800428237 /* HitStory.strings in Resources */,
 				2C7F49352571067E00EE9B0B /* Assets.xcassets in Resources */,
 				2CAD7C442573025E00529CF8 /* Hits.storyboard in Resources */,
+				2CD31C402574E65A00428237 /* README.md in Resources */,
 				2C7F49302571067C00EE9B0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +643,7 @@
 				2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */,
 				2CAD7C4A2573025E00529CF8 /* HitsViewController.swift in Sources */,
 				2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */,
+				2CD31C3B2574E31700428237 /* String.swift in Sources */,
 				2C7F49332571067C00EE9B0B /* HackerNewsReader.xcdatamodeld in Sources */,
 				2C7F498E2571230000EE9B0B /* FeedDTO.swift in Sources */,
 				2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */,
@@ -718,6 +729,24 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		2CD31C282574E25800428237 /* HitStory.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD31C272574E25800428237 /* en */,
+				2CD31C322574E27400428237 /* es-419 */,
+			);
+			name = HitStory.strings;
+			sourceTree = "<group>";
+		};
+		2CD31C2E2574E26100428237 /* Hits.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CD31C2D2574E26100428237 /* en */,
+				2CD31C362574E27400428237 /* es-419 */,
+			);
+			name = Hits.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -725,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -786,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

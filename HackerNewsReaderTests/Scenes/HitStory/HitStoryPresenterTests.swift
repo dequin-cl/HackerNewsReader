@@ -67,7 +67,7 @@ class HitStoryPresenterTests: XCTestCase {
 
     func testPresentSceneTitle() {
         /// Given
-        let response = HitStory.Scene.Response(title: "Non secure", titleImageName: nil)
+        let response = HitStory.Scene.Response(title: HitStoryStrings.NotSecure, titleImageName: nil)
         /// When
         sut.presentTitle(response: response)
         /// Then

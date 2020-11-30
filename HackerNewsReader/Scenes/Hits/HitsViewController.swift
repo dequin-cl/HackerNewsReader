@@ -75,6 +75,7 @@ class HitsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = HitsStrings.Welcome.localized
 
         self.refreshControl?.addTarget(self,
                                        action: #selector(refresh),

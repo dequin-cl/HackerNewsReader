@@ -23,7 +23,7 @@ class HitStoryPresenter: HitStoryPresentationLogic {
     }
 
     func presentTitle(response: HitStory.Scene.Response) {
-        let viewModel = HitStory.Scene.ViewModel(title: response.title,
+        let viewModel = HitStory.Scene.ViewModel(title: response.title?.localized,
                                                  titleImageName: response.titleImageName)
         viewController?.setSceneTitle(viewModel: viewModel)
     }

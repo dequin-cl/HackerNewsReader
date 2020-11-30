@@ -8,6 +8,14 @@
 
 import UIKit
 
+enum HitsStrings: String, CaseIterable, Localizable {
+    var tableName: String {
+        return "Hits"
+    }
+
+    case Welcome
+}
+
 // swiftlint:disable nesting
 enum Hits {
     // MARK: Use cases
