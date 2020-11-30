@@ -27,8 +27,31 @@ class HitsCoreDataWorker {
 
                 hitsPresentation.append(hitPresentation)
             }
-
             block(hitsPresentation, nil)
+        }
+    }
+
+    func  deleteHit(url: String,
+                    persistenceController: PersistenceController = PersistenceController.shared,
+                    block: @escaping () -> Void) {
+
+        let fetchRequest: NSFetchRequest<Hit> = Hit.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "url == %@ || storyURL == %@", url, url)
+
+        persistenceController.container.viewContext.perform {
+            do {
+                let results = try persistenceController.container.viewContext.fetch(fetchRequest)
+                results.first?.isUserDeleted = true
+                do {
+                    try persistenceController.container.viewContext.save()
+                } catch {
+                    debugPrint(error)
+                }
+                block()
+
+            } catch let error as NSError {
+                debugPrint("Fetch error: \(error) description: \(error.userInfo)")
+            }
         }
     }
 }

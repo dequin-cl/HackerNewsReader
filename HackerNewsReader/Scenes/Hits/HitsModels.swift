@@ -38,6 +38,19 @@ enum Hits {
         }
     }
 
+    enum Delete {
+        struct Request {
+            let hit: HitViewModel
+            let row: Int
+        }
+        struct Response {
+            let row: Int
+        }
+        struct ViewModel {
+            let row: Int
+        }
+    }
+
     struct HitPresentationModel {
         let title: String
         let author: String

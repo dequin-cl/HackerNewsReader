@@ -71,6 +71,17 @@ class HitsInteractorTests: XCTestCase {
 
             block(Seeds.HitSamples.hitsPresentation, nil)
         }
+
+        var deleteHitGotCalled = false
+        var deleteHitURL: String?
+        var deleteBlock:(() -> Void)?
+        override func deleteHit(url: String, persistenceController: PersistenceController = PersistenceController.shared, block: @escaping () -> Void) {
+            deleteHitGotCalled = true
+            deleteHitURL = url
+            deleteBlock = block
+
+            block()
+        }
     }
 
     // MARK: Tests
@@ -119,6 +130,35 @@ class HitsInteractorTests: XCTestCase {
         /// Then
         XCTAssertEqual(sut.selectedHitURL, Seeds.HitSamples.hitVMOne.url, "Should set the URL")
         XCTAssertTrue(spyPresenter.presentHitGotCalled, "Interactor should call the presenter")
+    }
+
+    func testDeleteHit() {
+        let sut = HitsInteractorMock()
+        sut.workerCoreData = spyCoreDataWorker
+        sut.presenter = spyPresenter
+        sut.hits = Seeds.HitSamples.hitsPresentation
+        /// Given
+        let request = Hits.Delete.Request(hit: Seeds.HitSamples.hitVMTwo, row: 1)
+        /// When
+        sut.deleteHit(request: request)
+        /// Then
+        XCTAssertEqual(sut.hits.count, 1)
+        let exists = sut.hits.contains { (hit) -> Bool in
+            hit.url == Seeds.HitSamples.hitVMTwo.url
+        }
+
+        XCTAssertFalse(exists)
+        XCTAssertTrue(spyCoreDataWorker.deleteHitGotCalled, "Should call the worker to delete")
+
+        XCTAssertTrue(spyPresenter.deleteHitGotCalled, "Should call the presenter")
+    }
+}
+
+class HitsInteractorMock: HitsInteractor {
+
+    var grabHitsGotCalled = false
+    override func grabHits() {
+        grabHitsGotCalled = true
     }
 }
 

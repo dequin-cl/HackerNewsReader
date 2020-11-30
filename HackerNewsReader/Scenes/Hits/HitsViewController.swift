@@ -12,6 +12,7 @@ protocol HitsDisplayLogic: class {
     func displayHits(viewModel: Hits.FetchHits.ViewModel)
     func displayOlderHits(viewModel: Hits.FetchHits.ViewModel)
     func displaySelectedHitStory()
+    func updateHitsWithDeletion(viewModel: Hits.Delete.ViewModel)
 }
 
 class HitsViewController: UITableViewController {
@@ -167,6 +168,20 @@ extension HitsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request = Hits.Show.Request(hit: hits[indexPath.row])
         interactor?.selectHit(request: request)
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let request = Hits.Delete.Request(hit: hits[indexPath.row],
+                                              row: indexPath.row)
+            interactor?.deleteHit(request: request)
+        }
+    }
+
+    func updateHitsWithDeletion(viewModel: Hits.Delete.ViewModel) {
+        let row = viewModel.row
+        hits.remove(at: row)
+        tableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
     }
 }
 

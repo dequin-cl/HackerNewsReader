@@ -85,7 +85,7 @@ class HitStoryInteractorTests: XCTestCase {
         /// Then
         XCTAssertTrue(spyPresenter.presentTitleGotCalled, "Interactor should call the presenter")
         XCTAssertNil(spyPresenter.presentTitleResponse?.titleImageName, "If the protocol is insecure don't send the image")
-        XCTAssertEqual(spyPresenter.presentTitleResponse?.title, "Not Secure", "Interactor should call the presenter with the URL grabbed from the hitURL")
+        XCTAssertEqual(spyPresenter.presentTitleResponse?.title?.localized, HitStoryStrings.NotSecure.localized, "Interactor should call the presenter with the URL grabbed from the hitURL")
     }
 }
 

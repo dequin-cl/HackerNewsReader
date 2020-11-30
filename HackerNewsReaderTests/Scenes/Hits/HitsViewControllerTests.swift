@@ -131,6 +131,32 @@ class HitsViewControllerTests: XCTestCase {
         XCTAssertEqual(spyInteractor.selectHitRequest?.hit, Seeds.HitSamples.hitsVM.first, "As we give row 0, should be the correct Hit the one sent to the interactor")
     }
 
+    func testDeleteOnRowCallsInteractor() {
+        /// Given
+        sut.hits = Seeds.HitSamples.hitsVM
+        /// When
+        sut.tableView(sut.tableView, commit: .delete, forRowAt: IndexPath(row: 0, section: 0))
+        /// Then
+        XCTAssertTrue(spyInteractor.deleteHitGotCalled, "VC should call the interactor to delete")
+        XCTAssertEqual(spyInteractor.deleteHitRequest?.row, 0)
+        XCTAssertEqual(spyInteractor.deleteHitRequest?.hit, Seeds.HitSamples.hitVMOne)
+    }
+
+    func testUpdateWithDeletion() {
+        /// Given
+        sut.hits = Seeds.HitSamples.hitsVM
+        let mockTableView = UITableViewMock()
+        sut.tableView = mockTableView
+        let vm = Hits.Delete.ViewModel(row: 0)
+        /// When
+        sut.updateHitsWithDeletion(viewModel: vm)
+        /// Then
+        XCTAssertEqual(sut.hits.count, 1)
+        XCTAssertTrue(mockTableView.deleteRowsGotCalled, "Should call delete")
+        XCTAssertEqual(mockTableView.deleteRowsIndexPath?.count, 1)
+        XCTAssertEqual(mockTableView.deleteRowsIndexPath?.first?.row, 0)
+        XCTAssertEqual(mockTableView.deleteRowsAnimation, UITableView.RowAnimation.automatic)
+    }
 }
 
 class UITableViewMock: UITableView {
@@ -139,6 +165,15 @@ class UITableViewMock: UITableView {
     override func reloadData() {
         reloadDataGotCalled = true
         block()
+    }
+
+    var deleteRowsGotCalled = false
+    var deleteRowsIndexPath: [IndexPath]?
+    var deleteRowsAnimation: UITableView.RowAnimation?
+    override func deleteRows(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        deleteRowsGotCalled = true
+        deleteRowsIndexPath = indexPaths
+        deleteRowsAnimation = animation
     }
 }
 

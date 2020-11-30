@@ -27,4 +27,11 @@ class HitsBusinessLogicSpy: HitsBusinessLogic {
         selectHitGotCalled = true
         selectHitRequest = request
     }
+
+    var deleteHitGotCalled = false
+    var deleteHitRequest: Hits.Delete.Request?
+    func deleteHit(request: Hits.Delete.Request) {
+        deleteHitGotCalled = true
+        deleteHitRequest = request
+    }
 }

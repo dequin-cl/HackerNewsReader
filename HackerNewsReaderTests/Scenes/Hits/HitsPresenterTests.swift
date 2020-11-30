@@ -71,6 +71,16 @@ class HitsPresenterTests: XCTestCase {
         /// Then
         XCTAssertTrue(spyViewController.displaySelectedHitStoryGotCalled, "Presenter should call the VC to display the Story")
     }
+
+    func testDeleteCallsVC() {
+        /// Given
+        let response = Hits.Delete.Response(row: 0)
+        /// When
+        sut.deleteHit(response: response)
+        /// Then
+        XCTAssertTrue(spyViewController.updateHitsWithDeletionGotCalled, "Presenter should call the vc")
+        XCTAssertEqual(spyViewController.updateHitsWithDeletionViewModel?.row, 0)
+    }
 }
 
 // swiftlint:enable line_length

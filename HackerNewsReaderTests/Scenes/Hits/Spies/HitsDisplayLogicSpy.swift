@@ -28,4 +28,11 @@ class HitsDisplayLogicSpy: HitsDisplayLogic {
     func displaySelectedHitStory() {
         displaySelectedHitStoryGotCalled = true
     }
+
+    var updateHitsWithDeletionGotCalled = false
+    var updateHitsWithDeletionViewModel: Hits.Delete.ViewModel?
+    func updateHitsWithDeletion(viewModel: Hits.Delete.ViewModel) {
+        updateHitsWithDeletionGotCalled = true
+        updateHitsWithDeletionViewModel = viewModel
+    }
 }

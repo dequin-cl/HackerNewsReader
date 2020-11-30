@@ -45,6 +45,7 @@ extension FeedService {
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "createdAt", ascending: false)
         ]
+        fetchRequest.predicate = NSPredicate(format: "isUserDeleted == %@", NSNumber(value: false))
         fetchRequest.fetchLimit = limit
         fetchRequest.fetchOffset = offset
 

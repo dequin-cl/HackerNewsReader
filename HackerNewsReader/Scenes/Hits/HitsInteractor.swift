@@ -12,6 +12,7 @@ protocol HitsBusinessLogic {
     func grabHits()
     func grabOlderHits(request: Hits.FetchHits.Request)
     func selectHit(request: Hits.Show.Request)
+    func deleteHit(request: Hits.Delete.Request)
 }
 
 protocol HitsDataStore {
@@ -98,5 +99,15 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     func selectHit(request: Hits.Show.Request) {
         selectedHitURL = request.hit.url
         presenter?.presentHit()
+    }
+
+    func deleteHit(request: Hits.Delete.Request) {
+
+        workerCoreData.deleteHit(url: request.hit.url) {
+
+            self.hits.remove(at: request.row)
+            let response = Hits.Delete.Response(row: request.row)
+            self.presenter?.deleteHit(response: response)
+        }
     }
 }

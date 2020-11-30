@@ -27,4 +27,11 @@ class HitsPresentationLogicSpy: HitsPresentationLogic {
     func presentHit() {
         presentHitGotCalled = true
     }
+
+    var deleteHitGotCalled = false
+    var deleteHitResponse: Hits.Delete.Response?
+    func deleteHit(response: Hits.Delete.Response) {
+        deleteHitGotCalled = true
+        deleteHitResponse = response
+    }
 }

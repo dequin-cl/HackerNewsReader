@@ -39,7 +39,7 @@ extension Seeds {
                                       title: "Title 1",
                                       createdAt: Date(),
                                       objectID: "1",
-                                      url: "http://localhost/1",
+                                      url: "https://usefathom.com/blog/ddos-attack",
                                       storyURL: nil)
         static let hitDTOTwo = HitDTO(author: "Author 2",
                                       storyTitle: "Story Title 2",

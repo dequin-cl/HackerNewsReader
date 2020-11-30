@@ -12,6 +12,7 @@ protocol HitsPresentationLogic {
     func presentHits(response: Hits.FetchHits.Response)
     func presentOlderHits(response: Hits.FetchHits.Response)
     func presentHit()
+    func deleteHit(response: Hits.Delete.Response)
 }
 
 class HitsPresenter: HitsPresentationLogic {
@@ -56,4 +57,8 @@ class HitsPresenter: HitsPresentationLogic {
         viewController?.displaySelectedHitStory()
     }
 
+    func deleteHit(response: Hits.Delete.Response) {
+        let viewModel = Hits.Delete.ViewModel(row: response.row)
+        viewController?.updateHitsWithDeletion(viewModel: viewModel)
+    }
 }
