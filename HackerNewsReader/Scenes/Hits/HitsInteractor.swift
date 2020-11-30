@@ -15,6 +15,7 @@ protocol HitsBusinessLogic {
 
 protocol HitsDataStore {
     var hits: [Hits.HitPresentationModel] { get }
+    var isFetchingOlderHits: Bool { get set }
 }
 
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
@@ -23,9 +24,9 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     var workerCoreData: HitsCoreDataWorker = HitsCoreDataWorker()
 
     private lazy var feedService: FeedService = { FeedService() }()
-    private var isFetchingOlderHits: Bool = false
 
     var hits: [Hits.HitPresentationModel] = []
+    var isFetchingOlderHits: Bool = false
 
     func grabHits() {
 

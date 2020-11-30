@@ -124,9 +124,9 @@ extension HitsViewController {
         )
 
         let spinner = UIActivityIndicatorView()
-        spinner.center = footerView.center
+        spinner.startAnimating()
         footerView.addSubview(spinner)
-
+        spinner.center = footerView.center
         return footerView
     }
 
@@ -134,12 +134,21 @@ extension HitsViewController {
         guard !hits.isEmpty else {
             return
         }
+
+        guard let isFetchingOlderHits = router?.dataStore?.isFetchingOlderHits, !isFetchingOlderHits else {
+            return
+        }
+
         let position = scrollView.contentOffset.y
 
         if position > tableView.contentSize.height - 100 - scrollView.frame.size.height {
             self.tableView.tableFooterView = createSpinnerForFooter()
-            let request = Hits.FetchHits.Request(offset: hits.count)
-            interactor?.grabOlderHits(request: request)
+
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1) {  [self] in
+                
+                let request = Hits.FetchHits.Request(offset: hits.count)
+                self.interactor?.grabOlderHits(request: request)
+            }
         }
     }
 }
