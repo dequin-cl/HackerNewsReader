@@ -13,6 +13,7 @@ protocol HitsDisplayLogic: class {
     func displayOlderHits(viewModel: Hits.FetchHits.ViewModel)
     func displaySelectedHitStory()
     func updateHitsWithDeletion(viewModel: Hits.Delete.ViewModel)
+    func cantNavigateToURL(viewModel: Hits.NoShow.ViewModel)
 }
 
 class HitsViewController: UITableViewController {
@@ -103,10 +104,6 @@ class HitsViewController: UITableViewController {
 
         interactor?.grabHits()
     }
-
-    func displaySelectedHitStory() {
-        router?.routeToStoryDetail(segue: nil)
-    }
 }
 
 // MARK: - HitsDisplayLogic
@@ -140,6 +137,21 @@ extension HitsViewController: HitsDisplayLogic {
             self.tableView.reloadData()
         }
     }
+
+    func displaySelectedHitStory() {
+        router?.routeToStoryDetail(segue: nil)
+    }
+
+    func cantNavigateToURL(viewModel: Hits.NoShow.ViewModel) {
+        let alert = UIAlertController(title: viewModel.title,
+                                      message: viewModel.message,
+                                      preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: viewModel.buttonTitle, style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+
 }
 
 // MARK: - DataSource

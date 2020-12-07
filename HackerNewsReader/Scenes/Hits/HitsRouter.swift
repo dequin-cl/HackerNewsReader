@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 @objc protocol HitsRoutingLogic {
     func routeToStoryDetail(segue: UIStoryboardSegue?)
@@ -21,18 +22,13 @@ class HitsRouter: NSObject, HitsRoutingLogic, HitsDataPassing {
     var dataStore: HitsDataStore?
 
     func routeToStoryDetail(segue: UIStoryboardSegue?) {
-        let destinationVC = HitStoryViewController.instantiate(from: .HitStory)
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToStoryDetail(source: dataStore!, destination: &destinationDS)
-        navigateToStoryDetail(source: viewController!, destination: destinationVC)
+
+        let vc = SFSafariViewController(url: dataStore!.selectedHitURL)
+        navigateToStoryDetail(source: viewController!, destination: vc)
     }
 
-    func passDataToStoryDetail(source: HitsDataStore, destination: inout HitStoryDataStore) {
-        destination.hitURL = source.selectedHitURL
-    }
-
-    func navigateToStoryDetail(source: UIViewController, destination: HitStoryViewController) {
-        source.show(destination, sender: nil)
+    func navigateToStoryDetail(source: UIViewController, destination: SFSafariViewController) {
+        source.present(destination, animated: true)
     }
 
 }

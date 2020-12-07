@@ -15,6 +15,7 @@
 
 @testable import HackerNewsReader
 import XCTest
+import SafariServices
 
 class HitsRouterTests: XCTestCase {
     // MARK: Subject under test
@@ -48,54 +49,42 @@ class HitsRouterTests: XCTestCase {
         /// When
         sut.routeToStoryDetail(segue: nil)
         /// Then
-        XCTAssertTrue(sut.passDataToStoryDetailGotCalled, "Router should call to pass data")
         XCTAssertTrue(sut.navigateToStoryDetailGotCalled, "Router should call to navigation")
+        XCTAssertNotNil(sut.navigateToStoryDetailDestination)
     }
 
     func testNavigateToStoryDetails() {
         /// Given
         let mockVC = ViewControllerMock()
         /// When
-        sut.navigateToStoryDetail(source: mockVC, destination: HitStoryViewController())
+        sut.navigateToStoryDetail(source: mockVC, destination: SFSafariViewController(url: URL(string: "https://local")!))
         /// Then
-        XCTAssertTrue(mockVC.showGotCalled, "The navigation should use Show")
-        XCTAssertTrue(mockVC.vcUIViewController is HitStoryViewController, "The navigation should be to a HitStoryViewController")
+        XCTAssertTrue(mockVC.presentGotCalled, "The navigation should use present")
+        XCTAssertTrue(mockVC.presentViewControllerToPresent is SFSafariViewController, "The navigation should be to a SFSafariViewController")
 
-    }
-
-    func testPassDataToStoryDetails() {
-        /// Given
-        let destinationVC = HitStoryViewController()
-        var destinationDS = destinationVC.router!.dataStore!
-        let hitsInteractor = HitsInteractor()
-        hitsInteractor.selectedHitURL = "TEST"
-        /// When
-        sut.passDataToStoryDetail(source: hitsInteractor, destination: &destinationDS)
-        /// Then
-        XCTAssertNotNil(destinationDS.hitURL, "Should pass the value of the selected hit URL")
-        XCTAssertEqual(destinationDS.hitURL, "TEST", "Should pass the correct value")
     }
 }
 
 class ViewControllerMock: UIViewController {
 
-    var showGotCalled = false
-    var vcUIViewController: UIViewController?
-    override func show(_ vc: UIViewController, sender: Any?) {
-        showGotCalled = true
-        vcUIViewController = vc
+    var presentGotCalled = false
+    var presentViewControllerToPresent: UIViewController?
+    var presentAnimatedFlag: Bool = false
+    var presentCompletion: (() -> Void)?
+    override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        presentGotCalled = true
+        presentViewControllerToPresent = viewControllerToPresent
+        presentAnimatedFlag = flag
+        presentCompletion = completion
     }
 }
 
 class HitsRouterMock: HitsRouter {
-    var passDataToStoryDetailGotCalled = false
-    override func passDataToStoryDetail(source: HitsDataStore, destination: inout HitStoryDataStore) {
-        passDataToStoryDetailGotCalled = true
-    }
-
     var navigateToStoryDetailGotCalled = false
-    override func navigateToStoryDetail(source: UIViewController, destination: HitStoryViewController) {
+    var navigateToStoryDetailDestination: SFSafariViewController?
+    override func navigateToStoryDetail(source: UIViewController, destination: SFSafariViewController) {
         navigateToStoryDetailGotCalled = true
+        navigateToStoryDetailDestination = destination
     }
 }
 

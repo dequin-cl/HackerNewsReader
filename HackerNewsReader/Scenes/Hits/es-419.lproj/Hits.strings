@@ -7,3 +7,7 @@
 */
 
 "Welcome" = "¡Hola!";
+"HitWithoutURL" = "Historia no tiene una dirección URL válida";
+"CantNavigateTo" = "No puedo navegar a: %@";
+"CantShowDetails" = "No puedo mostrar los detalles";
+"OK" = "Elige otra historia";

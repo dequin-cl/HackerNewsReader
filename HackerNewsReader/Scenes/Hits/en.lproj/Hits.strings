@@ -7,3 +7,7 @@
 */
 
 "Welcome" = "Welcome";
+"HitWithoutURL" = "Story does not have an URL address";
+"CantNavigateTo" = "Can't navigate to: %@";
+"CantShowDetails" = "Can't show details";
+"OK" = "Choose another Story";

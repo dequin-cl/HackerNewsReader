@@ -13,6 +13,7 @@ protocol HitsPresentationLogic {
     func presentOlderHits(response: Hits.FetchHits.Response)
     func presentHit()
     func deleteHit(response: Hits.Delete.Response)
+    func cantNavigateToURL(response: Hits.NoShow.Response)
 }
 
 class HitsPresenter: HitsPresentationLogic {
@@ -60,5 +61,11 @@ class HitsPresenter: HitsPresentationLogic {
     func deleteHit(response: Hits.Delete.Response) {
         let viewModel = Hits.Delete.ViewModel(row: response.row)
         viewController?.updateHitsWithDeletion(viewModel: viewModel)
+    }
+
+    func cantNavigateToURL(response: Hits.NoShow.Response) {
+        viewController?.cantNavigateToURL(viewModel: Hits.NoShow.ViewModel(title: response.title.localized,
+                                                                           message: response.message,
+                                                                           buttonTitle: response.buttonTitle.localized))
     }
 }

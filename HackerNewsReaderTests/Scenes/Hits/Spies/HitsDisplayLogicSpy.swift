@@ -35,4 +35,11 @@ class HitsDisplayLogicSpy: HitsDisplayLogic {
         updateHitsWithDeletionGotCalled = true
         updateHitsWithDeletionViewModel = viewModel
     }
+
+    var cantNavigateToURLGotCalled = false
+    var cantNavigateToURLViewModel: Hits.NoShow.ViewModel?
+    func cantNavigateToURL(viewModel: Hits.NoShow.ViewModel) {
+        cantNavigateToURLGotCalled = true
+        cantNavigateToURLViewModel = viewModel
+    }
 }

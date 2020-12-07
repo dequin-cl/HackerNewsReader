@@ -9,22 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C4B61DA25745BA30074988B /* HitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B61D925745BA30074988B /* HitTableViewCell.swift */; };
 		2C4B61E3257461080074988B /* HitTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B61E2257461080074988B /* HitTableViewCellTests.swift */; };
-		2C659B372574B88D003523CC /* HitStoryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */; };
-		2C659B382574B88D003523CC /* HitStoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */; };
-		2C659B392574B88D003523CC /* HitStoryDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */; };
-		2C659B3A2574B88D003523CC /* HitStoryWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */; };
-		2C659B3B2574B88D003523CC /* HitStoryPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */; };
-		2C659B3C2574B88D003523CC /* HitStoryRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */; };
-		2C659B3D2574B88D003523CC /* HitStoryBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */; };
-		2C659B3E2574B88D003523CC /* HitStoryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B352574B88D003523CC /* HitStoryRouterTests.swift */; };
-		2C659B3F2574B88D003523CC /* HitStoryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */; };
-		2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C659B482574B8C3003523CC /* HitStory.storyboard */; };
-		2C659B522574B8C3003523CC /* HitStoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */; };
-		2C659B532574B8C3003523CC /* HitStoryWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */; };
-		2C659B542574B8C3003523CC /* HitStoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */; };
-		2C659B552574B8C3003523CC /* HitStoryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4D2574B8C3003523CC /* HitStoryModels.swift */; };
-		2C659B562574B8C3003523CC /* HitStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */; };
-		2C659B572574B8C3003523CC /* HitStoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */; };
 		2C7F49292571067C00EE9B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F49282571067C00EE9B0B /* AppDelegate.swift */; };
 		2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7F492A2571067C00EE9B0B /* SceneDelegate.swift */; };
 		2C7F49302571067C00EE9B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7F492E2571067C00EE9B0B /* Main.storyboard */; };
@@ -71,7 +55,6 @@
 		2CAD7C8D2573376C00529CF8 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C8C2573376C00529CF8 /* Seeds.swift */; };
 		2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */; };
 		2CC822C82572DF4D004ACE8E /* first.json in Resources */ = {isa = PBXBuildFile; fileRef = 2CC822C72572DF4D004ACE8E /* first.json */; };
-		2CD31C262574E25800428237 /* HitStory.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C282574E25800428237 /* HitStory.strings */; };
 		2CD31C2C2574E26100428237 /* Hits.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C2E2574E26100428237 /* Hits.strings */; };
 		2CD31C3B2574E31700428237 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD31C3A2574E31700428237 /* String.swift */; };
 		2CD31C402574E65A00428237 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CD31C3F2574E65A00428237 /* README.md */; };
@@ -97,22 +80,6 @@
 /* Begin PBXFileReference section */
 		2C4B61D925745BA30074988B /* HitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTableViewCell.swift; sourceTree = "<group>"; };
 		2C4B61E2257461080074988B /* HitTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTableViewCellTests.swift; sourceTree = "<group>"; };
-		2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryViewControllerTests.swift; sourceTree = "<group>"; };
-		2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryInteractorTests.swift; sourceTree = "<group>"; };
-		2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryDisplayLogicSpy.swift; sourceTree = "<group>"; };
-		2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryWorkerTests.swift; sourceTree = "<group>"; };
-		2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresentationLogicSpy.swift; sourceTree = "<group>"; };
-		2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRoutingLogicSpy.swift; sourceTree = "<group>"; };
-		2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryBusinessLogicSpy.swift; sourceTree = "<group>"; };
-		2C659B352574B88D003523CC /* HitStoryRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouterTests.swift; sourceTree = "<group>"; };
-		2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenterTests.swift; sourceTree = "<group>"; };
-		2C659B482574B8C3003523CC /* HitStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HitStory.storyboard; sourceTree = "<group>"; };
-		2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryPresenter.swift; sourceTree = "<group>"; };
-		2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryWorker.swift; sourceTree = "<group>"; };
-		2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryRouter.swift; sourceTree = "<group>"; };
-		2C659B4D2574B8C3003523CC /* HitStoryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryModels.swift; sourceTree = "<group>"; };
-		2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryViewController.swift; sourceTree = "<group>"; };
-		2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitStoryInteractor.swift; sourceTree = "<group>"; };
 		2C7F49252571067C00EE9B0B /* HackerNewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7F49282571067C00EE9B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7F492A2571067C00EE9B0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,9 +132,7 @@
 		2CAD7C9B25734E5B00529CF8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2CC822C72572DF4D004ACE8E /* first.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = first.json; sourceTree = "<group>"; };
 		2CC822CF2572DF65004ACE8E /* second.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = second.json; sourceTree = "<group>"; };
-		2CD31C272574E25800428237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HitStory.strings; sourceTree = "<group>"; };
 		2CD31C2D2574E26100428237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Hits.strings; sourceTree = "<group>"; };
-		2CD31C322574E27400428237 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/HitStory.strings"; sourceTree = "<group>"; };
 		2CD31C362574E27400428237 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Hits.strings"; sourceTree = "<group>"; };
 		2CD31C3A2574E31700428237 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2CD31C3F2574E65A00428237 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -212,45 +177,6 @@
 				2C4B61E2257461080074988B /* HitTableViewCellTests.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		2C659B2D2574B875003523CC /* HitStory */ = {
-			isa = PBXGroup;
-			children = (
-				2C659B2E2574B88D003523CC /* HitStoryViewControllerTests.swift */,
-				2C659B2F2574B88D003523CC /* HitStoryInteractorTests.swift */,
-				2C659B462574B895003523CC /* Spies */,
-				2C659B312574B88D003523CC /* HitStoryWorkerTests.swift */,
-				2C659B352574B88D003523CC /* HitStoryRouterTests.swift */,
-				2C659B362574B88D003523CC /* HitStoryPresenterTests.swift */,
-			);
-			path = HitStory;
-			sourceTree = "<group>";
-		};
-		2C659B462574B895003523CC /* Spies */ = {
-			isa = PBXGroup;
-			children = (
-				2C659B302574B88D003523CC /* HitStoryDisplayLogicSpy.swift */,
-				2C659B322574B88D003523CC /* HitStoryPresentationLogicSpy.swift */,
-				2C659B332574B88D003523CC /* HitStoryRoutingLogicSpy.swift */,
-				2C659B342574B88D003523CC /* HitStoryBusinessLogicSpy.swift */,
-			);
-			path = Spies;
-			sourceTree = "<group>";
-		};
-		2C659B472574B8AD003523CC /* HitStory */ = {
-			isa = PBXGroup;
-			children = (
-				2C659B482574B8C3003523CC /* HitStory.storyboard */,
-				2CD31C282574E25800428237 /* HitStory.strings */,
-				2C659B4A2574B8C3003523CC /* HitStoryPresenter.swift */,
-				2C659B4B2574B8C3003523CC /* HitStoryWorker.swift */,
-				2C659B4C2574B8C3003523CC /* HitStoryRouter.swift */,
-				2C659B4D2574B8C3003523CC /* HitStoryModels.swift */,
-				2C659B4E2574B8C3003523CC /* HitStoryViewController.swift */,
-				2C659B4F2574B8C3003523CC /* HitStoryInteractor.swift */,
-			);
-			path = HitStory;
 			sourceTree = "<group>";
 		};
 		2C7F491C2571067C00EE9B0B = {
@@ -350,7 +276,6 @@
 		2CAD7C0E2573009100529CF8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2C659B2D2574B875003523CC /* HitStory */,
 				2CAD7C0F2573009B00529CF8 /* Hits */,
 			);
 			path = Scenes;
@@ -395,7 +320,6 @@
 		2CAD7C3A257301EB00529CF8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2C659B472574B8AD003523CC /* HitStory */,
 				2CAD7C3B257301F000529CF8 /* Hits */,
 			);
 			path = Scenes;
@@ -404,15 +328,15 @@
 		2CAD7C3B257301F000529CF8 /* Hits */ = {
 			isa = PBXGroup;
 			children = (
-				2C4B61D825745B8C0074988B /* Cells */,
 				2CAD7C3C2573025E00529CF8 /* Hits.storyboard */,
-				2CD31C2E2574E26100428237 /* Hits.strings */,
-				2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */,
-				2CAD7C7F25731CE400529CF8 /* Workers */,
-				2CAD7C402573025E00529CF8 /* HitsRouter.swift */,
-				2CAD7C412573025E00529CF8 /* HitsModels.swift */,
-				2CAD7C422573025E00529CF8 /* HitsViewController.swift */,
 				2CAD7C432573025E00529CF8 /* HitsInteractor.swift */,
+				2CAD7C412573025E00529CF8 /* HitsModels.swift */,
+				2CAD7C3E2573025E00529CF8 /* HitsPresenter.swift */,
+				2CAD7C402573025E00529CF8 /* HitsRouter.swift */,
+				2CAD7C422573025E00529CF8 /* HitsViewController.swift */,
+				2C4B61D825745B8C0074988B /* Cells */,
+				2CD31C2E2574E26100428237 /* Hits.strings */,
+				2CAD7C7F25731CE400529CF8 /* Workers */,
 			);
 			path = Hits;
 			sourceTree = "<group>";
@@ -569,8 +493,6 @@
 			files = (
 				2C7F49382571067E00EE9B0B /* LaunchScreen.storyboard in Resources */,
 				2CD31C2C2574E26100428237 /* Hits.strings in Resources */,
-				2C659B502574B8C3003523CC /* HitStory.storyboard in Resources */,
-				2CD31C262574E25800428237 /* HitStory.strings in Resources */,
 				2C7F49352571067E00EE9B0B /* Assets.xcassets in Resources */,
 				2CAD7C442573025E00529CF8 /* Hits.storyboard in Resources */,
 				2CD31C402574E65A00428237 /* README.md in Resources */,
@@ -627,11 +549,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAD7C312573011A00529CF8 /* AppStoryboard.swift in Sources */,
-				2C659B552574B8C3003523CC /* HitStoryModels.swift in Sources */,
 				2C7F497C257109FD00EE9B0B /* HitDTO.swift in Sources */,
 				2C7F49C1257134A700EE9B0B /* Hit.swift in Sources */,
-				2C659B572574B8C3003523CC /* HitStoryInteractor.swift in Sources */,
-				2C659B532574B8C3003523CC /* HitStoryWorker.swift in Sources */,
 				2CAD7C362573013A00529CF8 /* UIViewController.swift in Sources */,
 				2CAD7C4B2573025E00529CF8 /* HitsInteractor.swift in Sources */,
 				2C7F49292571067C00EE9B0B /* AppDelegate.swift in Sources */,
@@ -639,7 +558,6 @@
 				2CAD7C482573025E00529CF8 /* HitsRouter.swift in Sources */,
 				2C7F49A7257129A000EE9B0B /* Persistence.swift in Sources */,
 				2CAD7C7125731B9D00529CF8 /* HitsCoreDataWorker.swift in Sources */,
-				2C659B562574B8C3003523CC /* HitStoryViewController.swift in Sources */,
 				2C7F492B2571067C00EE9B0B /* SceneDelegate.swift in Sources */,
 				2CAD7C4A2573025E00529CF8 /* HitsViewController.swift in Sources */,
 				2CAD7C472573025E00529CF8 /* HitsNetworkWorker.swift in Sources */,
@@ -647,8 +565,6 @@
 				2C7F49332571067C00EE9B0B /* HackerNewsReader.xcdatamodeld in Sources */,
 				2C7F498E2571230000EE9B0B /* FeedDTO.swift in Sources */,
 				2CAD7C462573025E00529CF8 /* HitsPresenter.swift in Sources */,
-				2C659B522574B8C3003523CC /* HitStoryPresenter.swift in Sources */,
-				2C659B542574B8C3003523CC /* HitStoryRouter.swift in Sources */,
 				2C7F49C82571492100EE9B0B /* FeedService.swift in Sources */,
 				2C4B61DA25745BA30074988B /* HitTableViewCell.swift in Sources */,
 			);
@@ -660,27 +576,18 @@
 			files = (
 				2CAD7C9C25734E5B00529CF8 /* UIViewController+Extension.swift in Sources */,
 				2CAD7C19257300BA00529CF8 /* HitsViewControllerTests.swift in Sources */,
-				2C659B382574B88D003523CC /* HitStoryInteractorTests.swift in Sources */,
-				2C659B3A2574B88D003523CC /* HitStoryWorkerTests.swift in Sources */,
-				2C659B3C2574B88D003523CC /* HitStoryRoutingLogicSpy.swift in Sources */,
-				2C659B3D2574B88D003523CC /* HitStoryBusinessLogicSpy.swift in Sources */,
 				2C7F49BC2571342E00EE9B0B /* HitCoreDataTests.swift in Sources */,
 				2C7F4965257107B900EE9B0B /* HitDTOModelTests.swift in Sources */,
 				2CAD7C1E257300BA00529CF8 /* HitsRoutingLogicSpy.swift in Sources */,
 				2C7F49432571067E00EE9B0B /* HackerNewsReaderTests.swift in Sources */,
 				2CAD7C1B257300BA00529CF8 /* HitsDisplayLogicSpy.swift in Sources */,
 				2CAD7C20257300BA00529CF8 /* HitsRouterTests.swift in Sources */,
-				2C659B372574B88D003523CC /* HitStoryViewControllerTests.swift in Sources */,
 				2CAD7C1D257300BA00529CF8 /* HitsPresentationLogicSpy.swift in Sources */,
 				2CAD7C1C257300BA00529CF8 /* HitsNetworkWorkerTests.swift in Sources */,
-				2C659B3B2574B88D003523CC /* HitStoryPresentationLogicSpy.swift in Sources */,
-				2C659B3F2574B88D003523CC /* HitStoryPresenterTests.swift in Sources */,
 				2C7F498925711B3F00EE9B0B /* FeedDTOModelTests.swift in Sources */,
 				2CAD7C21257300BA00529CF8 /* HitsPresenterTests.swift in Sources */,
-				2C659B3E2574B88D003523CC /* HitStoryRouterTests.swift in Sources */,
 				2C7F49CD2571497100EE9B0B /* FeedServiceTest.swift in Sources */,
 				2CAD7C6C25731B5500529CF8 /* HitsCoreDataWorkerTest.swift in Sources */,
-				2C659B392574B88D003523CC /* HitStoryDisplayLogicSpy.swift in Sources */,
 				2C4B61E3257461080074988B /* HitTableViewCellTests.swift in Sources */,
 				2CAD7C1A257300BA00529CF8 /* HitsInteractorTests.swift in Sources */,
 				2CAD7C1F257300BA00529CF8 /* HitsBusinessLogicSpy.swift in Sources */,
@@ -727,15 +634,6 @@
 				2C7F49372571067E00EE9B0B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		2CD31C282574E25800428237 /* HitStory.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CD31C272574E25800428237 /* en */,
-				2CD31C322574E27400428237 /* es-419 */,
-			);
-			name = HitStory.strings;
 			sourceTree = "<group>";
 		};
 		2CD31C2E2574E26100428237 /* Hits.strings */ = {

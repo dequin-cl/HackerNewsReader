@@ -128,7 +128,8 @@ class HitsInteractorTests: XCTestCase {
         /// When
         sut.selectHit(request: request)
         /// Then
-        XCTAssertEqual(sut.selectedHitURL, Seeds.HitSamples.hitVMOne.url, "Should set the URL")
+        XCTAssertNotNil(sut.selectedHitURL)
+        XCTAssertEqual(sut.selectedHitURL.absoluteString, Seeds.HitSamples.hitVMOne.url, "Should set the URL")
         XCTAssertTrue(spyPresenter.presentHitGotCalled, "Interactor should call the presenter")
     }
 

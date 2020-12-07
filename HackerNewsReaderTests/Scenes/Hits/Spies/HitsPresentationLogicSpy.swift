@@ -34,4 +34,11 @@ class HitsPresentationLogicSpy: HitsPresentationLogic {
         deleteHitGotCalled = true
         deleteHitResponse = response
     }
+
+    var cantNavigateToURLGotCalled = false
+    var cantNavigateToURLResponse: Hits.NoShow.Response?
+    func cantNavigateToURL(response: Hits.NoShow.Response) {
+        cantNavigateToURLGotCalled = true
+        cantNavigateToURLResponse = response
+    }
 }

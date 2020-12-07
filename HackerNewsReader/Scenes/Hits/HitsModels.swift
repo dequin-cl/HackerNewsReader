@@ -14,6 +14,11 @@ enum HitsStrings: String, CaseIterable, Localizable {
     }
 
     case Welcome
+    case HitWithoutURL
+    case CantNavigateTo
+    case CantShowDetails
+    case OK
+
 }
 
 // swiftlint:disable nesting
@@ -35,6 +40,19 @@ enum Hits {
     enum Show {
         struct Request {
             let hit: HitViewModel
+        }
+    }
+
+    enum NoShow {
+        struct Response {
+            let title: Localizable
+            let message: String
+            let buttonTitle: Localizable
+        }
+        struct ViewModel {
+            let title: String
+            let message: String
+            let buttonTitle: String
         }
     }
 

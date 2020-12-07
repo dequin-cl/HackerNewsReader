@@ -18,7 +18,7 @@ protocol HitsBusinessLogic {
 protocol HitsDataStore {
     var hits: [Hits.HitPresentationModel] { get }
     var isFetchingOlderHits: Bool { get set }
-    var selectedHitURL: String { get set }
+    var selectedHitURL: URL { get }
 }
 
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
@@ -30,7 +30,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
 
     var hits: [Hits.HitPresentationModel] = []
     var isFetchingOlderHits: Bool = false
-    var selectedHitURL: String = ""
+    var selectedHitURL: URL = URL(string: "http://local")!
 
     func grabHits() {
 
@@ -97,7 +97,20 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     }
 
     func selectHit(request: Hits.Show.Request) {
-        selectedHitURL = request.hit.url
+        guard let destinationURL = URL(string: request.hit.url) else {
+            var message = ""
+            if request.hit.url.isEmpty {
+                message = HitsStrings.HitWithoutURL.localized
+            } else {
+                message = HitsStrings.CantNavigateTo.localized(with: [request.hit.url])
+            }
+
+            presenter?.cantNavigateToURL(response: Hits.NoShow.Response(title: HitsStrings.CantShowDetails,
+                                                                        message: message,
+                                                                        buttonTitle: HitsStrings.OK))
+            return
+        }
+        selectedHitURL = destinationURL
         presenter?.presentHit()
     }
 
