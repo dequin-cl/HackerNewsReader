@@ -15,14 +15,15 @@ final class PersistenceController {
             return PersistenceController()
         }
     }()
-    let container: NSPersistentCloudKitContainer
+
+    private(set) var container: NSPersistentCloudKitContainer?
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "HackerNewsReader")
         if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            container?.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container?.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
 
                 debugPrint("Unresolved error \(error), \(error.userInfo)")
@@ -30,8 +31,8 @@ final class PersistenceController {
                 debugPrint("\n  STORES LOADED! \(storeDescription) \n")
             }
 
-            self.container.viewContext.automaticallyMergesChangesFromParent = true
-            self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
+            self.container?.viewContext.automaticallyMergesChangesFromParent = true
+            self.container?.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
 
         })
     }
@@ -39,9 +40,8 @@ final class PersistenceController {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = PersistenceController.shared.container.viewContext
-
-        if context.hasChanges {
+        if let context = PersistenceController.shared.container?.viewContext,
+           context.hasChanges {
             do {
                 try context.save()
             } catch {
@@ -49,6 +49,10 @@ final class PersistenceController {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+
+    func clearContainer() {
+        container = nil
     }
 }
 

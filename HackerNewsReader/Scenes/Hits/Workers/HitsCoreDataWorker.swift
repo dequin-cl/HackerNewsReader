@@ -8,12 +8,11 @@
 import CoreData
 
 class HitsCoreDataWorker {
+    var persistenceController: PersistenceController?
 
     func fetchHits(offset: Int = 0,
-                   persistenceController: PersistenceController = PersistenceController.shared,
+                   feedService: FeedService = FeedService(),
                    block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
-
-        let feedService = FeedService(persistenceController: persistenceController)
 
         feedService.feed(offset: offset) { hits in
             var hitsPresentation: [Hits.HitPresentationModel] = []
@@ -32,18 +31,21 @@ class HitsCoreDataWorker {
     }
 
     func  deleteHit(url: String,
-                    persistenceController: PersistenceController = PersistenceController.shared,
                     block: @escaping () -> Void) {
+
+        guard let persistenceController = self.persistenceController else {
+            fatalError("Should have a Persistence Controller deleting hit ")
+        }
 
         let fetchRequest: NSFetchRequest<Hit> = Hit.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "url == %@ || storyURL == %@", url, url)
 
-        persistenceController.container.viewContext.perform {
+        persistenceController.container?.viewContext.perform {
             do {
-                let results = try persistenceController.container.viewContext.fetch(fetchRequest)
-                results.first?.isUserDeleted = true
+                let results = try persistenceController.container?.viewContext.fetch(fetchRequest)
+                results?.first?.isUserDeleted = true
                 do {
-                    try persistenceController.container.viewContext.save()
+                    try persistenceController.container?.viewContext.save()
                 } catch {
                     debugPrint(error)
                 }

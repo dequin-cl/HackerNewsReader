@@ -24,6 +24,7 @@ class HitsCoreDataWorkerTest: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        self.persistanceController.clearContainer()
         self.persistanceController = nil
     }
 
@@ -47,6 +48,7 @@ class HitsCoreDataWorkerTest: XCTestCase {
 
     func setupHitsWorker() {
         sut = HitsCoreDataWorker()
+        sut.persistenceController = self.persistanceController
     }
 
     // MARK: Tests
@@ -54,44 +56,35 @@ class HitsCoreDataWorkerTest: XCTestCase {
     func testFetchHits() throws {
 
         /// Given
-        let bundle = Bundle(for: type(of: self))
-        guard let sample = bundle.url(forResource: "SampleJSON", withExtension: "json") else {
-            XCTFail("Missing file: SampleJSON.json")
-            return
-        }
-
-        let data = try Data(contentsOf: sample)
-        let feedDTO = try FeedDTO(data: data)
-        let feedService = FeedService(persistenceController: persistanceController)
-
-        let expectationProcess = expectation(description: "Process FeedDTO")
-
-        feedService.process(feedDTO.hits) {
-            expectationProcess.fulfill()
-        }
-        wait(for: [expectationProcess], timeout: 2.0)
+        let feedServiceMock = FeedServiceMock(persistenceController: self.persistanceController)
 
         /// When
-
-        let expectation = XCTestExpectation(description: "Fetching hits")
-
-        /// When
-        sut.fetchHits(persistenceController: persistanceController) { (hits, error) in
+        sut.fetchHits(feedService: feedServiceMock) { (hits, error) in
 
             /// Then
 
             XCTAssertNil(error)
             XCTAssertNotNil(hits)
             XCTAssertFalse(hits!.isEmpty)
-            XCTAssertEqual(hits?.count, feedDTO.hits.count, "The number of hits on the ddbb should be the same as the number of hits processed from the json")
-
-            expectation.fulfill()
-
+            XCTAssertEqual(hits?.count, 2, "The number of Hits.HitPresentationModel should be 2, same as the sample data provided")
         }
-        wait(for: [expectation], timeout: 1.0)
 
     }
 
+}
+
+private class FeedServiceMock: FeedService {
+    var feedGotCalled = false
+    var persistenceControllerMocked: PersistenceController
+
+    init(persistenceController: PersistenceController) {
+        persistenceControllerMocked = persistenceController
+    }
+
+    override func feed(limit: Int = 20, offset: Int = 0, _ block: @escaping ([Hit]) -> Void) {
+        feedGotCalled = true
+        block(Seeds.HitSamples.hits(persistenceController: persistenceControllerMocked))
+    }
 }
 
 // swiftlint:enable line_length

@@ -8,24 +8,18 @@
 import Foundation
 import CoreData
 
-final class FeedService {
+class FeedService {
     // MARK: - Properties
-    let persistenceController: PersistenceController
-
-    // MARK: - Initializers
-    public init(persistenceController: PersistenceController = PersistenceController.shared) {
-        self.persistenceController = persistenceController
-    }
-}
-
-extension FeedService {
+    lazy var persistenceController: PersistenceController = {
+        PersistenceController.shared
+    }()
 
     /// Creates a Hit on the Core Data
     /// - Parameter hitDTO: Hit Data Transfer Object
     /// - Parameter block: Delivers a Hit Core Data Managed Object
     func add(_ hitDTO: HitDTO, _ block: @escaping (Hit) -> Void) {
 
-        persistenceController.container.performBackgroundTask { (backgroundContext) in
+        persistenceController.container?.performBackgroundTask { (backgroundContext) in
             let hit = Hit.from(hitDTO, in: backgroundContext)
 
             backgroundContext.perform {
@@ -49,7 +43,7 @@ extension FeedService {
         fetchRequest.fetchLimit = limit
         fetchRequest.fetchOffset = offset
 
-        persistenceController.container.performBackgroundTask { (backgroundContext) in
+        persistenceController.container?.performBackgroundTask { (backgroundContext) in
             do {
                 let results = try backgroundContext.fetch(fetchRequest)
                 block(results)
@@ -64,7 +58,7 @@ extension FeedService {
     /// - Parameter hitsDTO: list of hits from the API
     func process(_ hitsDTO: [HitDTO], block: @escaping () -> Void = {}) {
 
-        persistenceController.container.performBackgroundTask { (backgroundContext) in
+        persistenceController.container?.performBackgroundTask { (backgroundContext) in
 
             backgroundContext.perform {
 
@@ -78,9 +72,7 @@ extension FeedService {
                     }
                 }
 
-                DispatchQueue.main.async {
-                    block()
-                }
+                block()
             }
         }
     }

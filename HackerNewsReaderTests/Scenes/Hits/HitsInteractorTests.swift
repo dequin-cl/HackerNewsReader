@@ -66,7 +66,7 @@ class HitsInteractorTests: XCTestCase {
 
     class HitsCoreDataWorkerSpy: HitsCoreDataWorker {
         var fetchHitsGotCalled = false
-        override func fetchHits(offset: Int = 0, persistenceController: PersistenceController = PersistenceController.shared, block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
+        override func fetchHits(offset: Int = 0, feedService: FeedService = FeedService(), block: @escaping ([Hits.HitPresentationModel]?, Error?) -> Void) {
             fetchHitsGotCalled = true
 
             block(Seeds.HitSamples.hitsPresentation, nil)
@@ -75,7 +75,7 @@ class HitsInteractorTests: XCTestCase {
         var deleteHitGotCalled = false
         var deleteHitURL: String?
         var deleteBlock:(() -> Void)?
-        override func deleteHit(url: String, persistenceController: PersistenceController = PersistenceController.shared, block: @escaping () -> Void) {
+        override func deleteHit(url: String, block: @escaping () -> Void) {
             deleteHitGotCalled = true
             deleteHitURL = url
             deleteBlock = block
@@ -87,24 +87,53 @@ class HitsInteractorTests: XCTestCase {
     // MARK: Tests
     func testGrabHitsCallsNetworkWorker() {
         /// Given
-
+        let sut = HitsInteractorMockGrabHitTest()
         /// When
         sut.grabHits()
         /// Then
 
-        XCTAssertTrue(spyCoreDataWorker.fetchHitsGotCalled, "Hits Interactor should call the core data worker")
-        XCTAssertTrue(spyNetworkWorker.fetchHitsGotCalled, "Hits Interactor should call the network worker")
-
-        XCTAssertTrue(spyPresenter.presentHitsGotCalled, "Hits Interactor should call the presenter with the full list of fetched hits")
-        XCTAssertEqual(spyPresenter.presentHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
+        XCTAssertTrue(sut.grabFromCoreDataGotCalled, "Hits Interactor should call the grab from core data method")
+        XCTAssertTrue(sut.grabFromNetworkGotCalled, "Hits Interactor should call the grab from Network method")
 
     }
 
-    func testGrabHitsSetDatasourceHits() {
+    func testGrabFromCoreDataShouldCallPresenterOlderHitsWhenIsFetchingOlderHits() {
+        /// Given
+        sut.isFetchingOlderHits = true
+        /// When
+        sut.grabFromCoreData()
+        /// Then
+        XCTAssertTrue(spyPresenter.presentOlderHitsGotCalled, "Hits Interactor should call the presenter with the full list of fetched hits")
+        XCTAssertEqual(spyPresenter.presentOlderHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
+    }
+
+    func testGrabFromCoreDataShouldCallPresenterHitsWhenCallingNormalHits() {
+        /// Given
+
+        /// When
+        sut.grabFromCoreData()
+        /// Then
+        XCTAssertTrue(spyPresenter.presentHitsGotCalled, "Hits Interactor should call the presenter with the full list of fetched hits")
+        XCTAssertEqual(spyPresenter.presentHitsResponse?.hits.count, 2, "Hits Interactor should call the presenter with the result from the Core data")
+    }
+
+    func testGrabNetworkShouldCallFeedServiceProcessWhenThereIsNoError() {
+        /// Given
+        let feedServiceMock = FeedServiceMock()
+        sut.feedService = feedServiceMock
+        /// When
+        sut.grabFromNetwork(block: {})
+        /// Then
+        XCTAssertTrue(spyNetworkWorker.fetchHitsGotCalled, "The grab network process should call the network worker")
+        XCTAssertTrue(feedServiceMock.processGotCalled, "The grab network process should call the feedservice to process")
+    }
+
+    func testGrabFromCoreDataShouldSetDatasourceHits() {
         /// Given
         /// When
-        sut.grabHits()
+        sut.grabFromCoreData()
         /// Then
+
         XCTAssertEqual(sut.hits.count, 2, "Hits Interactor should set the hits in the datasource with the result from the Core data")
     }
 
@@ -155,11 +184,34 @@ class HitsInteractorTests: XCTestCase {
     }
 }
 
-class HitsInteractorMock: HitsInteractor {
+private class HitsInteractorMockGrabHitTest: HitsInteractor {
+
+    var grabFromCoreDataGotCalled = false
+    override func grabFromCoreData(offset: Int = 0, block: @escaping () -> Void = {}) {
+        grabFromCoreDataGotCalled = true
+        block()
+    }
+
+    var grabFromNetworkGotCalled = false
+    override func grabFromNetwork(block: @escaping () -> Void) {
+        grabFromNetworkGotCalled = true
+        block()
+    }
+}
+
+private class HitsInteractorMock: HitsInteractor {
 
     var grabHitsGotCalled = false
     override func grabHits() {
         grabHitsGotCalled = true
+    }
+}
+
+private class FeedServiceMock: FeedService {
+    var processGotCalled = false
+    override func process(_ hitsDTO: [HitDTO], block: @escaping () -> Void = {}) {
+        processGotCalled = true
+        block()
     }
 }
 

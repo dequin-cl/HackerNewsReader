@@ -24,9 +24,13 @@ protocol HitsDataStore {
 class HitsInteractor: HitsBusinessLogic, HitsDataStore {
     var presenter: HitsPresentationLogic?
     var workerNetwork: HitsNetworkWorker = HitsNetworkWorker()
-    var workerCoreData: HitsCoreDataWorker = HitsCoreDataWorker()
+    lazy var workerCoreData: HitsCoreDataWorker = {
+        let worker = HitsCoreDataWorker()
+        worker.persistenceController = PersistenceController.shared
+        return worker
+    }()
 
-    private lazy var feedService: FeedService = { FeedService() }()
+    lazy var feedService: FeedService = { FeedService() }()
 
     var hits: [Hits.HitPresentationModel] = []
     var isFetchingOlderHits: Bool = false
@@ -54,7 +58,8 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
         }
     }
 
-    private func grabFromCoreData(offset: Int = 0, block: @escaping () -> Void = {}) {
+    func grabFromCoreData(offset: Int = 0, block: @escaping () -> Void = {}) {
+
         workerCoreData.fetchHits(offset: offset, block: { [weak self] (presentationModelHits, error) in
             if error == nil {
 
@@ -83,7 +88,7 @@ class HitsInteractor: HitsBusinessLogic, HitsDataStore {
         })
     }
 
-    private func grabFromNetwork(block: @escaping () -> Void) {
+    func grabFromNetwork(block: @escaping () -> Void) {
         workerNetwork.fetchHits(block: { [weak self] (hitsDTO, error) in
             if error == nil {
                 self?.feedService.process(hitsDTO!) {

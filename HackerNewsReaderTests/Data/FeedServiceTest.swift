@@ -25,6 +25,7 @@ class FeedServiceTest: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        self.persistanceController.clearContainer()
         self.persistanceController = nil
     }
 
@@ -38,15 +39,13 @@ class FeedServiceTest: XCTestCase {
 
         let json = try Data(contentsOf: url)
         let hitDTO = try HitDTO(data: json)
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
-
+        let expectationSaved = expectation(description: "Saving Hit")
         /// When
         feedService.add(hitDTO) { (hitCD) in
-
+            expectationSaved.fulfill()
             /// Then
             XCTAssertNotNil(hitCD, "The Hit should be created on Core Data")
             XCTAssertEqual(hitCD.author, hitDTO.author)
@@ -60,20 +59,27 @@ class FeedServiceTest: XCTestCase {
             XCTAssertFalse(hitCD.isUserDeleted)
         }
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        wait(for: [expectationSaved], timeout: 20.0)
 
     }
 
     func testGetFeed() throws {
         /// Given
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
+        /// I want to be sure that the feed is empty
+        let expectationFetchEmpty = XCTestExpectation(description: "Fetching should be empty")
 
         feedService.feed { (hits) in
             XCTAssertEqual(hits.count, 0)
+
+            expectationFetchEmpty.fulfill()
+
         }
 
+        wait(for: [expectationFetchEmpty], timeout: 10.0)
+
+        /// Load the sample data
         let bundle = Bundle(for: type(of: self))
         guard let url = bundle.url(forResource: "SampleNews", withExtension: "json") else {
             XCTFail("Missing file: SampleNews.json")
@@ -83,15 +89,16 @@ class FeedServiceTest: XCTestCase {
         let json = try Data(contentsOf: url)
         let hitDTO = try HitDTO(data: json)
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
+        let expectationSaved = expectation(description: "Saving Hit")
+
+        feedService.add(hitDTO) {_ in
+            expectationSaved.fulfill()
+
         }
 
-        feedService.add(hitDTO) {_ in }
+        wait(for: [expectationSaved], timeout: 2.0)
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        let expectationFetchNotEmpty = XCTestExpectation(description: "Fetching should not be empty")
 
         feedService.feed { (hits) in
             XCTAssertEqual(hits.count, 1)
@@ -102,7 +109,11 @@ class FeedServiceTest: XCTestCase {
                     XCTAssertEqual(identifier, hitDTO.objectID)
                 }
             }
+            expectationFetchNotEmpty.fulfill()
         }
+
+        wait(for: [expectationFetchNotEmpty], timeout: 10.0)
+
     }
 
     func testParseFeedDTO() throws {
@@ -115,25 +126,28 @@ class FeedServiceTest: XCTestCase {
 
         let json = try Data(contentsOf: url)
         let feedDTO = try FeedDTO(data: json)
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
+        let expectationProcessFinished = XCTestExpectation(description: "Processing Feed DTO")
 
         /// When
-        feedService.process(feedDTO.hits)
+        feedService.process(feedDTO.hits) {
+            expectationProcessFinished.fulfill()
+        }
         /// Then
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        wait(for: [expectationProcessFinished], timeout: 2.0)
+
+        let expectationFetching = XCTestExpectation(description: "Fetching hits")
 
         feedService.feed { (hits) in
-            DispatchQueue.main.async {
-                XCTAssertEqual(hits.count, feedDTO.hits.count)
-            }
+            XCTAssertEqual(hits.count, feedDTO.hits.count)
+            expectationFetching.fulfill()
         }
+
+        wait(for: [expectationFetching], timeout: 2.0)
+
     }
 
     func testParseFeedLimitResponseDTO() throws {
@@ -146,25 +160,29 @@ class FeedServiceTest: XCTestCase {
 
         let json = try Data(contentsOf: url)
         let feedDTO = try FeedDTO(data: json)
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
+        let expectationProcessFinished = XCTestExpectation(description: "Processing Feed DTO")
 
         /// When
-        feedService.process(feedDTO.hits)
+        feedService.process(feedDTO.hits) {
+            expectationProcessFinished.fulfill()
+        }
         /// Then
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        wait(for: [expectationProcessFinished], timeout: 2.0)
+
+        let expectationFetchNotEmpty = XCTestExpectation(description: "Fetching should not be empty")
 
         feedService.feed(limit: 2) { (hits) in
-            DispatchQueue.main.async {
-                XCTAssertEqual(hits.count, 2)
-            }
+            XCTAssertEqual(hits.count, 2)
+            expectationFetchNotEmpty.fulfill()
+
         }
+
+        wait(for: [expectationFetchNotEmpty], timeout: 10.0)
+
     }
 
     func testParseTwiceFeedDTO() throws {
@@ -177,28 +195,25 @@ class FeedServiceTest: XCTestCase {
 
         let json = try Data(contentsOf: url)
         let feedDTO = try FeedDTO(data: json)
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
 
-        expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-            return true
-        }
+        let expectationFirstProcess = expectation(description: "First process")
 
         /// When
         feedService.process(feedDTO.hits) {
-
+            expectationFirstProcess.fulfill()
         }
         /// Then
 
-        waitForExpectations(timeout: 2.0) { error in
-            XCTAssertNil(error, "Save did not occur")
-        }
+        wait(for: [expectationFirstProcess], timeout: 2.0)
 
-        let expectationProcess = expectation(description: "Second process")
+        let expectationSecondProcess = expectation(description: "Second process")
         /// When
         feedService.process(feedDTO.hits) {
-            expectationProcess.fulfill()
+            expectationSecondProcess.fulfill()
         }
-        wait(for: [expectationProcess], timeout: 2.0)
+        wait(for: [expectationSecondProcess], timeout: 2.0)
 
         /// Then
         let expectation = XCTestExpectation(description: "Fetching hits")
@@ -233,7 +248,8 @@ class FeedServiceTest: XCTestCase {
         let jsonSecond = try Data(contentsOf: second)
         let feedDTOSecond = try FeedDTO(data: jsonSecond)
 
-        let feedService = FeedService(persistenceController: persistanceController)
+        let feedService = FeedService()
+        feedService.persistenceController = persistanceController
 
         let expectedOrder = ["2020-11-27T23:09:43.000Z",
                              "2020-11-26T23:00:24.000Z",
@@ -241,17 +257,18 @@ class FeedServiceTest: XCTestCase {
                              "2020-11-21T23:09:28.000Z"]
 
         /// When
+        let expectationFirstProcess = expectation(description: "First process")
+        let expectationSecondProcess = expectation(description: "Second process")
+
         feedService.process(feedDTO.hits) {
-            self.expectation(forNotification: .NSManagedObjectContextDidSave, object: nil) { _ in
-                return true
-            }
+            expectationFirstProcess.fulfill()
 
-            feedService.process(feedDTOSecond.hits)
-
-            self.waitForExpectations(timeout: 2.0) { error in
-                XCTAssertNil(error, "Save did not occur")
+            feedService.process(feedDTOSecond.hits) {
+                expectationSecondProcess.fulfill()
             }
         }
+
+        wait(for: [expectationFirstProcess, expectationSecondProcess], timeout: 10.0)
 
         /// Then
 
@@ -260,6 +277,7 @@ class FeedServiceTest: XCTestCase {
         feedService.feed { (hits) in
 
             for index in 0..<hits.count {
+
                 let receivedDateTimeInterval = hits[index].createdAt!.timeIntervalSinceReferenceDate
                 let expectedDateTimeInterval = DateFormatter.iso8601withFractionalSeconds.date(from: expectedOrder[index])!.timeIntervalSinceReferenceDate
                 XCTAssertEqual(receivedDateTimeInterval, expectedDateTimeInterval, accuracy: 0.001)

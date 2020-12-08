@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import XCTest
 @testable import HackerNewsReader
 
 struct Seeds {
@@ -16,23 +17,26 @@ extension Seeds {
     struct HitSamples {
         private init() {}
 
-        private static let context = PersistenceController.shared.container.viewContext
-        static var hitOne: Hit = {
-            let hit = Hit(context: context)
+        static func hits(persistenceController: PersistenceController) -> [Hit] {
+            return [hitOne(persistenceController: persistenceController), hitTwo(persistenceController: persistenceController)]
+        }
+
+        static func hitOne(persistenceController: PersistenceController) -> Hit {
+            let hit = Hit(context: persistenceController.container!.viewContext)
             hit.title = "Test 1"
             hit.id = "25224216"
-            try? context.save()
+            try? persistenceController.container!.viewContext.save()
             return hit
-        }()
-        static var hitTwo: Hit = {
-            let hit = Hit(context: context)
+        }
+
+        static func hitTwo(persistenceController: PersistenceController) -> Hit {
+
+            let hit = Hit(context: persistenceController.container!.viewContext)
             hit.title = "Test 2"
             hit.id = "25224210"
-            try? context.save()
+            try? persistenceController.container!.viewContext.save()
             return hit
-        }()
-
-        static let hits = [hitOne, hitTwo]
+        }
 
         static let hitDTOOne = HitDTO(author: "Author 1",
                                       storyTitle: nil,
