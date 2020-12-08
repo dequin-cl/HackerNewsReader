@@ -182,6 +182,53 @@ class HitsInteractorTests: XCTestCase {
 
         XCTAssertTrue(spyPresenter.deleteHitGotCalled, "Should call the presenter")
     }
+
+    func testSelectHitWithoutEmptyURLSetsDataSourceURLAndCallsPresentHit() {
+        /// Given
+        let request = Hits.Show.Request(hit: Seeds.HitSamples.hitVMOne)
+        /// When
+        sut.selectHit(request: request)
+        /// Then
+        XCTAssertTrue(spyPresenter.presentHitGotCalled, "The interactor should call the presenter when a hit as an url")
+        XCTAssertEqual(sut.selectedHitURL.absoluteString, Seeds.HitSamples.hitVMOne.url, "The interactor should set the selectedHitURL value in the data source")
+    }
+
+    func testSelectHitWithEmptyURLDoesNotSetDataSoruceURLAndCallsCantNavigate() {
+        /// Given
+        let request = Hits.Show.Request(hit: Seeds.HitSamples.hitVMThree)
+        /// When
+        sut.selectHit(request: request)
+        /// Then
+        XCTAssertFalse(spyPresenter.presentHitGotCalled, "The interactor should Not call the presenter when a hit have an empty url")
+
+        XCTAssertTrue(spyPresenter.cantNavigateToURLGotCalled, "The interctor should call the presenter to present the alert message")
+        XCTAssertTrue(HitsStrings.HitWithoutURL.rawValue.isLocalized(candidate: spyPresenter.cantNavigateToURLResponse?.message), "The interactor should localize the title")
+        XCTAssertEqual(HitsStrings.OK.rawValue, spyPresenter.cantNavigateToURLResponse?.buttonTitle.rawValue, "The interactor should send the correct localizable object for the button")
+
+    }
+
+    func testSelectHitWithInvalidURLDoesNotSetDataSoruceURLAndCallsCantNavigate() {
+        /// Given
+        let request = Hits.Show.Request(hit: Seeds.HitSamples.hitVMFour)
+        /// When
+        sut.selectHit(request: request)
+        /// Then
+        XCTAssertFalse(spyPresenter.presentHitGotCalled, "The interactor should Not call the presenter when a hit have an invalid url")
+
+        XCTAssertTrue(spyPresenter.cantNavigateToURLGotCalled, "The interctor should call the presenter to present the alert message")
+        XCTAssertTrue(HitsStrings.HitWithoutURL.rawValue.isLocalized(candidate: spyPresenter.cantNavigateToURLResponse?.message), "The interactor should localize the title")
+        XCTAssertEqual(HitsStrings.OK.rawValue, spyPresenter.cantNavigateToURLResponse?.buttonTitle.rawValue, "The interactor should send the correct localizable object for the button")
+    }
+
+//    func testInteractorShouldConfigureCorrectlyTheWorker() {
+//        /// Given
+//        sut = HitsInteractor()
+//        /// When
+//        let worker = sut.workerCoreData
+//        /// Then
+//        XCTAssertNotNil(worker.persistenceController, "The interactor should configure the persistance controller")
+//        sut.workerCoreData.persistenceController?.clearContainer()
+//    }
 }
 
 private class HitsInteractorMockGrabHitTest: HitsInteractor {

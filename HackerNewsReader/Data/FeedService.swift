@@ -67,9 +67,7 @@ class FeedService {
 
                     do {
                         try backgroundContext.save()
-                    } catch {
-                        debugPrint("\(hitDTO.title ?? "") \(hitDTO.storyTitle ?? "")")
-                    }
+                    } catch {}
                 }
 
                 block()

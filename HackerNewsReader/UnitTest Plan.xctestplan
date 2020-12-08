@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "CF29B1A2-1818-4564-837A-B7724F1FBBC1",
+      "name" : "English - United State",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
+      }
+    },
+    {
+      "id" : "BE3C330C-4286-48A0-A327-293DAB6EB9C9",
+      "name" : "Spanish Latin America - Chile",
+      "options" : {
+        "language" : "es-419",
+        "region" : "CL"
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:HackerNewsReader.xcodeproj",
+        "identifier" : "2C7F493D2571067E00EE9B0B",
+        "name" : "HackerNewsReaderTests"
+      }
+    }
+  ],
+  "version" : 1
+}

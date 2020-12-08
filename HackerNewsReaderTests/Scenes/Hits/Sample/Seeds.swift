@@ -61,6 +61,8 @@ extension Seeds {
 
         static let hitVMOne: Hits.HitViewModel = Hits.HitViewModel(title: "Test 1", subTitle: "Subtitle 1", url: "http://URL1")
         static let hitVMTwo: Hits.HitViewModel = Hits.HitViewModel(title: "Test 2", subTitle: "Subtitle 2", url: "http://URL2")
+        static let hitVMThree: Hits.HitViewModel = Hits.HitViewModel(title: "Test 1", subTitle: "Subtitle 1", url: "")
+        static let hitVMFour: Hits.HitViewModel = Hits.HitViewModel(title: "Test 2", subTitle: "Subtitle 2", url: "http://api.google.com/q?exp=a|b")
 
         static let hitsVM = [hitVMOne, hitVMTwo]
     }

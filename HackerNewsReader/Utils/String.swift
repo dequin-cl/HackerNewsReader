@@ -13,6 +13,11 @@ extension String {
         return "**\(self)**"
     }
 
+    func isLocalized(candidate: String?) -> Bool {
+        let nonLocalizedKey = defaultNonLocalizedValue()
+        return nonLocalizedKey != candidate
+    }
+
     func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
         return NSLocalizedString(self, tableName: tableName, value: defaultNonLocalizedValue(), comment: "")
     }
@@ -29,6 +34,7 @@ extension String {
 protocol Localizable {
     var tableName: String { get }
     var localized: String { get }
+    var rawValue: String { get }
     func localized(with arguments: [CVarArg]) -> String
 }
 
